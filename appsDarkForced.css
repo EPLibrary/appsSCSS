@@ -1,0 +1,275 @@
+
+/* Dark Mode for Apps without using a media query. */
+body {
+	background-color:#111111;
+	color: white;
+}
+
+/* Input elements - try to match Safari */
+input[type="text"], input[type="password"], input:not([type]),
+select,
+textarea {
+	background-color:black;
+	color:white;
+	border-style:solid;
+	border-width:1px;
+	border-color:rgb(90,90,90);
+	padding:1px 2px;
+}
+
+.appForm label div.markdown,
+.appForm .formItem div.markdown {
+	border-color:rgb(90,90,90);
+}
+
+
+input[type="text"], input:not([type]) {
+	line-height:20px;
+}
+
+select {
+	/*background-image:linear-gradient(to bottom, rgba(100,100,100,0.2) 0%,rgba(0,0,0,0) 100%);*/
+	/* IE is finnicky, works better with base65 but if we leave out encoding type we can just URLencode an SVG */
+	/*background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48cG9seWdvbiBmaWxsPSIjZWVlIiBwb2ludHM9IjIwMCwzOTAgMTAsMTAgMzkwLDEwIiAvPjwvc3ZnPg==');*/
+	background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cpolygon%20fill%3D%22%23888%22%20points%3D%22200%2C380%2010%2C60%20390%2C60%22%20%2F%3E%3C%2Fsvg%3E');
+	background-size:7px 7px;
+	background-repeat:no-repeat;
+	background-position: calc(100% - 5px) 50%;
+	-moz-appearance: none; 
+	-webkit-appearance: none; 
+	appearance: none;
+	padding:4px 6px;
+	padding-right:19px;
+}
+
+
+/* Need an extra media query to compensate input line neight for larger font-size */
+@media (max-width: 685px) {
+		input[type="text"], input:not([type]) {
+		font-size: 16px;
+		line-height:26px;
+	}
+}
+
+
+/* remove ugly dropdown arrow in IE */
+select::-ms-expand {
+    display: none;
+}
+
+input[type="text"].error, input.error:not([type]),
+select.error,
+textarea.error {
+	color: #ff1313;
+}
+
+/* ColdFusion debugging for Web Services */
+#appsBody .cfdebug {
+	background-color:#111111;
+	color: white;
+}
+
+#appsBody .cfdebuglge,
+#appsBody .template_overage {
+	background-color:transparent;
+}
+
+#appsBody table.cfdump_wddx td, #appsBody table.cfdump_xml td, #appsBody table.cfdump_struct td,
+#appsBody table.cfdump_varundefined td, #appsBody table.cfdump_array td, #appsBody table.cfdump_query td,
+#appsBody table.cfdump_cfc td, #appsBody table.cfdump_object td, #appsBody table.cfdump_binary td,
+#appsBody table.cfdump_udf td, #appsBody table.cfdump_udfbody td, #appsBody table.cfdump_udfarguments td {
+	background-color:#000;
+}
+
+
+a {
+	color:#94cdff;
+}
+
+ .plainLink {
+	color: white;
+}
+
+
+.autocomplete-suggestions {
+	background:black;
+}
+
+#sidebar {
+	background-color:#222222;
+}
+
+/* Used to make a dark version of EPL logo with white epl.ca */
+#eplcaLogo {
+	fill: white;
+}
+
+.BigPopover {
+
+	background-color:#222;
+	border:1px solid #111;
+	-moz-box-shadow: 3px 3px 20px #000;
+	-webkit-box-shadow: 3px 3px 20px #000;
+	box-shadow: 3px 3px 20px #000;
+}
+
+
+/* Datepicker and possibly other jQuery UI elements */
+.ui-widget-content {
+	background-color:inherit;
+	color:#aaaaaa;
+}
+
+.ui-widget.ui-widget-content {
+	border: 1px solid rgba(127,127,127,0.4);
+	box-shadow: 3px 3px 20px #000;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default, .ui-button,
+html  .ui-button.ui-state-disabled:hover,
+html  .ui-button.ui-state-disabled:active {
+	border: 1px solid #444444;
+	background: #333333;
+	font-weight: normal;
+	color: white;
+}
+
+.ui-state-active,  .ui-widget-content  .ui-state-active,
+.ui-widget-header .ui-state-active,  a.ui-button:active,
+.ui-button:active,  .ui-button.ui-state-active:hover {
+    border: 1px solid #003eff;
+    background: #007fff;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid rgba(255,255,0,0.6);
+	background: rgba(255,255,0,0.5);;
+	color: white;
+}
+
+
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+    color: #AAA !important;
+}
+
+.chosen-container .chosen-results li.no-results {
+    color: #AAA;
+    display: list-item;
+    background: #111111;
+}
+
+/* Chosen Dropdowns dark mode */
+.chosen-container .chosen-single {
+	background-color:black;
+	color:white;
+	background: linear-gradient(#111111 20%, #0A0A0A 50%, #000000 52%, #060606 100%);
+	background-clip: padding-box;
+	box-shadow: 0 0 2px rgba(100,100,100,0.8) inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+	color: white;		
+}
+
+.chosen-container-single .chosen-single {
+	border: 1px solid rgb(90,90,90);
+}
+
+.chosen-container-single .chosen-default {
+    color: #999;
+}	
+
+.chosen-container .chosen-drop {
+    border: 1px solid #333;
+    border-top: 0;
+    background: #000;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);	
+}
+
+.chosen-container .chosen-results {
+	color:#DDD;
+}
+
+.chosen-container-multi .chosen-drop .result-selected {
+    display: list-item;
+    color: #666;
+    cursor: default;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+    border: 1px solid rgb(90,90,90);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+	background-image: linear-gradient(#111111 20%, #000000 80%); 
+    box-shadow: 0 1px 0 #fff inset;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+    border: 1px solid #333;
+    background-image: linear-gradient(#111111 20%, #000000 80%);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.14) inset;
+}
+
+
+.chosen-container-multi .chosen-choices {
+	border: 1px solid rgb(90,90,90);
+	background-color: #000;
+	background-image: linear-gradient(#111111 1%, #000000 15%);
+	cursor: text;
+}	
+
+
+.chosen-container-multi .chosen-choices li.search-choice {
+	border: 1px solid rgb(90,90,90);;
+	background-color: #333;
+	background-image: linear-gradient(#444 20%, #000 50%, #000000 52%, #111 100%);
+	box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 2px rgba(100,100,100,0.8) inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+	color: #DDD;
+	line-height: 13px;
+	cursor: default;
+}
+
+/* Used in design documentation's dark mode */
+.pattern table.altColors {
+    background-color:rgba(0,0,0,0.6)
+}
+
+
+/* SimpleMDE toolbar for editing Markdown */
+
+.editor-toolbar {
+	background-color:#FFF;
+}
+
+body .CodeMirror {
+	background: black;
+	color: inherit;
+	border-color: rgb(90,90,90);
+}
+
+body .editor-preview, body .editor-preview-side {
+	background:#111111;
+}
+
+body span.CodeMirror-selectedtext {
+    /*background-color:rgba(127,127,127,0.5);*/
+}
+
+body .CodeMirror .CodeMirror-selected {
+    background: #272727;
+}
+
+body .CodeMirror-cursor {
+    border-left-color: #DDD;
+}
+
+
+/* Force CKEditor source background to black */
+#appsBody textarea.cke_source {
+	background-color:black;
+	color:#EEE;
+}

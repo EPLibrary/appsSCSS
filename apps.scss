@@ -1,0 +1,166 @@
+/*This core stylesheet includes all the components from partials (starting with _).*/
+
+@use 'sass:color';
+
+//Specify any partial files to use
+@use 'base';
+@use 'header';
+@use 'appForm';
+@use 'markdown';
+@use 'other';
+
+// Define Sass variables here
+@import 'variables';
+
+
+// We don't use appsDark here because that has to be a separate file to support Apps' dark mode switching system.
+//@use 'appsDark';
+
+// if I did it in the same way that 9to5Mac and ETS do,
+// I wouldn't need to reload the page, but I'd have to take pains to avoid screwing up link colours
+// Note that they are using local storage instead of a cookie, but same idea.
+
+// Adding another selector complicates CSS precedence. So if I add a selector for dark mode, I'll also need to add one for light mode.
+
+// One of those should be present.
+
+
+// Playing with a mixin that can generate a button style
+@mixin linkButton($className, $baseColor, $lighten:true) {
+
+	// standardize color properties. This might result in some boring colors
+	// $baseColor: color.adjust($baseColor, $lightness:+10%, $saturation: +0%);
+
+	.#{$className}, a.#{$className}, .#{$className}Subtle, a.#{$className}Subtle {
+		text-decoration:none;
+		border:solid 1px color.scale($baseColor, $lightness: -40%);
+		@if $lighten {
+			background-color:color.scale($baseColor, $lightness:+40%);
+			border-top-color: color.scale($baseColor, $lightness: +60%);
+			border-left-color: color.scale($baseColor, $lightness: +60%);
+		}
+		@else {
+			background-color:$baseColor;
+			border-top-color: color.scale($baseColor, $lightness: +15%);
+			border-left-color: color.scale($baseColor, $lightness: +15%);
+			
+		}
+		
+		color:color.scale($baseColor, $lightness: -60%);
+		padding:1px 3px 1px 3px;
+		border-radius: 3px;
+
+		&:hover {
+			@if $lighten {background-color:color.scale($baseColor, $lightness: +60%);}
+			@else {background-color:color.scale($baseColor, $lightness: +10%);}			
+			
+			color:color.scale($baseColor, $lightness: -80%);
+			text-decoration: none;
+		}
+
+		&:active {
+			@if $lighten {
+				background-color:color.scale($baseColor, $lightness: +70%);
+				border-color:color.scale($baseColor, $lightness: +55%);
+			}
+			@else {
+				background-color:color.scale($baseColor, $lightness: +17%);
+				border-color:color.scale($baseColor, $lightness: +15%);
+			}
+			border-style:solid;
+		}
+
+		&:visited {
+			color:color.scale($baseColor, $lightness: -80%);
+		}
+
+		&.disabled, &.disabled:visited, &[disabled], &[disabled]:visited {
+			background-color:#eeeeee;
+			color:#aaaaaa;
+			border: solid 1px #bbbbbb;
+			border-top-color: #eeeeee;
+			border-left-color: #eeeeee;
+
+			&:hover {
+				color:#aaaaaa;
+			}
+		}
+
+	}
+
+
+	// Delete Subtle just shows a simple gray link that looks like a delete button when hovered
+	.#{$className}Subtle, a.#{$className}Subtle, .#{$className}Subtle:visited, a.#{$className}Subtle:visited {
+		color:color.scale($baseColor, $saturation: -80%);
+		background-color:transparent;
+		border-color:transparent;
+
+		&:active {
+			border-color:transparent;
+		}
+
+	}
+
+	.#{$className}Subtle:visited:hover, a.#{$className}Subtle:visited:hover {
+		color:color.scale($baseColor, $lightness: -80%);
+	}
+
+
+}
+
+// These guys generate about 15KB of CSS code. Yikes!
+@include linkButton(pinkButton, $eplPink);
+@include linkButton(purpleButton, $eplPurple);
+@include linkButton(greenButton, $eplGreen);
+@include linkButton(yellowButton, $eplYellow);
+@include linkButton(blueButton, $eplBlue);
+@include linkButton(grayButton, #BBBBBB);
+.grayButton.active, .grayButton.active {
+	background-color:white;
+	color:black;
+}
+
+@include linkButton(redButton, #FF2222);
+@include linkButton(orangeButton, #ff8323);
+@include linkButton(delete, #FF7777);
+@include linkButton(edit, #77ff77);
+
+
+@include linkButton(button, $accentColor, false);
+
+/* New Standard Buttons for major actions */
+.button, a.button {
+	color:white;
+	font-size:16px;
+	// border-color: $accentColor;
+	// border:none;
+	// background-color: $accentColor;
+	box-shadow:0px 1px 2px rgba(0,0,0,0.5);
+	-webkit-appearance: none;
+	padding: 5px;
+	cursor:pointer;
+
+	&:visited {
+		color:white;
+	}
+
+}
+
+
+.button:hover, a.button:hover {
+	color:white;
+	// background-color:color.scale($accentColor, $lightness: +10%);
+	box-shadow:0px 0px 2px rgba(0,0,0,0.4);
+	text-shadow:0px 0px 4px rgba(0,0,0,0.7);
+}
+
+.button[disabled], a.button[disabled] {
+	// background-color: #909696;
+	box-shadow:none;
+}
+
+.button[disabled]:hover {
+	text-shadow:none;
+}
+
+

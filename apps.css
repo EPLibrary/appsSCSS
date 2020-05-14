@@ -1,0 +1,2594 @@
+/* Base styles to style plain elements on apps.
+Generally, we only want elements styled here with no classes or IDs
+
+*/
+/* Primary CSS For apps.epl.ca */
+/* WebFonts for browsers that support them */
+@font-face {
+  font-family: "HelveticaNeueLTStd";
+  src: url("https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.eot");
+  src: url("https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.eot?#iefix") format("embedded-opentype"), url("https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.woff") format("woff"), url("https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.ttf") format("truetype"), url("https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.svg#HelveticaNeueLTStd-Roman") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "EPLveticaUltralight";
+  src: url("https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.eot");
+  src: url("https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.eot?#iefix") format("embedded-opentype"), url("https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.woff") format("woff"), url("https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.ttf") format("truetype"), url("https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.svg#HelveticaNeueLTStd-Th") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "EPLveticaLight";
+  src: url("https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.eot");
+  src: url("https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.eot?#iefix") format("embedded-opentype"), url("https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.woff") format("woff"), url("https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.ttf") format("truetype"), url("https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.svg#HelveticaNeueLTStd-Lt") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "EPLveticaBold";
+  src: url("https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.eot");
+  src: url("https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.eot?#iefix") format("embedded-opentype"), url("https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.woff") format("woff"), url("https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.ttf") format("truetype"), url("https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.svg#HelveticaNeueLTStd-Bd") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* apply a natural box layout model to all elements */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** Base Rules
+	These are the defaults for elements. No class or ID selectors.
+******************************************************************/
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  /* zero margin and padding of the body to account for differing browser defaults */
+  padding: 0;
+  color: #333;
+}
+
+a {
+  color: #004B8D;
+  text-decoration: none;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+/* Adjacent sibling selector - H3s right after H2s don't have top margin */
+h1 + h2 {
+  margin-top: 0px;
+}
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+h2 + h3 {
+  margin-top: 0px;
+}
+
+h3 + h4 {
+  margin-top: 0px;
+}
+
+h3 + ul {
+  margin-top: 0px;
+}
+
+h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+h4 + ul {
+  margin-top: 0px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Kill blue borders in IE */
+img {
+  border: none;
+}
+
+input, textarea {
+  font-size: 14px;
+}
+
+/***************************************************************/
+/* Styles relevant to elements of the Header (IntraHeader.cfm) */
+/***************************************************************/
+body {
+  background: #ffffff;
+  /* the background color will be displayed for the length of the content in the column, but no further */
+  margin-left: 0px;
+  /* the auto margins (in conjunction with a width) center the page */
+  margin-right: 0px;
+  /* the auto margins (in conjunction with a width) center the page */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /*border: 1px solid #000000;*/
+  text-align: left;
+  /* this overrides the text-align: center on the body element. */
+}
+
+header {
+  background-color: black;
+  padding: 0;
+}
+
+main {
+  /*Workaround for IE*/
+  display: block;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+footer {
+  background-color: #000000;
+  clear: left;
+  height: 40px;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 6px 5px 8px 5px;
+  clear: left;
+}
+
+nav a:not(.grayButton) {
+  color: white;
+  background-color: #666;
+  padding: 1px 2px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
+nav a:hover:not(.grayButton) {
+  background-color: #777;
+  text-decoration: none;
+}
+
+nav a + a {
+  margin-left: 10px;
+}
+
+/* Used for the header present on almost all apps pages (ones using IntraHeader.cfm) */
+#footerHomeLink {
+  margin-top: 5px;
+  position: absolute;
+  right: 1px;
+  margin-right: 10px;
+}
+
+/* This ensures that the footer doesn't overlap floated elements */
+#footerSpacer {
+  clear: both;
+  height: 40px;
+}
+
+nav #findStaff {
+  float: right;
+}
+
+/* Links to parent pages in the header */
+.breadCrumbs {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* \Includes\SidebarBlogs.cfm and \Includes\SidebarBookmarks.cfm */
+.sidebarLink {
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  position: relative;
+}
+
+a.sidebarLink {
+  color: inherit;
+}
+
+#bookmarks .sidebarLink {
+  display: block;
+}
+
+#searchArea {
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#searchArea {
+  float: right;
+  width: 350px;
+}
+
+#searchArea label {
+  float: left;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+#searchArea div {
+  width: auto;
+  overflow: hidden;
+}
+
+#searchArea input {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 3px;
+  color: #AAA;
+}
+
+/* Style for the Quick Search */
+.autocomplete-suggestions {
+  border: 1px solid #999;
+  background: #FFF;
+  text-align: left;
+  overflow: scroll;
+}
+
+.autocomplete-suggestions div {
+  padding: 5px 0;
+  line-height: 15px;
+  padding-left: 10px;
+  text-indent: -10px;
+}
+
+.autocomplete-selected {
+  background-color: #3875d7;
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: white;
+}
+
+.autocomplete-suggestion strong {
+  font-weight: normal;
+  background-color: rgba(255, 255, 127, 0.5);
+}
+
+.autocomplete-selected strong {
+  font-weight: normal;
+  background-color: #545477;
+}
+
+#yourImage {
+  float: left;
+  margin: 5px;
+  /*width:86px;*/
+  text-align: center;
+  overflow: hidden;
+}
+
+#sidebar {
+  display: none;
+  background-color: #EEE;
+  position: absolute;
+  width: 280px;
+  -moz-box-shadow: 3px 3px 20px #222;
+  -webkit-box-shadow: 3px 3px 20px #222;
+  box-shadow: 3px 3px 20px #222;
+  z-index: 500;
+}
+
+.sidebarCell {
+  padding: 6px 7px 8px 7px;
+}
+
+/* Sidebar Section Headings */
+.sidebarHeading {
+  font-weight: bold;
+  background: #004B8D;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.sidebarHeading .tinytip {
+  margin-top: 3px;
+  margin-left: 15px;
+  float: right;
+}
+
+/* Style for Sidebar Hamburger Button */
+#sidebarButton {
+  width: 40px;
+  height: 34px;
+  display: none;
+  float: left;
+  text-align: center;
+  margin: 2px 5px 0px 5px;
+}
+
+/* Make the Buns/patty of the hamburger */
+#sidebarButton div {
+  background-color: white;
+  height: 6px;
+  width: 40px;
+  margin: 4px 0 5px 0;
+  font-size: 6px;
+  color: black;
+  text-align: center;
+}
+
+#logoutButton {
+  float: left;
+  margin-top: 9px;
+  margin-left: 5px;
+}
+
+a.appsTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+a.appsTitle:hover {
+  text-decoration: none;
+}
+
+#appsTitleSmallWidth {
+  display: none;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 5px;
+}
+
+/* Change appearance of logo and header info based on display width */
+#EdmontonPublicLibraryText {
+  display: none;
+}
+
+@media (min-width: 951px) {
+  #EdmontonPublicLibraryText {
+    display: inline;
+  }
+}
+@media (max-width: 950px) {
+  #LogoutUsername {
+    display: none;
+  }
+}
+@media (max-width: 685px) {
+  #headerEPLLogo {
+    display: none;
+  }
+
+  #appsTitleSmallWidth {
+    display: block;
+  }
+
+  #searchArea {
+    margin-top: 0;
+    width: 100%;
+    clear: left;
+    float: none;
+  }
+
+  #searchArea label {
+    padding-top: 4px;
+  }
+
+  #sidebarButton {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .extText {
+    display: none;
+  }
+
+  /* Keep phones from zooming into input fields. 736 handles an iPhone 6 Plus in landscape or
+  smaller. IMO, 16px is a little too large and it's goofy if you change a window size and the
+  fonts get bigger. I can't yet think of a better way to do this, other than disallowing zoom,
+  which is a usability concern.
+  */
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+/* Title for Applications if PageTitle is set */
+.titleBar {
+  background-color: #004B8D;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: normal;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.titleBar h1 {
+  display: inline;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Buttons that go on titleBar */
+.adminControl {
+  float: right;
+  margin-top: 5px;
+}
+
+.adminControl a {
+  margin: 3px 3px 0 3px;
+}
+
+/* Styles for Modal Dialogue/Popover
+   This is for content that pops up in a big box
+*/
+.BigPopover {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: #EEE;
+  border: 1px solid #444;
+  padding: 15px;
+  margin-top: 6px;
+  width: 90%;
+  max-height: 90%;
+  z-index: 205;
+  -moz-box-shadow: 3px 3px 20px #222;
+  -webkit-box-shadow: 3px 3px 20px #222;
+  box-shadow: 3px 3px 20px #222;
+  border-radius: 18px;
+  overflow: auto;
+}
+
+/* Heading used in Popover/modal dialogue */
+.popHeading {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Responsive popover handling */
+@media (max-width: 500px) {
+  .BigPopover {
+    top: 2%;
+    left: 2%;
+    right: 2%;
+    padding: 10px;
+    width: 96% !important;
+  }
+}
+.closeButton {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 210;
+  background-image: url("/Resources/Images/xIcon_shadow.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.closeButton:hover {
+  background-image: url("/Resources/Images/xIcon_bigshadow.svg");
+}
+
+#escHelp {
+  margin: 4px 0px 4px 0px;
+  font-size: 13px;
+  color: #888;
+  position: absolute;
+  top: -3px;
+  right: 22px;
+  display: none;
+  z-index: 210;
+}
+
+.backCurtain {
+  /* This was to support stupid IE8 that didn't allow for translucent colors */
+  /*background-image:url(/Resources/images/alpha-black-30.png);*/
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 201;
+}
+
+/* Styles used in standard forms used on apps (with an appForm) class. */
+.appForm {
+  /*Without a field separator, there's 20px of padding above each label */
+  /* Special code to handle Chosen dropdowns */
+  /*I don't know why, but if this is any less than 5px, the items won't show*/
+  /*fieldSeparator DIVs can be used to add space between fields... 
+  maybe I can do this another way.*/
+  /* Some special styles for forms that are centered on the page 
+  	These are used for very simple forms, like a login form in a popup */
+  /* Customizations to SimpleMDE Markdown Editor within appForm forms */
+  /* Responsive form elements for small screens */
+}
+.appForm label,
+.appForm .formItem {
+  /*overflow auto is required for something, maybe... I can't remember what,
+    but it breaks chosen dropdowns */
+  /*overflow:auto;*/
+  font-weight: bold;
+  display: block;
+  /*margin-bottom:20px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 400px;
+  /* For showing a group of inputs side by side. */
+}
+.appForm label div.markdown,
+.appForm .formItem div.markdown {
+  width: 100%;
+  flex-basis: 100%;
+  border: 1px solid darkgray;
+  padding: 4px;
+  font-weight: normal;
+}
+.appForm label input,
+.appForm label select,
+.appForm label .formGroup,
+.appForm label .prefill,
+.appForm .formItem input,
+.appForm .formItem select,
+.appForm .formItem .formGroup,
+.appForm .formItem .prefill {
+  display: block;
+  margin-left: auto;
+  width: 240px;
+  flex-basis: 240px;
+  font-weight: normal;
+}
+.appForm label .formGroup input,
+.appForm label .formGroup select,
+.appForm label .formGroup label,
+.appForm label .formGroup span,
+.appForm .formItem .formGroup input,
+.appForm .formItem .formGroup select,
+.appForm .formItem .formGroup label,
+.appForm .formItem .formGroup span {
+  float: none;
+  display: inline-block;
+}
+.appForm label .formGroup span,
+.appForm .formItem .formGroup span {
+  font-weight: normal;
+}
+.appForm label .formGroup label,
+.appForm .formItem .formGroup label {
+  width: auto;
+  margin: 0;
+  margin-right: 15px;
+  font-weight: normal;
+}
+.appForm label .formGroup label:last-child,
+.appForm .formItem .formGroup label:last-child {
+  margin: 0;
+}
+.appForm label .formGroup label input[type],
+.appForm .formItem .formGroup label input[type] {
+  width: auto;
+  margin-left: 0px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.appForm label .checkGroup,
+.appForm .formItem .checkGroup {
+  margin-bottom: 15px;
+  display: block;
+  min-width: 240px;
+}
+.appForm label .checkGroup input[type=checkbox], .appForm label .checkGroup input[type=radio],
+.appForm .formItem .checkGroup input[type=checkbox],
+.appForm .formItem .checkGroup input[type=radio] {
+  float: none;
+  display: inline;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.appForm label .checkGroup .icheckbox_square-blue,
+.appForm .formItem .checkGroup .icheckbox_square-blue {
+  margin-right: 4px;
+}
+.appForm label .checkGroup label,
+.appForm .formItem .checkGroup label {
+  display: inline;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.appForm label .checkGroup label:first-child,
+.appForm .formItem .checkGroup label:first-child {
+  display: block;
+  margin-bottom: 5px;
+}
+.appForm label span.required,
+.appForm .formItem span.required {
+  color: red;
+  font-weight: normal;
+  font-size: 14px;
+  flex: auto;
+}
+.appForm label input[type=checkbox], .appForm label input[type=radio],
+.appForm .formItem input[type=checkbox],
+.appForm .formItem input[type=radio] {
+  width: 15px;
+}
+.appForm label .checkboxLeft input[type=checkbox],
+.appForm .formItem .checkboxLeft input[type=checkbox] {
+  margin-right: 225px;
+}
+.appForm label .icheckbox_square-blue,
+.appForm .formItem .icheckbox_square-blue {
+  margin-right: 218px;
+}
+.appForm label .error,
+.appForm .formItem .error {
+  font-weight: normal;
+  /*white-space: nowrap;*/
+  /*be careful with this one*/
+  display: block;
+  width: 100%;
+  padding-top: 5px;
+  text-align: left;
+  clear: both;
+}
+.appForm label .error.hidden,
+.appForm label .error.eplhidden,
+.appForm .formItem .error.hidden,
+.appForm .formItem .error.eplhidden {
+  display: none;
+}
+.appForm label .helpIcon,
+.appForm .formItem .helpIcon {
+  flex: auto;
+  margin-left: 3px;
+}
+.appForm > label + label,
+.appForm > label + .formItem,
+.appForm > .formItem + .formItem,
+.appForm > .formItem + label,
+.appForm .sectionContents > label + label,
+.appForm fieldset label + label {
+  padding-top: 20px;
+}
+.appForm label.optional {
+  font-weight: normal;
+}
+.appForm .chosen-container {
+  font-weight: normal;
+  overflow: visible;
+}
+.appForm .chosen-container .chosen-results {
+  padding-left: 5px;
+}
+.appForm textarea {
+  width: 100%;
+}
+.appForm .formSubmit {
+  text-align: center;
+}
+.appForm .formSubmit input,
+.appForm .formSubmit label input {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+}
+.appForm .noticeBox {
+  width: 100%;
+  text-align: center;
+}
+.appForm .fieldSeparator {
+  clear: both;
+  padding-top: 20px;
+}
+.appForm.centeredForm label input {
+  width: 275px;
+}
+.appForm.centeredForm {
+  width: 400px;
+  margin: 0 auto;
+}
+.appForm.centeredForm label.formSubmit input {
+  width: 100%;
+}
+.appForm fieldset {
+  margin-top: 20px;
+  width: 400px;
+  padding-top: 11px;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+.appForm fieldset label,
+.appForm fieldset .formItem {
+  width: 374px;
+}
+.appForm fieldset label input,
+.appForm fieldset label select,
+.appForm fieldset .formGroup,
+.appForm fieldset label .prefill {
+  width: 229px;
+}
+.appForm .fieldDesc, .appForm .dataDesc, .appForm .optionList {
+  margin-top: 5px;
+  font-weight: normal;
+}
+.appForm .labelDesc {
+  width: 100%;
+  font-size: 11px;
+  display: block;
+  margin-top: 6px;
+}
+.appForm .CodeMirror, .appForm .CodeMirror-scroll {
+  min-height: 100px;
+  font-weight: normal;
+}
+.appForm .editor-toolbar {
+  padding: 0 1px;
+}
+.appForm .editor-toolbar:before {
+  margin-bottom: 0px;
+}
+.appForm .editor-toolbar:after {
+  margin-top: 0px;
+}
+.appForm .CodeMirror {
+  padding: 3px;
+}
+.appForm .editor-toolbar.fullscreen,
+.appForm .CodeMirror-fullscreen {
+  z-index: 13;
+}
+.appForm .editor-toolbar, .appForm .CodeMirror.CodeMirror-wrap {
+  width: 100%;
+}
+@media (max-width: 450px) {
+  .appForm {
+    /* Font size on iOS is pretty small in input fields by default.
+    16px is needed on phones to prevent auto-zooming */
+    /* Used in FormBuilder Forms */
+  }
+  .appForm.centeredForm label input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .appForm.centeredForm {
+    width: 100%;
+  }
+  .appForm input,
+.appForm textarea,
+.appForm select {
+    font-size: 16px;
+  }
+  .appForm label {
+    font-weight: bold;
+    /* I don't know why the below was set... it looked really goofy and added too much space.*/
+    /* Commented out by JDL on Oct 1 2019*/
+    /*margin-bottom:15px;*/
+    width: 100%;
+    flex-basis: 100%;
+    /* overflow:auto covers chosen dropdowns */
+    /*overflow:auto;*/
+  }
+  .appForm .formItem,
+.appForm .formItem .formGroup {
+    display: block;
+    width: 100%;
+  }
+  .appForm label input,
+.appForm label select,
+.appForm .formItem .formGroup {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .appForm label input[type=checkbox] {
+    width: 15px;
+    margin-right: 0;
+  }
+  .appForm .formSection {
+    margin-left: 0px;
+    margin-right: 0px;
+    /*border:1px solid #BBBBBB;*/
+    border: none;
+  }
+  .appForm .sectionContents {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+/* Tweak basic HTML styles within markdown containers */
+.markdown p {
+  margin-top: 0px;
+}
+
+/* If the last thing in a markdown is a p, give it no bottom margin */
+.markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown ul {
+  padding: 5px 0px 5px 20px;
+  margin: 5px 0px;
+}
+
+.markdown table {
+  /*border: 1px solid #aaa;*/
+  border-collapse: collapse;
+}
+
+.markdown table td, .markdown table th {
+  padding: 4px;
+  border: 1px solid rgba(127, 127, 127, 0.2);
+}
+
+.markdown table th {
+  border-color: #7f7f7f;
+}
+
+.markdown table thead tr {
+  background-color: #444;
+}
+
+.markdown table thead tr th {
+  color: white;
+}
+
+.markdown table tbody tr:nth-child(even):not(.heading) {
+  background-color: #dddddd;
+  background-color: rgba(127, 127, 127, 0.1);
+}
+
+.markdown table tbody tr:nth-child(odd):not(.heading) {
+  /* could put another color here */
+}
+
+.markdown li > ul {
+  padding-top: 1px;
+  margin-top: 1px;
+}
+
+/* Styles for the Markdown Editor */
+main .CodeMirror,
+main .CodeMirror-scroll {
+  min-height: 100px;
+}
+
+main .editor-toolbar {
+  padding: 0 1px;
+}
+
+main .editor-toolbar:before {
+  margin-bottom: 0px;
+}
+
+main .editor-toolbar:after {
+  margin-top: 0px;
+}
+
+/* Customizations to SimpleMDE Markdown Editor within appForm forms */
+.appForm .CodeMirror, .appForm .CodeMirror-scroll {
+  min-height: 100px;
+  font-weight: normal;
+}
+
+main .CodeMirror,
+main .CodeMirror-scroll {
+  min-height: 100px;
+}
+
+.appForm .editor-toolbar,
+main .editor-toolbar {
+  padding: 0 1px;
+}
+
+.appForm .editor-toolbar:before,
+main .editor-toolbar:before {
+  margin-bottom: 0px;
+}
+
+.appForm .editor-toolbar:after,
+main .editor-toolbar:after {
+  margin-top: 0px;
+}
+
+.appForm .CodeMirror {
+  padding: 3px;
+}
+
+.appForm .editor-toolbar.fullscreen,
+.appForm .CodeMirror-fullscreen {
+  z-index: 13;
+}
+
+/************************************************/
+/* General Classes for Applications and Content */
+/************************************************/
+.columnleft, .columnright {
+  width: 48%;
+  /* Fallback for old browsers that don't support calc() */
+  width: calc(50% - 10px);
+  padding: 0 0px;
+}
+
+.columnleft {
+  float: left;
+  margin-right: 10px;
+}
+
+.columnright {
+  float: right;
+  margin-left: 10px;
+}
+
+/* Formerly used for headings on things in spans.
+These shouldn't be used anymore. Use h3 instead. */
+.BoldTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* An ostenibly cross-browser way to force a new line after floated elements. */
+.clearfloat, .clearFloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+}
+
+.hidden, .eplhidden,
+.appForm label.hidden,
+.appForm .formItem.hidden,
+.appForm label.eplhidden,
+.appForm .formItem.eplhidden {
+  display: none;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.centered {
+  text-align: center;
+}
+
+.plainLink {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.plainLink:hover {
+  text-decoration: none;
+}
+
+/* Styles small icon beside hard coded bookmarks in /Includes/SidebarBookmarks.cfm */
+.linkIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.helpIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: none;
+  vertical-align: top;
+  background-image: url("/Resources/Images/helpIcon.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+
+/* EPL COLORS using underscores is BAD -- don't do it!*/
+.EPLyellow {
+  color: #FDBB30;
+}
+
+.EPLgreen {
+  color: #7BC143;
+}
+
+.EPLmagenta, .EPLpink {
+  color: #E40E62;
+}
+
+.EPLpurple {
+  color: #7C4199;
+}
+
+.EPLblue, .EPLlightBlue {
+  color: #009DDC;
+}
+
+/*lightBlue is alternate nickname for blue*/
+.EPLdarkBlue {
+  color: #004B8D;
+}
+
+.EPLmagentaBG, .EPLpinkBG {
+  background-color: #E40E62;
+}
+
+/*alternate nickname for magenta*/
+.EPLpinkBG, .EPLmagentaBG {
+  background-color: #E40E62;
+}
+
+.EPLpurpleBG {
+  background-color: #7C4199;
+}
+
+.EPLgreenBG {
+  background-color: #7BC143;
+}
+
+.EPLyellowBG {
+  background-color: #FDBB30;
+}
+
+.EPLblueBG {
+  background-color: #009DDC;
+}
+
+.EPLlightBlueBG {
+  background-color: #009DDC;
+}
+
+.EPLdarkBlueBG {
+  background-color: #004B8D;
+}
+
+/* some older code didn't use uppercase B */
+.noticeBox, .noticebox {
+  background-color: #FFD5D5;
+  background-color: rgba(255, 80, 80, 0.4);
+  border: solid 1px rgba(255, 80, 80, 0.6);
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Old grayBox style, now altered to be consistent with Noticebox 
+.grayBox {
+	margin-top:5px;
+	padding:2px 0px 0px 4px;
+	background-color:#EFEFEF;
+	border-top:solid 1px #E0E0E0;
+	border-bottom:solid 2px #DDD;
+	border-left:solid 1px #E0E0E0;
+	border-right:solid 2px #DDD;	
+} */
+.grayBox {
+  background-color: rgba(127, 127, 127, 0.25);
+  border: solid 1px rgba(127, 127, 127, 0.45);
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Validation errors can use pulsating red borders around the field */
+#appsBody .valError {
+  border-color: red;
+  border-width: 2px;
+  border-radius: 3px;
+  border-style: inset;
+  /*Experimental animation*/
+  box-shadow: 0 0 0 rgba(252, 24, 24, 0.4);
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(252, 24, 24, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(252, 24, 24, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(252, 24, 24, 0);
+  }
+}
+#appsBody .valError:hover,
+#appsBody .valError:focus,
+.chosen-container-single .chosen-single.valError:hover {
+  animation: none;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #00AA00;
+}
+
+.successBox, .successbox {
+  background-color: #C7FDCB;
+  background-color: rgba(24, 255, 41, 0.25);
+  border: solid 1px #77B37B;
+  border: solid 1px rgba(0, 130, 9, 0.5);
+  padding: 10px;
+  margin: 5px;
+}
+
+.tinyTip, .tinytip {
+  font-size: 11px;
+  margin: 0 0 0 0;
+}
+
+.padded td {
+  padding: 3px 5px 3px 5px;
+}
+
+.noBreak, .nobreak, .nowrap, .noWrap {
+  white-space: nowrap;
+}
+
+.rowGradient {
+  background-color: #F8F8F8;
+  background: linear-gradient(to bottom, rgba(127, 127, 127, 0.1) 25%, rgba(127, 127, 127, 0.25) 100%);
+}
+
+/* Make table colors alternate */
+.altColors tr:nth-child(even):not(.heading) {
+  background-color: #dae6f7;
+  background-color: rgba(0, 106, 255, 0.12);
+  background-color: rgba(0, 75, 141, 0.15);
+}
+
+/* Make table colors alternate but in red instead of the accent Color */
+.altColors.red tr:nth-child(even):not(.heading) {
+  background-color: #ff8484;
+  background-color: rgba(141, 0, 0, 0.15);
+}
+
+/* Alternate in pairs (when every second row is hidden) */
+.altColors.pairs tr:nth-child(4n+1):not(.heading),
+.altColors.pairs tr:nth-child(4n+2):not(.heading) {
+  background-color: inherit;
+}
+
+.altColors.pairs tr:nth-child(4n+3):not(.heading),
+.altColors.pairs tr:nth-child(4n+4):not(.heading) {
+  background-color: #dae6f7;
+  background-color: rgba(0, 106, 255, 0.12);
+  background-color: rgba(0, 75, 141, 0.15);
+}
+
+.altColors.pairs.red tr:nth-child(4n+3):not(.heading),
+.altColors.pairs.red tr:nth-child(4n+4):not(.heading) {
+  background-color: #ff8484;
+  background-color: rgba(141, 0, 0, 0.15);
+}
+
+.altRow, .altrow {
+  background-color: #dae6f7;
+  background-color: rgba(0, 106, 255, 0.12);
+  background-color: rgba(0, 75, 141, 0.15);
+}
+
+.altRowGray {
+  background-color: #F7F7F7;
+  /* Support for dark mode */
+  background-color: rgba(127, 127, 127, 0.2);
+}
+
+/* These are presets for styling tables with a set of colors for alernating both rows and columns */
+.heading,
+.altColors thead {
+  font-weight: bold;
+  color: white;
+  background-color: #004B8D;
+  padding: 7px 7px 7px 7px;
+}
+
+.heading.red,
+.altColors.red thead {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+/* Shade alternating columns by giving a table this class */
+.altColColors td:nth-child(even) {
+  background-image: url(/Resources/images/alpha-black-05.png);
+  background-image: linear-gradient(rgba(127, 127, 127, 0.1), rgba(127, 127, 127, 0.1));
+}
+
+.headingGray {
+  font-weight: bold;
+  color: white;
+  background-color: #444444;
+  padding: 7px 7px 7px 7px;
+}
+
+.heading th,
+.altColors thead th {
+  text-align: left;
+  padding: 0 5px 0 5px;
+}
+
+.heading a,
+.altColors thead a {
+  color: #d0e3ff;
+}
+
+.altColors caption {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+}
+
+/*use hoverHighlight to allow rows and columns to highlight on hover */
+.hoverHighlight {
+  overflow: hidden;
+}
+
+.hoverHighlight tr:hover {
+  background-image: url(/Resources/images/alpha-yellow-20.png);
+}
+
+.hoverHighlight tr td,
+.hoverHighlight tr th {
+  position: relative;
+}
+
+.hoverHighlight tr td:hover::after,
+.hoverHighlight tr th:hover::after {
+  background-image: url(/Resources/images/alpha-yellow-20.png);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+.outlined, .outlinedGreen {
+  background-color: #d2ffd0;
+  border: solid 1px #08a600;
+  color: #08a600;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 2px;
+  padding: 1px 2px;
+}
+
+/* outlined but orange*/
+.outlinedOrange, .outlinedDraft {
+  background-color: #ffd9b3;
+  border: solid 1px #f54e4e;
+  color: #f54e4e;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 2px;
+  padding: 1px 2px;
+}
+
+/* Much like outline/draftOutline but gray, for archiving */
+.outlinedGray, .outlinedGrey, .outlinedArch {
+  background-color: #DDDDDE;
+  border: solid 1px #999999;
+  color: #444444;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 2px;
+  padding: 1px 2px;
+}
+
+/* Often used for errors and warnings, important info */
+.outlinedRed {
+  background-color: #ffefef;
+  border: solid 1px #ff0000;
+  color: #ff0000;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 2px;
+  padding: 1px 2px;
+}
+
+.subtleGray {
+  color: #999;
+  font-style: italic;
+}
+
+.spacedList li {
+  margin-bottom: 20px;
+}
+
+/* Used for links that are not currently clickable and such */
+.inactive {
+  color: #aaa;
+}
+
+/* Adds icon for links to certain filetypes */
+a[href$=".ppt"], a[href$=".pptx"], a[href$=".ppsx"], a[href$=".pdf"], a[href$=".doc"], a[href$=".docx"], a[href$=".xls"], a[href$=".xlsx"] {
+  padding-right: 20px;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+a[href$=".ppt"], a[href$=".pptx"], a[href$=".ppsx"] {
+  background-image: url("/Resources/images/type_icons/ppt-icon_16.png");
+}
+
+a[href$=".pdf"] {
+  background-image: url("/Resources/images/type_icons/pdf-icon_16.png");
+}
+
+a[href$=".doc"], a[href$=".docx"] {
+  background-image: url("/Resources/images/type_icons/doc-icon_16.png");
+}
+
+a[href$=".xls"], a[href$=".xlsx"] {
+  background-image: url("/Resources/images/type_icons/xls-icon_16.png");
+}
+
+/* For tabbed Easy-Edit Pages (or other pages with tabs) */
+.tabs {
+  margin-top: 10px;
+}
+
+.tab {
+  position: relative;
+  z-index: 10;
+  color: #DDD;
+  font-size: 16px;
+  background-color: #004B8D;
+  padding: 4px 8px 0px 8px;
+  background-image: url("/Resources/images/alpha-black-30.png");
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #0d2b4a;
+  margin-left: 4px;
+}
+
+.tab:first-child {
+  margin-left: 0 !important;
+}
+
+.tab.selected {
+  border-bottom: 1px solid #004B8D;
+  background-image: none;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 6px rgba(50, 50, 50, 0.68);
+  z-index: -1;
+}
+
+.tab:visited {
+  color: #DDD;
+}
+
+.tab:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.tab.selected:hover {
+  text-decoration: none;
+}
+
+.tabContent {
+  /*border:1px solid #BBBBBB;*/
+  display: none;
+  border: none;
+}
+
+.tabContent h2, .tabContent h1 {
+  background-color: #004B8D;
+  color: white;
+  margin-top: 0px;
+  padding-left: 8px;
+  z-index: 7;
+  position: relative;
+}
+
+/* This used to apply to any class of datepicker. I don't think it should apply to anything other than inputs */
+input.datepicker, .hasDatepicker {
+  background-image: url("https://www2.epl.ca/images/calendar_icon16.png");
+  background-position: 100% 50%;
+  background-position: calc(100% - 1px) 50%;
+  background-repeat: no-repeat;
+}
+
+/* Forces chosen dropdowns to align left*/
+.chosen-drop {
+  text-align: left;
+}
+
+/* Allows columns to be defined in modern browsers */
+.cols1 {
+  -webkit-column-count: 1;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 1;
+  /* Firefox */
+  column-count: 1;
+}
+
+.cols2 {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2;
+}
+
+.cols3 {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3;
+}
+
+/* Styles for list of files */
+/* Override link styling for links to files */
+.filesList a[href$=".pdf"], .filesList a[href$=".ppt"], .filesList a[href$=".pptx"], .filesList a[href$=".ppsx"], .filesList a[href$=".doc"], .filesList a[href$=".docx"], .filesList a[href$=".xls"], .filesList a[href$=".xlsx"] {
+  padding-right: 0px;
+  background-image: none;
+}
+
+table.filesList thead tr {
+  background-color: #004B8D !important;
+  color: white;
+}
+
+table.filesList th {
+  padding: 0 5px;
+}
+
+table.filesList th a {
+  color: #DAE6F7;
+}
+
+table.filesList {
+  font-family: "Segoe UI", Helvetica;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+
+/* Make table colors alternate */
+table.filesList tr:nth-child(even) {
+  background-color: rgba(0, 106, 255, 0.12);
+}
+
+table.filesList tr:nth-child(odd) {
+  background-color: rgba(0, 106, 255, 0.05);
+}
+
+table.filesList td {
+  padding: 0 5px;
+}
+
+table.filesList th {
+  text-align: left;
+  font-weight: bold;
+}
+
+table.filesList span.time {
+  font-size: 10pt;
+}
+
+table.filesList .fileIconName,
+table.filesList .fileIcon {
+  position: relative;
+  height: 32px;
+  padding-left: 0;
+  font-weight: normal;
+}
+
+table.filesList img.fileImage,
+table.filesList img.dirImage {
+  width: 32px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/*Little popup thumbnail that shows on hover over the thumbnail*/
+table.filesList .thumbPop {
+  width: 256px;
+  background-color: white;
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  z-index: 2;
+  box-shadow: 3px 3px 20px #222;
+}
+
+table.filesList .emptyFolder {
+  text-align: center;
+}
+
+/* allow this general style to apply to anything*/
+.highlighted,
+table.filesList tr.highlighted {
+  background-image: url("/Resources/images/alpha-yellow-20.png");
+}
+
+table.filesList .delTD {
+  text-align: center;
+  width: 26px;
+}
+
+table.filesList .sizeTD {
+  min-width: 60px;
+  font-weight: normal;
+  text-align: right;
+}
+
+/* This styles the divs of elements */
+div.filesList {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+div.filesList div {
+  margin: 5px;
+  width: 128px;
+}
+
+div.filesList div img {
+  width: 100%;
+}
+
+/* style for the imagebox that shows big photos */
+#imagebox {
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#imagebox img {
+  max-width: 90%;
+  max-width: calc(100% - 25px);
+  max-height: 80%;
+  max-height: calc(100% - 25px);
+  /*border-radius:8px;*/
+  -moz-box-shadow: 3px 3px 20px #222;
+  -webkit-box-shadow: 3px 3px 20px #222;
+  box-shadow: 3px 3px 20px #222;
+}
+
+/* Used to ensure QR codes have crip edges, even when they are tiny low-res images */
+.pixelated, .qr, .barcode {
+  image-rendering: optimizeSpeed;
+  /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;
+  /* Firefox                        */
+  image-rendering: -o-crisp-edges;
+  /* Opera                          */
+  image-rendering: -webkit-optimize-contrast;
+  /* Chrome (and eventually Safari) */
+  image-rendering: pixelated;
+  /* Chrome */
+  image-rendering: optimize-contrast;
+  /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE8+                           */
+}
+
+/* A segmented progress bar to show progress over multiple steps */
+.progress-steps {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  /* Make the arrow shape */
+  /* Make the arrow back shape */
+  /* Set the colors for a complete step */
+  /* Make the arrow shape blue when it's complete */
+}
+.progress-steps > li {
+  position: relative;
+  overflow: visible;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  flex: 1;
+}
+.progress-steps > li:first-child {
+  border-left: none;
+}
+.progress-steps > li:last-child {
+  border-right: none;
+}
+.progress-steps > li a {
+  background-color: rgba(127, 127, 127, 0.3);
+  color: black;
+  height: 40px;
+}
+.appsThemeDark .progress-steps > li a {
+  color: #DDD;
+}
+.progress-steps > li a:hover {
+  text-decoration: none;
+}
+.progress-steps > li > a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.progress-steps > li > a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.progress-steps > li .progress-arrow {
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent rgba(127, 127, 127, 0.3);
+  z-index: 150;
+}
+.progress-steps > li .progress-wedge {
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) transparent;
+  z-index: 150;
+}
+.progress-steps > li.complete > a {
+  background-color: #004B8D;
+  color: #fff;
+}
+.progress-steps > li.complete .progress-arrow {
+  border-color: transparent transparent transparent #004B8D;
+}
+.progress-steps > li.complete .progress-wedge {
+  border-color: #004B8D #004B8D #004B8D transparent;
+}
+
+/* Pulsating animation */
+@keyframes pulsateMain {
+  from {
+    background-color: rgba(0, 75, 141, 0.85);
+  }
+  to {
+    background-color: rgba(0, 75, 141, 0.6);
+  }
+}
+@keyframes pulsateArrow {
+  from {
+    border-color: transparent transparent transparent rgba(0, 75, 141, 0.85);
+  }
+  to {
+    border-color: transparent transparent transparent rgba(0, 75, 141, 0.6);
+  }
+}
+@keyframes pulsateWedge {
+  from {
+    border-color: rgba(0, 75, 141, 0.85) rgba(0, 75, 141, 0.85) rgba(0, 75, 141, 0.85) transparent;
+  }
+  to {
+    border-color: rgba(0, 75, 141, 0.6) rgba(0, 75, 141, 0.6) rgba(0, 75, 141, 0.6) transparent;
+  }
+}
+/* Use a pulsating animation on an active step */
+.progress-steps > li.active > a {
+  -webkit-animation: pulsateMain 2s linear 0s infinite alternate;
+  animation: pulsateMain 2s linear 0s infinite alternate;
+}
+
+.progress-steps > li.active .progress-arrow {
+  -webkit-animation: pulsateArrow 2s linear 0s infinite alternate;
+  animation: pulsateArrow 2s linear 0s infinite alternate;
+}
+
+.progress-steps > li.active .progress-wedge {
+  -webkit-animation: pulsateWedge 2s linear 0s infinite alternate;
+  animation: pulsateWedge 2s linear 0s infinite alternate;
+}
+
+.progress-steps > li > a {
+  display: block;
+  padding: 10px 0px 10px 7px;
+  white-space: nowrap;
+}
+
+.step {
+  font-weight: bold;
+}
+
+.step-detail {
+  font-weight: normal;
+}
+
+/* This max-width may need to go up if the content in the arrows is quite long */
+@media (max-width: 620px) {
+  .step-detail {
+    display: none;
+  }
+
+  .progress-steps > li > a {
+    padding: 10px 6px;
+    text-align: center;
+  }
+}
+/* Overrides for tooltips so they don't get hidden */
+.opentip-container {
+  z-index: 200;
+}
+
+#InnerPopOver .opentip-container {
+  z-index: 210;
+}
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 200;
+  /*cursor: pointer;*/
+}
+
+#InnerPopOver [data-tooltip] {
+  z-index: 210;
+}
+
+/* This gets around an IE glitch where the underline appears IN the tooltip
+  If you really want a tooltip on hover, you'll have to override this and
+  accept that the underline will also show in the tooltip  */
+a[data-tooltip] {
+  text-decoration: none;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";*/
+  /*filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);*/
+  opacity: 0;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid rgba(51, 51, 51, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* A modified version that appears to the left, used on forms/report.cfm */
+.leftTip[data-tooltip]:before {
+  position: absolute;
+  bottom: 0%;
+  right: calc(100% + 5px);
+  left: auto;
+  margin-bottom: -5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+.leftTip[data-tooltip]:after {
+  position: absolute;
+  bottom: 25%;
+  left: -5px;
+  right: auto;
+  margin-left: 0px;
+  width: 0;
+  border-left: 5px solid #000;
+  border-left: 5px solid rgba(51, 51, 51, 0.9);
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";*/
+  /*filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);*/
+  opacity: 1;
+  text-decoration: none;
+}
+
+#InnerPopOver h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* flashes a bright yellow color for a second */
+.flash {
+  background: linear-gradient(0deg, rgba(255, 255, 0, 0.4) 0%, rgba(255, 255, 0, 0) 80%, rgba(255, 255, 0, 0) 100%);
+  background-size: 100% 400%;
+  animation: fadeOut 2s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeOut {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@keyframes fadeBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.darkModeSwitch {
+  color: #7f7f7f;
+}
+
+.darkModeSwitch img {
+  width: 23px;
+  height: 23px;
+  margin-top: 0;
+}
+
+footer .darkModeSwitch {
+  text-align: center;
+  margin: 10px 0 0 0;
+  display: inline-block;
+}
+
+footer .darkModeSwitch img {
+  margin-top: -2px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+header .darkModeSwitch {
+  float: left;
+  margin-top: 7px;
+  margin-left: 11px;
+}
+
+/* Slider switch used in inOut and inOutGo */
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  -webkit-tap-highlight-color: transparent;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  background-color: rgba(127, 127, 127, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-top-color: rgba(0, 0, 0, 0.05);
+  border-left-color: rgba(0, 0, 0, 0.05);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+  border-right-color: rgba(255, 255, 255, 0.05);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-tap-highlight-color: transparent;
+  /* Rounded sliders */
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.52);
+}
+.switch .slider.round {
+  border-radius: 34px;
+}
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+.switch input:checked + .slider {
+  background-color: #00df26;
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #00df26;
+}
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.switch.small {
+  width: 30px;
+  height: 17px;
+}
+.switch.small .slider:before {
+  height: 13px;
+  width: 13px;
+  left: 1px;
+  bottom: 1px;
+}
+.switch.small .slider.round {
+  border-radius: 17px;
+}
+.switch.small input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+.switch.large {
+  width: 120px;
+  height: 68px;
+}
+.switch.large .slider:before {
+  height: 52px;
+  width: 52px;
+  left: 7px;
+  bottom: 7px;
+}
+.switch.large .slider.round {
+  border-radius: 68px;
+}
+.switch.large input:checked + .slider:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+
+/*This core stylesheet includes all the components from partials (starting with _).*/
+.pinkButton, a.pinkButton, .pinkButtonSubtle, a.pinkButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #89083b;
+  background-color: #f6689f;
+  border-top-color: #f99abf;
+  border-left-color: #f99abf;
+  color: #5b0627;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.pinkButton:hover, a.pinkButton:hover, .pinkButtonSubtle:hover, a.pinkButtonSubtle:hover {
+  background-color: #f99abf;
+  color: #2e0314;
+  text-decoration: none;
+}
+.pinkButton:active, a.pinkButton:active, .pinkButtonSubtle:active, a.pinkButtonSubtle:active {
+  background-color: #fab3cf;
+  border-color: #f88db7;
+  border-style: solid;
+}
+.pinkButton:visited, a.pinkButton:visited, .pinkButtonSubtle:visited, a.pinkButtonSubtle:visited {
+  color: #2e0314;
+}
+.pinkButton.disabled, .pinkButton.disabled:visited, .pinkButton[disabled], .pinkButton[disabled]:visited, a.pinkButton.disabled, a.pinkButton.disabled:visited, a.pinkButton[disabled], a.pinkButton[disabled]:visited, .pinkButtonSubtle.disabled, .pinkButtonSubtle.disabled:visited, .pinkButtonSubtle[disabled], .pinkButtonSubtle[disabled]:visited, a.pinkButtonSubtle.disabled, a.pinkButtonSubtle.disabled:visited, a.pinkButtonSubtle[disabled], a.pinkButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.pinkButton.disabled:hover, .pinkButton.disabled:visited:hover, .pinkButton[disabled]:hover, .pinkButton[disabled]:visited:hover, a.pinkButton.disabled:hover, a.pinkButton.disabled:visited:hover, a.pinkButton[disabled]:hover, a.pinkButton[disabled]:visited:hover, .pinkButtonSubtle.disabled:hover, .pinkButtonSubtle.disabled:visited:hover, .pinkButtonSubtle[disabled]:hover, .pinkButtonSubtle[disabled]:visited:hover, a.pinkButtonSubtle.disabled:hover, a.pinkButtonSubtle.disabled:visited:hover, a.pinkButtonSubtle[disabled]:hover, a.pinkButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.pinkButtonSubtle, a.pinkButtonSubtle, .pinkButtonSubtle:visited, a.pinkButtonSubtle:visited {
+  color: #8e6474;
+  background-color: transparent;
+  border-color: transparent;
+}
+.pinkButtonSubtle:active, a.pinkButtonSubtle:active, .pinkButtonSubtle:visited:active, a.pinkButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.pinkButtonSubtle:visited:hover, a.pinkButtonSubtle:visited:hover {
+  color: #2e0314;
+}
+
+.purpleButton, a.purpleButton, .purpleButtonSubtle, a.purpleButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #4a275c;
+  background-color: #b384cb;
+  border-top-color: #cdaddc;
+  border-left-color: #cdaddc;
+  color: #321a3d;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.purpleButton:hover, a.purpleButton:hover, .purpleButtonSubtle:hover, a.purpleButtonSubtle:hover {
+  background-color: #cdaddc;
+  color: #190d1f;
+  text-decoration: none;
+}
+.purpleButton:active, a.purpleButton:active, .purpleButtonSubtle:active, a.purpleButtonSubtle:active {
+  background-color: #d9c2e5;
+  border-color: #c6a3d8;
+  border-style: solid;
+}
+.purpleButton:visited, a.purpleButton:visited, .purpleButtonSubtle:visited, a.purpleButtonSubtle:visited {
+  color: #190d1f;
+}
+.purpleButton.disabled, .purpleButton.disabled:visited, .purpleButton[disabled], .purpleButton[disabled]:visited, a.purpleButton.disabled, a.purpleButton.disabled:visited, a.purpleButton[disabled], a.purpleButton[disabled]:visited, .purpleButtonSubtle.disabled, .purpleButtonSubtle.disabled:visited, .purpleButtonSubtle[disabled], .purpleButtonSubtle[disabled]:visited, a.purpleButtonSubtle.disabled, a.purpleButtonSubtle.disabled:visited, a.purpleButtonSubtle[disabled], a.purpleButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.purpleButton.disabled:hover, .purpleButton.disabled:visited:hover, .purpleButton[disabled]:hover, .purpleButton[disabled]:visited:hover, a.purpleButton.disabled:hover, a.purpleButton.disabled:visited:hover, a.purpleButton[disabled]:hover, a.purpleButton[disabled]:visited:hover, .purpleButtonSubtle.disabled:hover, .purpleButtonSubtle.disabled:visited:hover, .purpleButtonSubtle[disabled]:hover, .purpleButtonSubtle[disabled]:visited:hover, a.purpleButtonSubtle.disabled:hover, a.purpleButtonSubtle.disabled:visited:hover, a.purpleButtonSubtle[disabled]:hover, a.purpleButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.purpleButtonSubtle, a.purpleButtonSubtle, .purpleButtonSubtle:visited, a.purpleButtonSubtle:visited {
+  color: #706476;
+  background-color: transparent;
+  border-color: transparent;
+}
+.purpleButtonSubtle:active, a.purpleButtonSubtle:active, .purpleButtonSubtle:visited:active, a.purpleButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.purpleButtonSubtle:visited:hover, a.purpleButtonSubtle:visited:hover {
+  color: #190d1f;
+}
+
+.greenButton, a.greenButton, .greenButtonSubtle, a.greenButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #4a7527;
+  background-color: #b0da8e;
+  border-top-color: #cae6b4;
+  border-left-color: #cae6b4;
+  color: #314e1a;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.greenButton:hover, a.greenButton:hover, .greenButtonSubtle:hover, a.greenButtonSubtle:hover {
+  background-color: #cae6b4;
+  color: #19270d;
+  text-decoration: none;
+}
+.greenButton:active, a.greenButton:active, .greenButtonSubtle:active, a.greenButtonSubtle:active {
+  background-color: #d7ecc7;
+  border-color: #c4e3aa;
+  border-style: solid;
+}
+.greenButton:visited, a.greenButton:visited, .greenButtonSubtle:visited, a.greenButtonSubtle:visited {
+  color: #19270d;
+}
+.greenButton.disabled, .greenButton.disabled:visited, .greenButton[disabled], .greenButton[disabled]:visited, a.greenButton.disabled, a.greenButton.disabled:visited, a.greenButton[disabled], a.greenButton[disabled]:visited, .greenButtonSubtle.disabled, .greenButtonSubtle.disabled:visited, .greenButtonSubtle[disabled], .greenButtonSubtle[disabled]:visited, a.greenButtonSubtle.disabled, a.greenButtonSubtle.disabled:visited, a.greenButtonSubtle[disabled], a.greenButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.greenButton.disabled:hover, .greenButton.disabled:visited:hover, .greenButton[disabled]:hover, .greenButton[disabled]:visited:hover, a.greenButton.disabled:hover, a.greenButton.disabled:visited:hover, a.greenButton[disabled]:hover, a.greenButton[disabled]:visited:hover, .greenButtonSubtle.disabled:hover, .greenButtonSubtle.disabled:visited:hover, .greenButtonSubtle[disabled]:hover, .greenButtonSubtle[disabled]:visited:hover, a.greenButtonSubtle.disabled:hover, a.greenButtonSubtle.disabled:visited:hover, a.greenButtonSubtle[disabled]:hover, a.greenButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.greenButtonSubtle, a.greenButtonSubtle, .greenButtonSubtle:visited, a.greenButtonSubtle:visited {
+  color: #818f75;
+  background-color: transparent;
+  border-color: transparent;
+}
+.greenButtonSubtle:active, a.greenButtonSubtle:active, .greenButtonSubtle:visited:active, a.greenButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.greenButtonSubtle:visited:hover, a.greenButtonSubtle:visited:hover {
+  color: #19270d;
+}
+
+.yellowButton, a.yellowButton, .yellowButtonSubtle, a.yellowButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #b37a02;
+  background-color: #fed683;
+  border-top-color: #fee4ac;
+  border-left-color: #fee4ac;
+  color: #775101;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.yellowButton:hover, a.yellowButton:hover, .yellowButtonSubtle:hover, a.yellowButtonSubtle:hover {
+  background-color: #fee4ac;
+  color: #3c2901;
+  text-decoration: none;
+}
+.yellowButton:active, a.yellowButton:active, .yellowButtonSubtle:active, a.yellowButtonSubtle:active {
+  background-color: #feebc1;
+  border-color: #fee0a2;
+  border-style: solid;
+}
+.yellowButton:visited, a.yellowButton:visited, .yellowButtonSubtle:visited, a.yellowButtonSubtle:visited {
+  color: #3c2901;
+}
+.yellowButton.disabled, .yellowButton.disabled:visited, .yellowButton[disabled], .yellowButton[disabled]:visited, a.yellowButton.disabled, a.yellowButton.disabled:visited, a.yellowButton[disabled], a.yellowButton[disabled]:visited, .yellowButtonSubtle.disabled, .yellowButtonSubtle.disabled:visited, .yellowButtonSubtle[disabled], .yellowButtonSubtle[disabled]:visited, a.yellowButtonSubtle.disabled, a.yellowButtonSubtle.disabled:visited, a.yellowButtonSubtle[disabled], a.yellowButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.yellowButton.disabled:hover, .yellowButton.disabled:visited:hover, .yellowButton[disabled]:hover, .yellowButton[disabled]:visited:hover, a.yellowButton.disabled:hover, a.yellowButton.disabled:visited:hover, a.yellowButton[disabled]:hover, a.yellowButton[disabled]:visited:hover, .yellowButtonSubtle.disabled:hover, .yellowButtonSubtle.disabled:visited:hover, .yellowButtonSubtle[disabled]:hover, .yellowButtonSubtle[disabled]:visited:hover, a.yellowButtonSubtle.disabled:hover, a.yellowButtonSubtle.disabled:visited:hover, a.yellowButtonSubtle[disabled]:hover, a.yellowButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.yellowButtonSubtle, a.yellowButtonSubtle, .yellowButtonSubtle:visited, a.yellowButtonSubtle:visited {
+  color: #ab9e82;
+  background-color: transparent;
+  border-color: transparent;
+}
+.yellowButtonSubtle:active, a.yellowButtonSubtle:active, .yellowButtonSubtle:visited:active, a.yellowButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.yellowButtonSubtle:visited:hover, a.yellowButtonSubtle:visited:hover {
+  color: #3c2901;
+}
+
+.blueButton, a.blueButton, .blueButtonSubtle, a.blueButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #005e84;
+  background-color: #51cdff;
+  border-top-color: #8bdeff;
+  border-left-color: #8bdeff;
+  color: #003f58;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.blueButton:hover, a.blueButton:hover, .blueButtonSubtle:hover, a.blueButtonSubtle:hover {
+  background-color: #8bdeff;
+  color: #001f2c;
+  text-decoration: none;
+}
+.blueButton:active, a.blueButton:active, .blueButtonSubtle:active, a.blueButtonSubtle:active {
+  background-color: #a8e6ff;
+  border-color: #7ddaff;
+  border-style: solid;
+}
+.blueButton:visited, a.blueButton:visited, .blueButtonSubtle:visited, a.blueButtonSubtle:visited {
+  color: #001f2c;
+}
+.blueButton.disabled, .blueButton.disabled:visited, .blueButton[disabled], .blueButton[disabled]:visited, a.blueButton.disabled, a.blueButton.disabled:visited, a.blueButton[disabled], a.blueButton[disabled]:visited, .blueButtonSubtle.disabled, .blueButtonSubtle.disabled:visited, .blueButtonSubtle[disabled], .blueButtonSubtle[disabled]:visited, a.blueButtonSubtle.disabled, a.blueButtonSubtle.disabled:visited, a.blueButtonSubtle[disabled], a.blueButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.blueButton.disabled:hover, .blueButton.disabled:visited:hover, .blueButton[disabled]:hover, .blueButton[disabled]:visited:hover, a.blueButton.disabled:hover, a.blueButton.disabled:visited:hover, a.blueButton[disabled]:hover, a.blueButton[disabled]:visited:hover, .blueButtonSubtle.disabled:hover, .blueButtonSubtle.disabled:visited:hover, .blueButtonSubtle[disabled]:hover, .blueButtonSubtle[disabled]:visited:hover, a.blueButtonSubtle.disabled:hover, a.blueButtonSubtle.disabled:visited:hover, a.blueButtonSubtle[disabled]:hover, a.blueButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.blueButtonSubtle, a.blueButtonSubtle, .blueButtonSubtle:visited, a.blueButtonSubtle:visited {
+  color: #587784;
+  background-color: transparent;
+  border-color: transparent;
+}
+.blueButtonSubtle:active, a.blueButtonSubtle:active, .blueButtonSubtle:visited:active, a.blueButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.blueButtonSubtle:visited:hover, a.blueButtonSubtle:visited:hover {
+  color: #001f2c;
+}
+
+.grayButton, a.grayButton, .grayButtonSubtle, a.grayButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #707070;
+  background-color: #d6d6d6;
+  border-top-color: #e4e4e4;
+  border-left-color: #e4e4e4;
+  color: #4b4b4b;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.grayButton:hover, a.grayButton:hover, .grayButtonSubtle:hover, a.grayButtonSubtle:hover {
+  background-color: #e4e4e4;
+  color: #252525;
+  text-decoration: none;
+}
+.grayButton:active, a.grayButton:active, .grayButtonSubtle:active, a.grayButtonSubtle:active {
+  background-color: #ebebeb;
+  border-color: #e0e0e0;
+  border-style: solid;
+}
+.grayButton:visited, a.grayButton:visited, .grayButtonSubtle:visited, a.grayButtonSubtle:visited {
+  color: #252525;
+}
+.grayButton.disabled, .grayButton.disabled:visited, .grayButton[disabled], .grayButton[disabled]:visited, a.grayButton.disabled, a.grayButton.disabled:visited, a.grayButton[disabled], a.grayButton[disabled]:visited, .grayButtonSubtle.disabled, .grayButtonSubtle.disabled:visited, .grayButtonSubtle[disabled], .grayButtonSubtle[disabled]:visited, a.grayButtonSubtle.disabled, a.grayButtonSubtle.disabled:visited, a.grayButtonSubtle[disabled], a.grayButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.grayButton.disabled:hover, .grayButton.disabled:visited:hover, .grayButton[disabled]:hover, .grayButton[disabled]:visited:hover, a.grayButton.disabled:hover, a.grayButton.disabled:visited:hover, a.grayButton[disabled]:hover, a.grayButton[disabled]:visited:hover, .grayButtonSubtle.disabled:hover, .grayButtonSubtle.disabled:visited:hover, .grayButtonSubtle[disabled]:hover, .grayButtonSubtle[disabled]:visited:hover, a.grayButtonSubtle.disabled:hover, a.grayButtonSubtle.disabled:visited:hover, a.grayButtonSubtle[disabled]:hover, a.grayButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.grayButtonSubtle, a.grayButtonSubtle, .grayButtonSubtle:visited, a.grayButtonSubtle:visited {
+  color: #bbbbbb;
+  background-color: transparent;
+  border-color: transparent;
+}
+.grayButtonSubtle:active, a.grayButtonSubtle:active, .grayButtonSubtle:visited:active, a.grayButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.grayButtonSubtle:visited:hover, a.grayButtonSubtle:visited:hover {
+  color: #252525;
+}
+
+.grayButton.active, .grayButton.active {
+  background-color: white;
+  color: black;
+}
+
+.redButton, a.redButton, .redButtonSubtle, a.redButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #ad0000;
+  background-color: #ff7a7a;
+  border-top-color: #ffa7a7;
+  border-left-color: #ffa7a7;
+  color: #740000;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.redButton:hover, a.redButton:hover, .redButtonSubtle:hover, a.redButtonSubtle:hover {
+  background-color: #ffa7a7;
+  color: #3a0000;
+  text-decoration: none;
+}
+.redButton:active, a.redButton:active, .redButtonSubtle:active, a.redButtonSubtle:active {
+  background-color: #ffbdbd;
+  border-color: #ff9c9c;
+  border-style: solid;
+}
+.redButton:visited, a.redButton:visited, .redButtonSubtle:visited, a.redButtonSubtle:visited {
+  color: #3a0000;
+}
+.redButton.disabled, .redButton.disabled:visited, .redButton[disabled], .redButton[disabled]:visited, a.redButton.disabled, a.redButton.disabled:visited, a.redButton[disabled], a.redButton[disabled]:visited, .redButtonSubtle.disabled, .redButtonSubtle.disabled:visited, .redButtonSubtle[disabled], .redButtonSubtle[disabled]:visited, a.redButtonSubtle.disabled, a.redButtonSubtle.disabled:visited, a.redButtonSubtle[disabled], a.redButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.redButton.disabled:hover, .redButton.disabled:visited:hover, .redButton[disabled]:hover, .redButton[disabled]:visited:hover, a.redButton.disabled:hover, a.redButton.disabled:visited:hover, a.redButton[disabled]:hover, a.redButton[disabled]:visited:hover, .redButtonSubtle.disabled:hover, .redButtonSubtle.disabled:visited:hover, .redButtonSubtle[disabled]:hover, .redButtonSubtle[disabled]:visited:hover, a.redButtonSubtle.disabled:hover, a.redButtonSubtle.disabled:visited:hover, a.redButtonSubtle[disabled]:hover, a.redButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.redButtonSubtle, a.redButtonSubtle, .redButtonSubtle:visited, a.redButtonSubtle:visited {
+  color: #a77a7a;
+  background-color: transparent;
+  border-color: transparent;
+}
+.redButtonSubtle:active, a.redButtonSubtle:active, .redButtonSubtle:visited:active, a.redButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.redButtonSubtle:visited:hover, a.redButtonSubtle:visited:hover {
+  color: #3a0000;
+}
+
+.orangeButton, a.orangeButton, .orangeButtonSubtle, a.orangeButtonSubtle {
+  text-decoration: none;
+  border: solid 1px #ae4c00;
+  background-color: #ffb57b;
+  border-top-color: #ffcda7;
+  border-left-color: #ffcda7;
+  color: #743300;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.orangeButton:hover, a.orangeButton:hover, .orangeButtonSubtle:hover, a.orangeButtonSubtle:hover {
+  background-color: #ffcda7;
+  color: #3a1900;
+  text-decoration: none;
+}
+.orangeButton:active, a.orangeButton:active, .orangeButtonSubtle:active, a.orangeButtonSubtle:active {
+  background-color: #ffdabd;
+  border-color: #ffc79c;
+  border-style: solid;
+}
+.orangeButton:visited, a.orangeButton:visited, .orangeButtonSubtle:visited, a.orangeButtonSubtle:visited {
+  color: #3a1900;
+}
+.orangeButton.disabled, .orangeButton.disabled:visited, .orangeButton[disabled], .orangeButton[disabled]:visited, a.orangeButton.disabled, a.orangeButton.disabled:visited, a.orangeButton[disabled], a.orangeButton[disabled]:visited, .orangeButtonSubtle.disabled, .orangeButtonSubtle.disabled:visited, .orangeButtonSubtle[disabled], .orangeButtonSubtle[disabled]:visited, a.orangeButtonSubtle.disabled, a.orangeButtonSubtle.disabled:visited, a.orangeButtonSubtle[disabled], a.orangeButtonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.orangeButton.disabled:hover, .orangeButton.disabled:visited:hover, .orangeButton[disabled]:hover, .orangeButton[disabled]:visited:hover, a.orangeButton.disabled:hover, a.orangeButton.disabled:visited:hover, a.orangeButton[disabled]:hover, a.orangeButton[disabled]:visited:hover, .orangeButtonSubtle.disabled:hover, .orangeButtonSubtle.disabled:visited:hover, .orangeButtonSubtle[disabled]:hover, .orangeButtonSubtle[disabled]:visited:hover, a.orangeButtonSubtle.disabled:hover, a.orangeButtonSubtle.disabled:visited:hover, a.orangeButtonSubtle[disabled]:hover, a.orangeButtonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.orangeButtonSubtle, a.orangeButtonSubtle, .orangeButtonSubtle:visited, a.orangeButtonSubtle:visited {
+  color: #a78e7b;
+  background-color: transparent;
+  border-color: transparent;
+}
+.orangeButtonSubtle:active, a.orangeButtonSubtle:active, .orangeButtonSubtle:visited:active, a.orangeButtonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.orangeButtonSubtle:visited:hover, a.orangeButtonSubtle:visited:hover {
+  color: #3a1900;
+}
+
+.delete, a.delete, .deleteSubtle, a.deleteSubtle {
+  text-decoration: none;
+  border: solid 1px #e00000;
+  background-color: #ffadad;
+  border-top-color: #ffc9c9;
+  border-left-color: #ffc9c9;
+  color: #960000;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.delete:hover, a.delete:hover, .deleteSubtle:hover, a.deleteSubtle:hover {
+  background-color: #ffc9c9;
+  color: #4b0000;
+  text-decoration: none;
+}
+.delete:active, a.delete:active, .deleteSubtle:active, a.deleteSubtle:active {
+  background-color: #ffd6d6;
+  border-color: #ffc2c2;
+  border-style: solid;
+}
+.delete:visited, a.delete:visited, .deleteSubtle:visited, a.deleteSubtle:visited {
+  color: #4b0000;
+}
+.delete.disabled, .delete.disabled:visited, .delete[disabled], .delete[disabled]:visited, a.delete.disabled, a.delete.disabled:visited, a.delete[disabled], a.delete[disabled]:visited, .deleteSubtle.disabled, .deleteSubtle.disabled:visited, .deleteSubtle[disabled], .deleteSubtle[disabled]:visited, a.deleteSubtle.disabled, a.deleteSubtle.disabled:visited, a.deleteSubtle[disabled], a.deleteSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.delete.disabled:hover, .delete.disabled:visited:hover, .delete[disabled]:hover, .delete[disabled]:visited:hover, a.delete.disabled:hover, a.delete.disabled:visited:hover, a.delete[disabled]:hover, a.delete[disabled]:visited:hover, .deleteSubtle.disabled:hover, .deleteSubtle.disabled:visited:hover, .deleteSubtle[disabled]:hover, .deleteSubtle[disabled]:visited:hover, a.deleteSubtle.disabled:hover, a.deleteSubtle.disabled:visited:hover, a.deleteSubtle[disabled]:hover, a.deleteSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.deleteSubtle, a.deleteSubtle, .deleteSubtle:visited, a.deleteSubtle:visited {
+  color: #c9adad;
+  background-color: transparent;
+  border-color: transparent;
+}
+.deleteSubtle:active, a.deleteSubtle:active, .deleteSubtle:visited:active, a.deleteSubtle:visited:active {
+  border-color: transparent;
+}
+
+.deleteSubtle:visited:hover, a.deleteSubtle:visited:hover {
+  color: #4b0000;
+}
+
+.edit, a.edit, .editSubtle, a.editSubtle {
+  text-decoration: none;
+  border: solid 1px #00e000;
+  background-color: #adffad;
+  border-top-color: #c9ffc9;
+  border-left-color: #c9ffc9;
+  color: #009600;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.edit:hover, a.edit:hover, .editSubtle:hover, a.editSubtle:hover {
+  background-color: #c9ffc9;
+  color: #004b00;
+  text-decoration: none;
+}
+.edit:active, a.edit:active, .editSubtle:active, a.editSubtle:active {
+  background-color: #d6ffd6;
+  border-color: #c2ffc2;
+  border-style: solid;
+}
+.edit:visited, a.edit:visited, .editSubtle:visited, a.editSubtle:visited {
+  color: #004b00;
+}
+.edit.disabled, .edit.disabled:visited, .edit[disabled], .edit[disabled]:visited, a.edit.disabled, a.edit.disabled:visited, a.edit[disabled], a.edit[disabled]:visited, .editSubtle.disabled, .editSubtle.disabled:visited, .editSubtle[disabled], .editSubtle[disabled]:visited, a.editSubtle.disabled, a.editSubtle.disabled:visited, a.editSubtle[disabled], a.editSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.edit.disabled:hover, .edit.disabled:visited:hover, .edit[disabled]:hover, .edit[disabled]:visited:hover, a.edit.disabled:hover, a.edit.disabled:visited:hover, a.edit[disabled]:hover, a.edit[disabled]:visited:hover, .editSubtle.disabled:hover, .editSubtle.disabled:visited:hover, .editSubtle[disabled]:hover, .editSubtle[disabled]:visited:hover, a.editSubtle.disabled:hover, a.editSubtle.disabled:visited:hover, a.editSubtle[disabled]:hover, a.editSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.editSubtle, a.editSubtle, .editSubtle:visited, a.editSubtle:visited {
+  color: #adc9ad;
+  background-color: transparent;
+  border-color: transparent;
+}
+.editSubtle:active, a.editSubtle:active, .editSubtle:visited:active, a.editSubtle:visited:active {
+  border-color: transparent;
+}
+
+.editSubtle:visited:hover, a.editSubtle:visited:hover {
+  color: #004b00;
+}
+
+.button, a.button, .buttonSubtle, a.buttonSubtle {
+  text-decoration: none;
+  border: solid 1px #002d55;
+  background-color: #004B8D;
+  border-top-color: #0068c4;
+  border-left-color: #0068c4;
+  color: #001e38;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+.button:hover, a.button:hover, .buttonSubtle:hover, a.buttonSubtle:hover {
+  background-color: #005fb2;
+  color: #000f1c;
+  text-decoration: none;
+}
+.button:active, a.button:active, .buttonSubtle:active, a.buttonSubtle:active {
+  background-color: #006ccc;
+  border-color: #0068c4;
+  border-style: solid;
+}
+.button:visited, a.button:visited, .buttonSubtle:visited, a.buttonSubtle:visited {
+  color: #000f1c;
+}
+.button.disabled, .button.disabled:visited, .button[disabled], .button[disabled]:visited, a.button.disabled, a.button.disabled:visited, a.button[disabled], a.button[disabled]:visited, .buttonSubtle.disabled, .buttonSubtle.disabled:visited, .buttonSubtle[disabled], .buttonSubtle[disabled]:visited, a.buttonSubtle.disabled, a.buttonSubtle.disabled:visited, a.buttonSubtle[disabled], a.buttonSubtle[disabled]:visited {
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border: solid 1px #bbbbbb;
+  border-top-color: #eeeeee;
+  border-left-color: #eeeeee;
+}
+.button.disabled:hover, .button.disabled:visited:hover, .button[disabled]:hover, .button[disabled]:visited:hover, a.button.disabled:hover, a.button.disabled:visited:hover, a.button[disabled]:hover, a.button[disabled]:visited:hover, .buttonSubtle.disabled:hover, .buttonSubtle.disabled:visited:hover, .buttonSubtle[disabled]:hover, .buttonSubtle[disabled]:visited:hover, a.buttonSubtle.disabled:hover, a.buttonSubtle.disabled:visited:hover, a.buttonSubtle[disabled]:hover, a.buttonSubtle[disabled]:visited:hover {
+  color: #aaaaaa;
+}
+
+.buttonSubtle, a.buttonSubtle, .buttonSubtle:visited, a.buttonSubtle:visited {
+  color: #384755;
+  background-color: transparent;
+  border-color: transparent;
+}
+.buttonSubtle:active, a.buttonSubtle:active, .buttonSubtle:visited:active, a.buttonSubtle:visited:active {
+  border-color: transparent;
+}
+
+.buttonSubtle:visited:hover, a.buttonSubtle:visited:hover {
+  color: #000f1c;
+}
+
+/* New Standard Buttons for major actions */
+.button, a.button {
+  color: white;
+  font-size: 16px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-appearance: none;
+  padding: 5px;
+  cursor: pointer;
+}
+.button:visited, a.button:visited {
+  color: white;
+}
+
+.button:hover, a.button:hover {
+  color: white;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+}
+
+.button[disabled], a.button[disabled] {
+  box-shadow: none;
+}
+
+.button[disabled]:hover {
+  text-shadow: none;
+}
+
+/*# sourceMappingURL=apps.css.map */

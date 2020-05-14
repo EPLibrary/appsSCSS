@@ -1,0 +1,365 @@
+/* Styles used in standard forms used on apps (with an appForm) class. */
+
+$labelWidth: 400px;
+$inputWidth: 240px;
+
+.appForm {
+
+	label, 
+	.formItem {
+		/*overflow auto is required for something, maybe... I can't remember what,
+		  but it breaks chosen dropdowns */
+		/*overflow:auto;*/
+		font-weight:bold;
+		display:block;
+		/*margin-bottom:20px;*/
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:space-between;
+		width:$labelWidth;
+		
+		// Markdown fields within formbuilder completed stages
+		div.markdown {
+			width:100%;
+			flex-basis:100%;
+			border: 1px solid rgb(169, 169, 169);
+			padding:4px;
+			font-weight:normal;
+		}
+
+		input,
+		select,
+		.formGroup,
+		.prefill {
+			display:block;
+			margin-left:auto;
+			width:$inputWidth;
+			flex-basis:$inputWidth;
+			font-weight:normal;
+		}
+
+
+		/* For showing a group of inputs side by side. */
+		.formGroup {
+			input,
+			select,
+			label,
+			span {
+				float:none;
+				display:inline-block;
+			}
+
+			span {
+				font-weight:normal;
+			}
+
+			label {
+				width:auto;
+				margin:0;
+				margin-right:15px;
+				font-weight:normal;
+			}
+
+			label:last-child {
+				margin:0;
+			}
+
+			label input[type] {
+				width:auto;
+				margin-left:0px;
+				margin-right:5px;
+				margin-bottom:10px;
+			}
+
+		}//end .formGroup		
+
+		//Originally From Forms/forms.css 
+		.checkGroup {
+			margin-bottom:15px;
+			display:block;
+			min-width:$inputWidth;
+
+			input[type="checkbox"], input[type="radio"] {
+				float:none;
+				display:inline;
+				vertical-align: middle;
+				margin-right:4px;
+			}
+
+			.icheckbox_square-blue {
+				margin-right:4px;
+			}			
+
+			label {
+				display:inline;
+				font-weight:normal;
+				vertical-align:middle;
+			}
+
+			label:first-child {
+				display:block;
+				margin-bottom:5px;
+			}		
+
+		}//.checkGroup
+
+		span.required {
+			color:red;
+			font-weight:normal;
+			font-size:14px;
+			flex:auto;
+		}
+
+
+		input[type="checkbox"], input[type="radio"] {
+			width:15px;
+			// margin-right:$inputWidth - 15px;
+		}
+
+		.checkboxLeft input[type="checkbox"] {
+			margin-right:$inputWidth - 15px;	
+		}
+
+		.icheckbox_square-blue {
+			margin-right:$inputWidth - 22px;
+		}
+
+		.error {
+			font-weight:normal;
+			/*white-space: nowrap;*/ /*be careful with this one*/
+			display:block;
+			width:100%;
+			padding-top:5px;
+			text-align: left;
+			clear:both;
+		} 
+
+		.error.hidden,
+		.error.eplhidden {
+			display:none;
+		}
+
+ 		.helpIcon {
+			flex:auto;
+			margin-left:3px;
+		}
+
+
+	}//label, .formItem
+
+	/*Without a field separator, there's 20px of padding above each label */
+	>label+label,
+	>label+.formItem,
+	>.formItem+.formItem,
+	>.formItem+label,
+	.sectionContents>label+label,
+	fieldset label+label {
+		padding-top:20px;
+	}
+
+	label.optional {
+		font-weight:normal;
+	}
+
+
+	/* Special code to handle Chosen dropdowns */
+	.chosen-container {
+		font-weight:normal;
+		overflow:visible;
+	}
+
+	/*I don't know why, but if this is any less than 5px, the items won't show*/
+	.chosen-container .chosen-results {
+		padding-left:5px;
+	}
+
+	textarea {
+		width:100%;
+	}
+
+	.formSubmit {
+		text-align: center;
+
+		input,
+		label input {
+			display:block;
+			margin:0 auto;
+			// float:none !important;
+			font-size:20px;
+		}
+	}
+
+	.noticeBox {
+		width:100%;
+		text-align: center;
+	}
+
+	/*fieldSeparator DIVs can be used to add space between fields... 
+	maybe I can do this another way.*/
+	.fieldSeparator {
+		clear:both;
+		padding-top:20px;
+	}
+
+
+
+	/* Some special styles for forms that are centered on the page 
+		These are used for very simple forms, like a login form in a popup */
+	&.centeredForm label input {
+		width:275px;
+	}
+
+	&.centeredForm {
+		width: $labelWidth;
+		margin:0 auto;
+
+	}
+
+	&.centeredForm label.formSubmit input {
+		width:100%;
+	}
+
+
+	fieldset {
+		margin-top:20px;
+		width: $labelWidth;
+		padding-top:11px;
+		padding-left:11px;
+		padding-right:11px;
+
+		label,
+		.formItem {
+			width:374px;
+		}
+
+		label input,
+		label select,
+		.formGroup,
+		label .prefill {
+			width: 229px;
+		}
+	}//end fieldset
+
+
+
+
+
+
+	.fieldDesc, .dataDesc, .optionList {
+		margin-top:5px;
+		font-weight:normal;
+	}
+
+	.labelDesc {
+		width:100%;
+		font-size:11px;
+		display:block;
+		margin-top:6px;
+	}	
+
+
+
+	/* Customizations to SimpleMDE Markdown Editor within appForm forms */
+	.CodeMirror, .CodeMirror-scroll {
+		min-height: 100px;
+		font-weight: normal;
+	}
+
+	.editor-toolbar {
+		padding: 0 1px;
+	}
+
+	.editor-toolbar:before {
+		margin-bottom: 0px;
+	}
+
+	.editor-toolbar:after {
+		margin-top: 0px;
+	}
+
+	.CodeMirror {
+		padding: 3px;
+	}
+
+	.editor-toolbar.fullscreen,
+	.CodeMirror-fullscreen {
+		z-index: 13;
+	}
+
+	.editor-toolbar, .CodeMirror.CodeMirror-wrap {
+		width: 100%;
+	}
+
+
+
+	/* Responsive form elements for small screens */
+	@media (max-width:450px) {
+
+		&.centeredForm label input {
+			width:100%;
+			flex-basis:100%
+		}
+
+		&.centeredForm {
+			width:100%;
+		}	
+
+		/* Font size on iOS is pretty small in input fields by default.
+		16px is needed on phones to prevent auto-zooming */
+		input,
+		textarea,
+		select {
+			font-size: 16px;
+		}
+
+
+		label {
+			font-weight:bold;
+			/* I don't know why the below was set... it looked really goofy and added too much space.*/
+			/* Commented out by JDL on Oct 1 2019*/
+			/*margin-bottom:15px;*/
+			width:100%;
+			flex-basis:100%;
+			/* overflow:auto covers chosen dropdowns */
+			/*overflow:auto;*/
+		}
+
+		.formItem,
+		.formItem .formGroup {
+			display:block;
+			width:100%;
+		}
+
+		label input,
+		label select,
+		.formItem .formGroup {
+			width:100%;
+			flex-basis:100%;
+			// float:none;
+		}
+
+
+		label input[type="checkbox"] {
+			width:15px;
+			margin-right:0;
+		}
+
+		/* Used in FormBuilder Forms */
+		.formSection {
+			margin-left:0px;
+			margin-right:0px;
+			/*border:1px solid #BBBBBB;*/
+			border:none;
+		}
+
+		.sectionContents {
+			padding-left:3px;
+			padding-right:3px;
+		}
+
+	}//@max-width:450px;
+
+
+
+}//End .appForm
+

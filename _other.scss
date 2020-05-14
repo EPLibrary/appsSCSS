@@ -1,0 +1,1177 @@
+@use 'sass:color';
+@import 'variables';
+
+/************************************************/
+/* General Classes for Applications and Content */
+/************************************************/
+
+.columnleft, .columnright {
+	width:48%; /* Fallback for old browsers that don't support calc() */
+	width:calc(50% - 10px);
+	padding: 0 0px;
+}
+
+.columnleft {
+	float:left;
+	margin-right:10px;
+}
+
+.columnright {
+	float:right;
+	margin-left:10px;
+}
+
+/* Formerly used for headings on things in spans.
+These shouldn't be used anymore. Use h3 instead. */
+.BoldTitle {
+	font-size:18px;
+	font-weight:bold;
+}
+
+/* An ostenibly cross-browser way to force a new line after floated elements. */
+.clearfloat, .clearFloat {
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+.hidden, .eplhidden,
+.appForm label.hidden,
+.appForm .formItem.hidden,
+.appForm label.eplhidden,
+.appForm .formItem.eplhidden {
+	display:none;
+}
+
+
+.normal {font-weight:normal;}
+
+.centered {text-align:center}
+
+.plainLink {
+	color:black;
+	text-decoration:none;
+	font-size:$defaultFontSize;
+}
+
+.plainLink:hover {
+	text-decoration: none;
+}
+
+
+/* Styles small icon beside hard coded bookmarks in /Includes/SidebarBookmarks.cfm */
+.linkIcon {
+	width:16px;
+	height:16px;
+	margin-right:5px;
+	position:relative;
+	top:2px;
+}
+
+.helpIcon {
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+	border: none;
+	vertical-align: top;
+	background-image:url('/Resources/Images/helpIcon.svg');
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+}
+
+
+/* EPL COLORS using underscores is BAD -- don't do it!*/
+.EPLyellow {
+	color:$eplYellow;
+}
+
+.EPLgreen {
+	color:$eplGreen;
+}
+
+.EPLmagenta, .EPLpink {
+	color:$eplPink;
+}
+
+.EPLpurple {
+	color:$eplPurple;
+}
+
+.EPLblue, .EPLlightBlue {
+	color:$eplBlue;
+}
+/*lightBlue is alternate nickname for blue*/
+
+
+.EPLdarkBlue {
+	color: $eplDarkBlue; //This is also the same as accent color
+}
+
+.EPLmagentaBG, .EPLpinkBG {
+	background-color:$eplPink;
+}
+
+/*alternate nickname for magenta*/
+.EPLpinkBG, .EPLmagentaBG {
+	background-color:$eplPink;
+}
+
+.EPLpurpleBG {
+	background-color:$eplPurple;
+}
+
+.EPLgreenBG {
+	background-color:$eplGreen;
+}
+
+.EPLyellowBG {
+	background-color:$eplYellow;
+}
+
+.EPLblueBG {
+	background-color:$eplBlue;
+}
+
+.EPLlightBlueBG {
+	background-color:$eplBlue;
+}
+
+.EPLdarkBlueBG {
+	background-color: $accentColor;
+}
+
+/* some older code didn't use uppercase B */
+.noticeBox, .noticebox {
+	background-color:#FFD5D5;
+	background-color:rgba(255,80,80,0.4);
+	border:solid 1px rgba(255,80,80,0.6);
+	padding:10px;
+	margin:5px;
+}
+
+/* Old grayBox style, now altered to be consistent with Noticebox 
+.grayBox {
+	margin-top:5px;
+	padding:2px 0px 0px 4px;
+	background-color:#EFEFEF;
+	border-top:solid 1px #E0E0E0;
+	border-bottom:solid 2px #DDD;
+	border-left:solid 1px #E0E0E0;
+	border-right:solid 2px #DDD;	
+} */
+
+.grayBox {
+	background-color:rgba(127,127,127,0.25);
+	border:solid 1px rgba(127,127,127,0.45);
+	padding:10px;
+	margin:5px;
+}
+
+/* Validation errors can use pulsating red borders around the field */
+#appsBody .valError {
+	border-color:red;
+	border-width:2px;
+	border-radius:3px;
+	border-style: inset;
+	/*Experimental animation*/
+	box-shadow: 0 0 0 rgba(252,24,24, 0.4);
+  	animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(252, 24, 24, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 7px rgba(252, 24, 24, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(252, 24, 24, 0);
+  }
+}
+
+#appsBody .valError:hover,
+#appsBody .valError:focus,
+.chosen-container-single .chosen-single.valError:hover {
+  animation: none;
+}
+
+
+.error {color:red;}
+
+.success {color:#00AA00;}
+
+.successBox, .successbox {
+	background-color:#C7FDCB;
+    background-color: rgba(24, 255, 41, 0.25);
+	border:solid 1px #77B37B;
+	border: solid 1px rgba(0, 130, 9, 0.5);
+	padding:10px;
+	margin:5px;
+}
+
+
+
+.tinyTip, .tinytip {
+	font-size:11px;
+	margin:0 0 0 0;
+}
+
+.padded td {
+	padding:3px 5px 3px 5px;
+}
+
+.noBreak, .nobreak, .nowrap, .noWrap {
+	white-space:nowrap;
+}
+
+
+
+.rowGradient {
+	background-color: #F8F8F8;
+	background: linear-gradient(to bottom, rgba(127,127,127,0.1) 25%, rgba(127,127,127,0.25) 100%);
+}
+
+/* Make table colors alternate */
+.altColors tr:nth-child(even):not(.heading) {
+	background-color:#dae6f7;
+	background-color:rgba(0, 106, 255, .12);
+	background-color: color.adjust($accentColor, $alpha:-0.85);
+}
+
+/* Make table colors alternate but in red instead of the accent Color */
+.altColors.red tr:nth-child(even):not(.heading) {
+	background-color:#ff8484;
+	background-color:rgba(141, 0, 0, 0.15);
+}
+
+/* Alternate in pairs (when every second row is hidden) */
+.altColors.pairs tr:nth-child(4n+1):not(.heading),
+.altColors.pairs tr:nth-child(4n+2):not(.heading) {
+	background-color:inherit;
+}
+
+
+.altColors.pairs tr:nth-child(4n+3):not(.heading),
+.altColors.pairs tr:nth-child(4n+4):not(.heading) {
+	background-color:#dae6f7;
+	background-color:rgba(0, 106, 255, .12);
+	background-color: color.adjust($accentColor, $alpha:-0.85);
+}
+
+
+.altColors.pairs.red tr:nth-child(4n+3):not(.heading),
+.altColors.pairs.red tr:nth-child(4n+4):not(.heading) {
+	background-color:#ff8484;
+	background-color:rgba(141, 0, 0, 0.15);	
+}
+
+
+
+
+.altRow, .altrow {
+	background-color:#dae6f7;
+	background-color:rgba(0, 106, 255, .12);
+	background-color: color.adjust($accentColor, $alpha:-0.85);
+	}
+
+.altRowGray {
+	background-color:#F7F7F7;
+	/* Support for dark mode */
+	background-color:rgba(127,127,127,0.2);
+}
+
+
+/* These are presets for styling tables with a set of colors for alernating both rows and columns */
+.heading,
+.altColors thead {
+	font-weight:bold;
+	color:white;
+	background-color: $accentColor;
+	padding:7px 7px 7px 7px;
+}
+
+.heading.red,
+.altColors.red thead {
+	background-color:rgba(255, 0, 0, 0.8);
+}
+
+/* Shade alternating columns by giving a table this class */
+.altColColors td:nth-child(even) {
+	background-image: url(/Resources/images/alpha-black-05.png);
+	background-image: linear-gradient(rgba(127,127,127,0.1), rgba(127,127,127,0.1));
+}
+
+
+.headingGray {
+	font-weight:bold;
+	color:white;
+	background-color:#444444;
+	padding:7px 7px 7px 7px;
+}
+
+.heading th,
+.altColors thead th {
+	text-align:left;
+	padding:0 5px 0 5px;
+}
+
+.heading a,
+.altColors thead a {
+	color:#d0e3ff;
+}
+
+.altColors caption {
+	font-weight:bold;
+	font-size:20px;
+	text-align: left;
+}
+
+
+/*use hoverHighlight to allow rows and columns to highlight on hover */
+.hoverHighlight {
+	overflow:hidden;
+}
+
+.hoverHighlight tr:hover {
+	background-image: url(/Resources/images/alpha-yellow-20.png);		
+}
+
+.hoverHighlight tr td,
+.hoverHighlight tr th {
+	position: relative;
+}
+
+.hoverHighlight tr td:hover::after,
+.hoverHighlight tr th:hover::after {
+	background-image: url(/Resources/images/alpha-yellow-20.png);
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -5000px;
+	height: 10000px;
+	width: 100%;
+	z-index: -1;			
+}
+
+
+.outlined, .outlinedGreen {
+	background-color:#d2ffd0;
+	border: solid 1px #08a600;
+	color:#08a600;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	margin-right:2px;
+	padding:1px 2px;
+}
+
+
+/* outlined but orange*/
+.outlinedOrange, .outlinedDraft {
+	background-color:#ffd9b3;
+	border: solid 1px #f54e4e;
+	color:#f54e4e;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	margin-right:2px;
+	padding:1px 2px;
+}
+
+/* Much like outline/draftOutline but gray, for archiving */
+.outlinedGray, .outlinedGrey, .outlinedArch {
+	background-color:#DDDDDE;
+	border: solid 1px #999999;
+	color:#444444;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	margin-right:2px;
+	padding:1px 2px;
+}
+
+/* Often used for errors and warnings, important info */
+.outlinedRed {
+	background-color:#ffefef;
+	border: solid 1px #ff0000;
+	color:#ff0000;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	margin-right:2px;
+	padding:1px 2px;
+}
+
+.subtleGray {
+	color:#999;
+	font-style:italic;
+}
+
+
+.spacedList li {
+	margin-bottom:20px;
+}
+
+/* Used for links that are not currently clickable and such */
+.inactive {
+	color:#aaa;
+}
+
+
+/* Adds icon for links to certain filetypes */
+a[href$=".ppt"],a[href$=".pptx"],a[href$=".ppsx"],a[href$=".pdf"],a[href$=".doc"],a[href$=".docx"],a[href$=".xls"],a[href$=".xlsx"] {
+  padding-right:20px;
+  background-position: 100% 50%;
+  background-repeat:no-repeat;
+}
+
+a[href$=".ppt"],a[href$=".pptx"],a[href$=".ppsx"] {
+  background-image: url('/Resources/images/type_icons/ppt-icon_16.png');
+}
+
+a[href$=".pdf"] {
+  background-image: url('/Resources/images/type_icons/pdf-icon_16.png');
+}
+
+a[href$=".doc"],a[href$=".docx"] {
+  background-image: url('/Resources/images/type_icons/doc-icon_16.png');
+}
+
+a[href$=".xls"],a[href$=".xlsx"] {
+  background-image: url('/Resources/images/type_icons/xls-icon_16.png');
+}
+
+
+
+/* For tabbed Easy-Edit Pages (or other pages with tabs) */
+
+.tabs {
+	margin-top:10px;
+}
+
+.tab {
+	position:relative;
+	z-index:10;
+	color:#DDD;
+	font-size:16px;
+	background-color: $accentColor;
+	padding:4px 8px 0px 8px;
+	background-image:url('/Resources/images/alpha-black-30.png');
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom:1px solid #0d2b4a;
+	margin-left:4px;
+}
+
+.tab:first-child {
+	margin-left:0 ! important
+}
+
+.tab.selected {
+	border-bottom:1px solid $accentColor;
+	background-image:none;
+	color:#FFFFFF;
+	box-shadow: 0px 0px 6px rgba(50, 50, 50, 0.68);
+	z-index:-1;
+}
+
+.tab:visited {
+	color:#DDD;
+}
+
+.tab:hover {
+	text-decoration:underline;
+	color:white;
+}
+
+.tab.selected:hover {
+	text-decoration: none;
+}
+
+.tabContent {
+	/*border:1px solid #BBBBBB;*/
+	display:none;
+	border:none;
+}	
+
+.tabContent h2, .tabContent h1 {
+	background-color: $accentColor;
+	color:white;
+	margin-top:0px;
+	padding-left:8px;
+	z-index:7;
+	position:relative;
+}
+
+/* This used to apply to any class of datepicker. I don't think it should apply to anything other than inputs */
+input.datepicker, .hasDatepicker {
+	background-image:url('https://www2.epl.ca/images/calendar_icon16.png');
+	background-position: 100% 50%;
+	background-position: calc(100% - 1px) 50%;
+	background-repeat:no-repeat;
+}
+
+/* Forces chosen dropdowns to align left*/
+.chosen-drop {
+	text-align:left;
+}
+
+
+/* Allows columns to be defined in modern browsers */
+.cols1 {
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+	-moz-column-count: 1; /* Firefox */
+	column-count: 1;	
+}
+
+.cols2 {
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+}
+
+.cols3 {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+	-moz-column-count: 3; /* Firefox */
+	column-count: 3;
+}
+
+
+/* Styles for list of files */
+
+/* Override link styling for links to files */
+.filesList a[href$=".pdf"],.filesList a[href$=".ppt"],.filesList a[href$=".pptx"],.filesList a[href$=".ppsx"],.filesList a[href$=".doc"],.filesList a[href$=".docx"],.filesList a[href$=".xls"],.filesList a[href$=".xlsx"]
+{
+  padding-right:0px;
+  background-image: none;
+}
+
+table.filesList thead tr {
+	background-color:$accentColor !important;
+	color:white;
+}
+
+table.filesList th {
+	padding:0 5px;
+}
+
+table.filesList th a {
+	color:#DAE6F7;
+}
+
+table.filesList {
+	font-family: "Segoe UI", Helvetica;
+	font-size:12pt;
+	border-collapse:collapse;
+}
+
+/* Make table colors alternate */
+table.filesList tr:nth-child(even){
+	background-color:rgba(0, 106, 255, .12)
+}
+
+table.filesList tr:nth-child(odd){
+	background-color:rgba(0, 106, 255, .05);
+}
+
+table.filesList td {
+	padding:0 5px;
+}
+
+table.filesList th {
+	text-align:left;
+	font-weight:bold;
+}
+
+table.filesList span.time {
+	font-size:10pt;
+}
+
+table.filesList .fileIconName,
+table.filesList .fileIcon {
+	position:relative;
+	height:32px;
+	padding-left:0;
+	font-weight:normal;
+}
+
+table.filesList img.fileImage,
+table.filesList img.dirImage {
+	width:32px;
+	vertical-align:middle;
+	margin-right:5px;
+}
+
+/*Little popup thumbnail that shows on hover over the thumbnail*/
+table.filesList .thumbPop {
+    width: 256px;
+    background-color:white;
+    position: absolute;
+    left: 32px;
+    top:32px;
+    z-index:2;
+    box-shadow: 3px 3px 20px #222;
+}
+
+table.filesList .emptyFolder {
+	text-align: center;
+}
+
+/* allow this general style to apply to anything*/
+.highlighted,
+table.filesList tr.highlighted {
+	background-image: url('/Resources/images/alpha-yellow-20.png');
+}
+
+
+table.filesList .delTD {
+	text-align: center;
+	width:26px;
+}
+
+table.filesList .sizeTD {
+	min-width:60px;
+	font-weight:normal;
+	text-align: right;
+}
+
+/* This styles the divs of elements */
+
+div.filesList {
+	display:flex;
+	flex-flow:row wrap;
+	align-items:center;
+}
+
+div.filesList div {
+	margin:5px;
+	width:128px;
+}
+
+div.filesList div img {
+	width:100%;
+}
+
+
+/* style for the imagebox that shows big photos */
+#imagebox
+{
+    position: fixed;
+    z-index: 99;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#imagebox img
+{
+    max-width: 90%;
+    max-width: calc(100% - 25px);
+    max-height: 80%;
+    max-height: calc(100% - 25px);
+    /*border-radius:8px;*/
+    -moz-box-shadow: 3px 3px 20px #222;
+	-webkit-box-shadow: 3px 3px 20px #222;
+	box-shadow: 3px 3px 20px #222;
+}
+
+
+
+
+/* Used to ensure QR codes have crip edges, even when they are tiny low-res images */
+.pixelated, .qr, .barcode {
+	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+	image-rendering: -moz-crisp-edges;          /* Firefox                        */
+	image-rendering: -o-crisp-edges;            /* Opera                          */
+	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+	image-rendering: pixelated; /* Chrome */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+/* A segmented progress bar to show progress over multiple steps */
+.progress-steps {
+	padding:0;
+	display:flex;
+	list-style:none;    
+
+	> li {
+		position: relative;
+		overflow: visible;
+		border-right: 15px solid transparent;
+		border-left: 15px solid transparent;
+		flex:1;
+	}
+
+	> li:first-child {
+		border-left:none;
+	}
+
+	> li:last-child {
+		border-right:none;
+	}
+
+	> li a {
+		background-color: rgba(127,127,127,0.3);
+		color: black;
+		height:40px;
+	}
+
+	.appsThemeDark & > li a {
+		color: #DDD;
+	}
+
+	> li a:hover {
+		text-decoration: none;
+	}
+
+	> li > a:first-child {
+		border-top-left-radius:5px;
+		border-bottom-left-radius:5px;
+	}
+
+	> li > a:last-child {
+		border-top-right-radius:5px;
+		border-bottom-right-radius:5px;
+	}
+
+
+	/* Make the arrow shape */
+	> li .progress-arrow {
+		position: absolute;
+		top: 0px;
+		right: -20px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 20px 0 20px 20px;
+		border-color: transparent transparent transparent rgba(127,127,127,0.3);
+		z-index: 150;
+	}
+
+	/* Make the arrow back shape */
+	> li .progress-wedge {
+		position: absolute;
+		top: 0px;
+		left: -20px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 20px 0 20px 20px;
+		border-color: rgba(127,127,127,0.3) rgba(127,127,127,0.3) rgba(127,127,127,0.3) transparent;
+		z-index: 150;
+	}
+
+
+
+	/* Set the colors for a complete step */
+	> li.complete > a {
+		background-color: $accentColor;
+		color: #fff;
+	}
+
+
+	/* Make the arrow shape blue when it's complete */
+	> li.complete .progress-arrow {
+		border-color: transparent transparent transparent $accentColor;
+	}
+
+	> li.complete .progress-wedge {
+	    border-color: $accentColor $accentColor $accentColor transparent;
+	}
+
+
+}
+
+
+/* Pulsating animation */
+$trans:color.adjust($accentColor, $alpha:-0.15);
+$moreTrans:color.adjust($accentColor, $alpha:-0.4);
+
+@keyframes pulsateMain {
+  from   { background-color:$trans;}
+  to { background-color:$moreTrans;}
+}
+
+
+@keyframes pulsateArrow {
+  from   { border-color: transparent transparent transparent $trans;}
+  to { border-color: transparent transparent transparent $moreTrans;}
+}
+
+
+@keyframes pulsateWedge {
+  from   { border-color: $trans $trans $trans transparent;}
+  to { border-color: $moreTrans $moreTrans $moreTrans transparent;}
+}
+
+
+/* Use a pulsating animation on an active step */
+
+.progress-steps > li.active > a {
+	-webkit-animation: pulsateMain 2s linear 0s infinite alternate;
+	        animation: pulsateMain 2s linear 0s infinite alternate;
+}
+
+
+.progress-steps > li.active .progress-arrow {
+	-webkit-animation: pulsateArrow 2s linear 0s infinite alternate;
+	        animation: pulsateArrow 2s linear 0s infinite alternate;
+}
+
+.progress-steps > li.active .progress-wedge {
+	-webkit-animation: pulsateWedge 2s linear 0s infinite alternate;
+	        animation: pulsateWedge 2s linear 0s infinite alternate;
+}
+
+.progress-steps>li>a {
+    display: block;
+    padding: 10px 0px 10px 7px;
+    white-space:nowrap;
+}
+
+.step {
+    font-weight:bold;
+}
+
+.step-detail {
+    font-weight:normal;
+}
+
+/* This max-width may need to go up if the content in the arrows is quite long */
+@media (max-width: 620px) {
+    .step-detail {
+        display:none;
+    }
+
+    .progress-steps>li>a {
+        padding: 10px 6px;
+        text-align:center;
+    }
+
+}
+
+/* Overrides for tooltips so they don't get hidden */
+.opentip-container {
+  z-index: 200;
+}
+
+#InnerPopOver .opentip-container {
+  z-index: 210;
+}
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 200;
+  /*cursor: pointer;*/
+}
+
+#InnerPopOver [data-tooltip] {
+	z-index:210;
+}
+
+/* This gets around an IE glitch where the underline appears IN the tooltip
+  If you really want a tooltip on hover, you'll have to override this and
+  accept that the underline will also show in the tooltip  */
+a[data-tooltip] {
+	text-decoration:none;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";*/
+  /*filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);*/
+  opacity: 0;
+  pointer-events: none;
+  text-decoration:none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* A modified version that appears to the left, used on forms/report.cfm */
+    .leftTip[data-tooltip]:before {
+      position: absolute;
+      bottom: 0%;
+      right: calc(100% + 5px);
+      left:auto;
+      margin-bottom: -5px;
+      margin-left: -80px;
+      padding: 7px;
+      width: auto;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background-color: #000;
+      background-color: hsla(0, 0%, 20%, 0.9);
+      color: #fff;
+      content: attr(data-tooltip);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    /* Triangle hack to make tooltip look like a speech bubble */
+    .leftTip[data-tooltip]:after {
+      position: absolute;
+      bottom: 25%;
+      left: -5px;
+      right:auto;
+      margin-left: 0px;
+      width: 0;
+      border-left: 5px solid #000;
+      border-left: 5px solid hsla(0, 0%, 20%, 0.9);
+      border-right: 5px solid transparent;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      content: " ";
+      font-size: 0;
+      line-height: 0;
+    }
+
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";*/
+  /*filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);*/
+  opacity: 1;
+  text-decoration:none;
+}
+
+
+#InnerPopOver h3 {
+	margin-top: 0;
+	margin-bottom:15px;
+}
+
+
+/* flashes a bright yellow color for a second */
+.flash {
+	background: linear-gradient(0deg, rgba(255,255,0,0.4) 0%, rgba(255,255,0,0) 80%, rgba(255,255,0,0) 100%);
+	background-size: 100% 400%;	
+	animation: fadeOut 2s ease;
+	animation-iteration-count:1;
+}
+
+@keyframes fadeOut {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 00%}
+}
+
+
+@keyframes fadeBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+
+.darkModeSwitch {
+	color:rgb(127,127,127);
+}
+
+.darkModeSwitch img {
+	width:23px;
+	height:23px;
+	margin-top:0;
+}
+
+footer .darkModeSwitch {
+	text-align: center;
+	margin:10px 0 0 0;
+	display:inline-block;
+}
+
+footer .darkModeSwitch img {
+	margin-top:-2px;
+	margin-left:5px;
+	vertical-align:middle;
+}
+
+header .darkModeSwitch {
+	float: left;
+	margin-top: 7px;
+	margin-left: 11px;
+}
+
+
+
+/* Slider switch used in inOut and inOutGo */
+$switchWidth: 60px;
+$switchHeight: 34px;
+$sliderSize: $switchWidth - $switchHeight;
+$sliderMargin:($switchHeight - $sliderSize)/2;
+
+.switch {
+	position: relative;
+	display: block;
+	width: $switchWidth;
+	height: $switchHeight;
+	-webkit-tap-highlight-color: transparent;
+
+	// Hide normal HTML checkbox
+	input {
+	  opacity: 0;
+	  width: 0;
+	  height: 0;
+	}
+	
+
+	// This moving slider
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		background-color: rgba(127,127,127,0.2);
+		border-style: solid;
+		border-width:1px;
+		border-top-color: rgba(0,0,0,0.05);
+		border-left-color: rgba(0,0,0,0.05);
+		border-bottom-color: rgba(255,255,255,0.05);
+		border-right-color: rgba(255,255,255,0.05);
+		-webkit-transition: .4s;
+		transition: .4s;
+		-webkit-tap-highlight-color: transparent;
+
+		&:before {
+			position: absolute;
+			content: "";
+			height: $sliderSize;
+			width: $sliderSize;
+			left: $sliderMargin - 1;
+			bottom: $sliderMargin - 1;
+			background-color: white;
+			-webkit-transition: .4s;
+			transition: .4s;
+			box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.52);
+		}
+
+		/* Rounded sliders */
+		&.round {
+			border-radius: $switchHeight;
+		}
+
+		&.round:before {
+			border-radius: 50%;
+		}
+
+	}//.slider
+
+	input:checked + .slider {
+		background-color: #00df26;
+	}
+
+	input:focus + .slider {
+		box-shadow: 0 0 1px #00df26;
+	}
+
+	input:checked + .slider:before {
+		-webkit-transform: translateX($sliderSize);
+		-ms-transform: translateX($sliderSize);
+		transform: translateX($sliderSize);
+	}
+
+}//.switch
+
+
+// 1/2 sized switch
+$sFactor: 0.5;
+.switch.small {
+	width: $switchWidth*$sFactor;
+	height: $switchHeight*$sFactor;
+
+	.slider {
+		&:before {
+			height: $sliderSize*$sFactor;
+			width: $sliderSize*$sFactor;
+			left: $sliderMargin*$sFactor - 1;
+			bottom: $sliderMargin*$sFactor - 1;						
+		}
+
+		&.round {
+			border-radius: $switchHeight*$sFactor;
+		}
+	}
+
+	input:checked + .slider:before {
+		-webkit-transform: translateX($sliderSize*$sFactor);
+		-ms-transform: translateX($sliderSize*$sFactor);
+		transform: translateX($sliderSize*$sFactor);
+	}	
+}//.switch.small
+
+
+// 2x sized switch
+$lFactor: 2;
+.switch.large {
+	width: $switchWidth*$lFactor;
+	height: $switchHeight*$lFactor;
+
+	.slider {
+		&:before {
+			height: $sliderSize*$lFactor;
+			width: $sliderSize*$lFactor;
+			left: $sliderMargin*$lFactor - 1;
+			bottom: $sliderMargin*$lFactor - 1;
+		}
+
+		&.round {
+			border-radius: $switchHeight*$lFactor;
+		}
+	}
+
+	input:checked + .slider:before {
+		-webkit-transform: translateX($sliderSize*$lFactor);
+		-ms-transform: translateX($sliderSize*$lFactor);
+		transform: translateX($sliderSize*$lFactor);
+	}	
+}//.switch.large

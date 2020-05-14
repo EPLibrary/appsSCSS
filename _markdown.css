@@ -1,0 +1,108 @@
+/* Tweak basic HTML styles within markdown containers */
+.markdown p {
+  margin-top: 0px;
+}
+
+/* If the last thing in a markdown is a p, give it no bottom margin */
+.markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown ul {
+  padding: 5px 0px 5px 20px;
+  margin: 5px 0px;
+}
+
+.markdown table {
+  /*border: 1px solid #aaa;*/
+  border-collapse: collapse;
+}
+
+.markdown table td, .markdown table th {
+  padding: 4px;
+  border: 1px solid rgba(127, 127, 127, 0.2);
+}
+
+.markdown table th {
+  border-color: #7f7f7f;
+}
+
+.markdown table thead tr {
+  background-color: #444;
+}
+
+.markdown table thead tr th {
+  color: white;
+}
+
+.markdown table tbody tr:nth-child(even):not(.heading) {
+  background-color: #dddddd;
+  background-color: rgba(127, 127, 127, 0.1);
+}
+
+.markdown table tbody tr:nth-child(odd):not(.heading) {
+  /* could put another color here */
+}
+
+.markdown li > ul {
+  padding-top: 1px;
+  margin-top: 1px;
+}
+
+/* Styles for the Markdown Editor */
+
+
+main .CodeMirror,
+main .CodeMirror-scroll {
+  min-height: 100px;
+}
+
+main .editor-toolbar {
+  padding: 0 1px;
+}
+
+main .editor-toolbar:before {
+  margin-bottom: 0px;
+}
+
+main .editor-toolbar:after {
+    margin-top: 0px;
+}
+
+
+
+/* Customizations to SimpleMDE Markdown Editor within appForm forms */
+
+.appForm .CodeMirror, .appForm .CodeMirror-scroll {
+  min-height: 100px;
+  font-weight:normal;
+}
+
+main .CodeMirror,
+main .CodeMirror-scroll {
+  min-height: 100px;
+}
+
+.appForm .editor-toolbar,
+main .editor-toolbar {
+  padding:0 1px;
+}
+
+.appForm .editor-toolbar:before,
+main .editor-toolbar:before {
+    margin-bottom: 0px
+}
+
+.appForm .editor-toolbar:after,
+main .editor-toolbar:after {
+    margin-top: 0px
+}
+
+.appForm .CodeMirror {
+  padding:3px;
+}
+
+.appForm .editor-toolbar.fullscreen,
+.appForm .CodeMirror-fullscreen {
+  z-index:13;
+}

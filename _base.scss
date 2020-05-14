@@ -1,0 +1,200 @@
+/* Base styles to style plain elements on apps.
+Generally, we only want elements styled here with no classes or IDs
+
+*/
+@import 'variables';
+
+@charset "utf-8";
+/* Primary CSS For apps.epl.ca */
+
+/* WebFonts for browsers that support them */
+@font-face { 
+    font-family: 'HelveticaNeueLTStd'; 
+    src: url('https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.eot'); 
+    src: url('https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.eot?#iefix') format('embedded-opentype'), 
+         url('https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.woff') format('woff'), 
+         url('https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.ttf') format('truetype'), 
+         url('https://www2.epl.ca/displayboard/HelveticaNeueLTStd/HelveticaNeueLTStd.svg#HelveticaNeueLTStd-Roman') format('svg'); 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+
+@font-face { 
+    font-family: 'EPLveticaUltralight'; 
+    src: url('https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.eot'); 
+    src: url('https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.eot?#iefix') format('embedded-opentype'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.woff') format('woff'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.ttf') format('truetype'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaUltralight/EPLveticaUltralight.svg#HelveticaNeueLTStd-Th') format('svg'); 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+
+@font-face { 
+    font-family: 'EPLveticaLight'; 
+    src: url('https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.eot'); 
+    src: url('https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.eot?#iefix') format('embedded-opentype'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.woff') format('woff'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.ttf') format('truetype'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaLight/EPLveticaLight.svg#HelveticaNeueLTStd-Lt') format('svg'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face { 
+    font-family: 'EPLveticaBold'; 
+    src: url('https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.eot'); 
+    src: url('https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.eot?#iefix') format('embedded-opentype'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.woff') format('woff'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.ttf') format('truetype'), 
+         url('https://www2.epl.ca/displayboard/EPLveticaBold/EPLveticaBold.svg#HelveticaNeueLTStd-Bd') format('svg'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+
+/* apply a natural box layout model to all elements */
+* {
+ -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+/** Base Rules
+	These are the defaults for elements. No class or ID selectors.
+******************************************************************/
+
+ 
+body  {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:$defaultFontSize;
+	margin: 0; /* zero margin and padding of the body to account for differing browser defaults */
+	padding: 0;
+	color: #333;
+}
+
+a  {
+	color: #004B8D;
+	text-decoration: none;
+}
+
+a:visited  {
+}
+
+h1 {
+	margin-top:10px;
+	margin-bottom:5px;
+}
+
+h2 {
+	margin-top:25px;
+	margin-bottom:5px;
+}
+
+/* Adjacent sibling selector - H3s right after H2s don't have top margin */
+h1+h2 {
+	margin-top:0px;
+}
+
+h3 {
+	margin-top:15px;
+	margin-bottom:5px;
+}
+
+h2+h3 {
+	margin-top:0px;
+}
+
+h3+h4 {
+	margin-top:0px;
+}
+
+h3+ul {
+	margin-top:0px;
+}
+
+h4 {
+	margin-top:15px;
+	margin-bottom:5px;
+}
+
+h4+ul {
+	margin-top:0px;
+}
+
+a:hover {
+	text-decoration:underline;
+	}
+
+/* Kill blue borders in IE */	
+img {
+	border:none;
+}
+
+input, textarea {
+	font-size:14px;
+}
+
+
+
+/***************************************************************/
+/* Styles relevant to elements of the Header (IntraHeader.cfm) */
+/***************************************************************/
+
+body { 
+	background: #ffffff; /* the background color will be displayed for the length of the content in the column, but no further */
+	margin-left: 0px; /* the auto margins (in conjunction with a width) center the page */
+	margin-right: 0px; /* the auto margins (in conjunction with a width) center the page */
+	margin-top:0px;
+	margin-bottom:0px;
+	/*border: 1px solid #000000;*/
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+
+header { 
+	background-color:black;
+	padding: 0;
+} 
+
+
+main {
+	/*Workaround for IE*/
+	display:block;
+	padding-left:6px;
+	padding-right:6px;
+	
+} 
+
+footer {
+	background-color:#000000;
+	clear:left;
+	height:40px;
+	margin-top:40px;
+	text-align:center;
+	position:relative;
+}
+
+nav {
+	background-color:rgba(255,255,255,0.3);
+	padding:6px 5px 8px 5px;
+	clear:left;
+}
+
+nav a:not(.grayButton) {
+	color:white;
+	background-color:#666;
+	padding:1px 2px;
+	border-radius:3px;
+	border:1px solid #777;
+}
+
+nav a:hover:not(.grayButton) {
+	background-color:#777;
+	text-decoration: none;
+}
+
+nav a+a {
+	margin-left:10px;
+}
+
+

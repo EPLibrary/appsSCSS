@@ -15,7 +15,7 @@ Compiled Files
  - *apps.css*  The compiled main stylesheet
  - *appsDarkForced.css*  The dark mode stylesheet. If this is included by itself, it forces dark mode on all clients.
  - *appsDark.css*  Use this stylesheet to respect the user agent's prefers-color-scheme dark/light setting via media query.
-
+ - *print.css*  apps stylesheet for when pages are printed - hide the header and some other elements.
 Source SCSS Files
 -----------------
  - *apps.css*  @use all _files, includes mixins and generators for buttons and stuff.

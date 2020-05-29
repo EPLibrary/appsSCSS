@@ -1,4 +1,4 @@
-@import url("/appsDarkForced.css") screen and (prefers-color-scheme: dark);
+@import url("appsDarkForced.css") screen and (prefers-color-scheme: dark);
 
 /* Dark Mode for Apps. Automatically is used when client OS is set to dark mode */
 

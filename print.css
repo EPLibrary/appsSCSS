@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+ 
+body  {
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	color: #000000;
+}
+
+header,
+footer,
+#footerSpacer { 
+	display:none;
+}
+
+main { 
+	/* width: 98%;   this will create a container 80% of the browser width */
+	border: 0px none #ffffff;
+	margin:0;
+	color:#000000;
+	background-color:#ffffff;
+} 
+
+#titleBar {
+	color:black;
+	background:none;
+}
+
+.adminControl {
+	display:none;
+}
+
+.breadCrumbs {
+	display:none;
+}
+
+a  {
+	color: black;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+a:visited  {
+	/*use epl_light_blue with less brightness*/
+	color:#000000;
+}
+
+nav {
+	display:none;
+}
+
+.cfdebug {
+	display:none;
+}
+
+.noPrint {
+	display:none;
+}

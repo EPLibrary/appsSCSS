@@ -178,6 +178,10 @@ nav a + a {
   right: 1px;
   margin-right: 10px;
 }
+#footerHomeLink img {
+  height: 32px;
+  vertical-align: bottom;
+}
 
 /* This ensures that the footer doesn't overlap floated elements */
 #footerSpacer {

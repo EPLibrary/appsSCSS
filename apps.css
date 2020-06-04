@@ -171,26 +171,99 @@ nav a + a {
   margin-left: 10px;
 }
 
-/* Used for the header present on almost all apps pages (ones using IntraHeader.cfm) */
-#footerHomeLink {
-  margin-top: 5px;
-  position: absolute;
-  right: 1px;
-  margin-right: 10px;
-}
-#footerHomeLink img {
-  height: 32px;
-  vertical-align: bottom;
+/* Used for the header present on almost all apps pages (ones using appsHeader.cfm) */
+#innerHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* This ensures that the footer doesn't overlap floated elements */
-#footerSpacer {
-  clear: both;
-  height: 40px;
+#headerLeftSection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#headerLeftSection a + a {
+  margin-left: 15px;
+}
+#headerLeftSection #yourImage {
+  margin-left: 3px;
+}
+#headerLeftSection #headerUsername {
+  margin-left: 8px;
+  color: white;
 }
 
-nav #findStaff {
-  float: right;
+/* Style for Sidebar Hamburger Button */
+#sidebarButton {
+  width: 40px;
+  display: none;
+  /* Make the Buns/patty of the hamburger */
+}
+#sidebarButton div {
+  background-color: white;
+  height: 6px;
+  width: 40px;
+  margin: 4px 0 5px 0;
+  font-size: 6px;
+  color: black;
+  text-align: center;
+}
+
+#yourImage {
+  width: 31px;
+  height: 31px;
+  margin-left: 3px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 32px;
+  border: 1px solid white;
+}
+
+#headerEPLLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#headerEPLLogo a + a {
+  margin-left: 20px;
+}
+
+.appsTitle {
+  font-size: 21px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.appsTitle:hover {
+  text-decoration: none;
+}
+
+#searchArea {
+  color: white;
+  font-weight: bold;
+  padding-right: 5px;
+}
+#searchArea div {
+  width: auto;
+  overflow: hidden;
+}
+#searchArea input {
+  margin: 1px 2px 3px 2px;
+  min-width: 300px;
+}
+
+.darkModeSwitch {
+  padding-top: 3px;
+  color: #7f7f7f;
+}
+.darkModeSwitch img {
+  width: 23px;
+  height: 23px;
+  margin-top: 0;
 }
 
 /* Links to parent pages in the header */
@@ -215,42 +288,8 @@ a.sidebarLink {
   display: block;
 }
 
-#searchArea {
-  float: right;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#searchArea {
-  float: right;
-  width: 350px;
-}
-
-#searchArea label {
-  float: left;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  padding-right: 5px;
-}
-
-#searchArea div {
-  width: auto;
-  overflow: hidden;
-}
-
-#searchArea input {
-  width: 100%;
-  margin: 0;
-  margin-bottom: 3px;
-  color: #AAA;
-}
-
 /* Style for the Quick Search */
 .autocomplete-suggestions {
-  border: 1px solid #999;
   background: #FFF;
   text-align: left;
   overflow: scroll;
@@ -259,8 +298,7 @@ a.sidebarLink {
 .autocomplete-suggestions div {
   padding: 5px 0;
   line-height: 15px;
-  padding-left: 10px;
-  text-indent: -10px;
+  padding-left: 3px;
 }
 
 .autocomplete-selected {
@@ -279,12 +317,24 @@ a.sidebarLink {
   background-color: #545477;
 }
 
-#yourImage {
-  float: left;
-  margin: 5px;
-  /*width:86px;*/
+.resultCategory {
+  font-weight: bold;
+  background: linear-gradient(to bottom, rgba(128, 128, 128, 0.7) 0%, rgba(128, 128, 128, 0.4) 24%, transparent 100%);
+  padding-top: 8px;
   text-align: center;
-  overflow: hidden;
+  padding-bottom: 3px;
+}
+
+footer .darkModeSwitch {
+  text-align: center;
+  margin: 10px 0 0 0;
+  display: inline-block;
+}
+
+footer .darkModeSwitch img {
+  margin-top: -2px;
+  margin-left: 5px;
+  vertical-align: middle;
 }
 
 #sidebar {
@@ -318,107 +368,11 @@ a.sidebarLink {
   float: right;
 }
 
-/* Style for Sidebar Hamburger Button */
-#sidebarButton {
-  width: 40px;
-  height: 34px;
-  display: none;
-  float: left;
-  text-align: center;
-  margin: 2px 5px 0px 5px;
-}
-
-/* Make the Buns/patty of the hamburger */
-#sidebarButton div {
-  background-color: white;
-  height: 6px;
-  width: 40px;
-  margin: 4px 0 5px 0;
-  font-size: 6px;
-  color: black;
-  text-align: center;
-}
-
-#logoutButton {
-  float: left;
-  margin-top: 9px;
-  margin-left: 5px;
-}
-
-a.appsTitle {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
-
-a.appsTitle:hover {
-  text-decoration: none;
-}
-
 #appsTitleSmallWidth {
   display: none;
   text-align: center;
-  padding-top: 6px;
-  padding-bottom: 5px;
 }
 
-/* Change appearance of logo and header info based on display width */
-#EdmontonPublicLibraryText {
-  display: none;
-}
-
-@media (min-width: 951px) {
-  #EdmontonPublicLibraryText {
-    display: inline;
-  }
-}
-@media (max-width: 950px) {
-  #LogoutUsername {
-    display: none;
-  }
-}
-@media (max-width: 685px) {
-  #headerEPLLogo {
-    display: none;
-  }
-
-  #appsTitleSmallWidth {
-    display: block;
-  }
-
-  #searchArea {
-    margin-top: 0;
-    width: 100%;
-    clear: left;
-    float: none;
-  }
-
-  #searchArea label {
-    padding-top: 4px;
-  }
-
-  #sidebarButton {
-    display: block;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .extText {
-    display: none;
-  }
-
-  /* Keep phones from zooming into input fields. 736 handles an iPhone 6 Plus in landscape or
-  smaller. IMO, 16px is a little too large and it's goofy if you change a window size and the
-  fonts get bigger. I can't yet think of a better way to do this, other than disallowing zoom,
-  which is a usability concern.
-  */
-  input, textarea, select {
-    font-size: 16px;
-  }
-}
 /* Title for Applications if PageTitle is set */
 .titleBar {
   background-color: #004B8D;
@@ -450,6 +404,85 @@ a.appsTitle:hover {
 
 .adminControl a {
   margin: 3px 3px 0 3px;
+}
+
+/* footer */
+#footerHomeLink {
+  margin-top: 5px;
+  position: absolute;
+  right: 1px;
+  margin-right: 10px;
+}
+#footerHomeLink img {
+  height: 32px;
+  vertical-align: bottom;
+}
+
+@media (max-width: 950px) {
+  #headerUsername {
+    display: none;
+  }
+}
+@media (max-width: 740px) {
+  #headerEPLLogo img {
+    display: none;
+  }
+}
+@media (max-width: 685px) {
+  #headerLeftSection #yourImage {
+    margin-left: 10px;
+  }
+
+  #sidebarButton {
+    display: block;
+    margin-left: 3px;
+  }
+
+  #headerEPLLogo {
+    display: none;
+  }
+
+  #appsTitleSmallWidth {
+    display: block;
+    margin: auto;
+  }
+
+  #searchArea {
+    padding-left: 3px;
+    width: 100%;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-right: 3px;
+  }
+
+  #searchArea input {
+    flex: 1;
+    margin-left: 5px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .extText {
+    display: none;
+  }
+
+  /* Keep phones from zooming into input fields. 736 handles an iPhone 6 Plus in landscape or
+  smaller. IMO, 16px is a little too large and it's goofy if you change a window size and the
+  fonts get bigger. I can't yet think of a better way to do this, other than disallowing zoom,
+  which is a usability concern.
+  */
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+/* This ensures that the footer doesn't overlap floated elements */
+#footerSpacer {
+  clear: both;
+  height: 40px;
 }
 
 /* Styles for Modal Dialogue/Popover
@@ -991,6 +1024,10 @@ These shouldn't be used anymore. Use h3 instead. */
 }
 
 .centered {
+  text-align: center;
+}
+
+.heading .centered {
   text-align: center;
 }
 
@@ -1917,34 +1954,6 @@ a[data-tooltip] {
     background-position: 0% 50%;
   }
 }
-.darkModeSwitch {
-  color: #7f7f7f;
-}
-
-.darkModeSwitch img {
-  width: 23px;
-  height: 23px;
-  margin-top: 0;
-}
-
-footer .darkModeSwitch {
-  text-align: center;
-  margin: 10px 0 0 0;
-  display: inline-block;
-}
-
-footer .darkModeSwitch img {
-  margin-top: -2px;
-  margin-left: 5px;
-  vertical-align: middle;
-}
-
-header .darkModeSwitch {
-  float: left;
-  margin-top: 7px;
-  margin-left: 11px;
-}
-
 /* Slider switch used in inOut and inOutGo */
 .switch {
   position: relative;

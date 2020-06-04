@@ -48,6 +48,7 @@ These shouldn't be used anymore. Use h3 instead. */
 .normal {font-weight:normal;}
 
 .centered {text-align:center}
+.heading .centered {text-align:center;}
 
 .plainLink {
 	color:black;
@@ -1008,36 +1009,6 @@ a[data-tooltip] {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
-}
-
-
-
-.darkModeSwitch {
-	color:rgb(127,127,127);
-}
-
-.darkModeSwitch img {
-	width:23px;
-	height:23px;
-	margin-top:0;
-}
-
-footer .darkModeSwitch {
-	text-align: center;
-	margin:10px 0 0 0;
-	display:inline-block;
-}
-
-footer .darkModeSwitch img {
-	margin-top:-2px;
-	margin-left:5px;
-	vertical-align:middle;
-}
-
-header .darkModeSwitch {
-	float: left;
-	margin-top: 7px;
-	margin-left: 11px;
 }
 
 

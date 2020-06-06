@@ -845,6 +845,12 @@ $moreTrans:color.adjust($accentColor, $alpha:-0.4);
 
 /* This max-width may need to go up if the content in the arrows is quite long */
 @media (max-width: 620px) {
+
+	.columnleft, .columnright {
+		width:100%;
+		float:none;
+	}
+
     .step-detail {
         display:none;
     }
@@ -855,6 +861,8 @@ $moreTrans:color.adjust($accentColor, $alpha:-0.4);
     }
 
 }
+
+
 
 /* Overrides for tooltips so they don't get hidden */
 .opentip-container {

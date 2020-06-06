@@ -1,0 +1,1249 @@
+/* Stylesheet for www2.epl.ca */
+
+body {
+	margin:0;
+}
+.container.flex * {
+	box-sizing:border-box;
+}
+
+.container.flex {
+	margin-top:20px;
+}
+
+.w2Contents * {
+	box-sizing:border-box;
+}
+
+table {
+	border:none;
+}
+
+
+.w2Contents table td, table th {
+	font-size:14px;
+	padding:5px;
+}
+
+/*Bibliocommons has a hidden class, but they use !important on it,
+meaning it can not ever be shown. DO NOT USE .hidden!!! */
+.eplhidden {
+	display:none;
+}
+
+
+.heading {
+	background-color: #0A2D75;
+	color:white;
+}
+
+.heading th {
+	color:white;
+}
+
+.altRow {
+	background-color: rgb(236, 236, 236);
+}
+
+.altColors tr:nth-child(even){
+	background-color:rgb(236, 236, 236);
+}
+
+.tinyTip, .tinytip {
+	font-size:12px;
+	line-height:15px;
+	margin:0 0 0 0;
+}
+
+.w2Form .tinyTip, .w2Form .tinytip {
+	font-weight:normal;
+}
+
+.w2Contents {
+	background-color:white;
+	margin:0 auto;
+	/*margin-top:20px;*/
+	padding:25px;
+	/*overflow:auto;*/
+	max-width:1000px;
+}
+
+/* Reset list styles */
+
+.w2Contents ul, .w2Contents ol, .popover ul, .popover ol {
+   margin-left:0;
+   padding-left:40px;
+}
+
+.w2Contents ul, .popover ul {
+   list-style-type: disc; 
+   list-style-position: inside; 
+}
+
+.w2Contents li,.popover li {
+	padding:initial;
+	margin:initial;
+}
+
+.w2Contents ol,
+.popover ol { 
+   list-style-type: decimal; 
+   list-style-position: inside; 
+}
+
+.w2Contents ul ul, ol ul { 
+   list-style-type: circle; 
+   list-style-position: inside; 
+   margin-left: 15px; 
+}
+.w2Contents ol ol, ul ol { 
+   list-style-type: lower-latin; 
+   list-style-position: inside; 
+   margin-left: 15px; 
+}
+
+/* For use in pages with multiple columns */
+.leftCol {
+	/*float:left; ugh, floats are evil*/
+	margin-right:20px;
+}
+
+/* A column that shows on the right when page width is over 750px, taking up the remainder of the width */
+.optVarCol {
+	overflow:hidden;
+	float:right;
+	max-width:600px;
+	max-width:calc(100% - 440px);
+}
+
+
+.error {
+	color:#cc441e;
+}
+
+
+.datepicker, .hasDatepicker {
+	background-image:url('https://www2.epl.ca/images/calendar_icon16.png');
+	background-position: 100% 50%;
+	background-repeat:no-repeat;
+	width:100%;
+}
+
+.errorBox, #bigError {
+	text-align: center;
+	font-weight:normal;
+	padding:10px;
+	background-color:#FFBBBB;
+	border-radius: 8px;
+}
+
+
+
+
+
+/* Form stuff */
+.w2Form label {
+	/*overflow auto is required for something, maybe... I can't remember what,
+	  but it breaks chosen dropdowns */
+	/*overflow:auto;*/
+	font-weight:bold;
+	display:block;
+	margin-bottom:20px;
+	width:400px;
+	line-height:1.9em;
+}
+
+
+.w2Form .formItem {
+	/*overflow:auto;*/
+	font-weight:bold;
+	display:block;
+	margin-bottom:20px;
+	width:400px;
+	line-height:1.9em;
+}
+
+.w2Form label.optional {
+	font-weight:normal;
+}
+
+.w2Form label span.required,
+.w2Form .formItem span.required {
+	color:red;
+	font-weight:normal;
+	font-size:14px;
+}
+
+.w2Form label input,
+/*.w2Form label button,*/
+.w2Form label select,
+.w2Form .formGroup,
+.w2Form label .prefill {
+	display:block;
+	float:right;
+	width: 240px;
+	font-weight:normal;
+	font-size:16px;
+}
+
+/* Borders on input elements */
+.w2Form label input:not([type="submit"]),
+.w2Form label select,
+.w2Form label textarea {
+	border: 1px solid #BBB;
+	padding:5px;
+}
+
+.w2Form select,
+.w2Form label select {
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.w2Form select {
+	height:30px;
+}
+
+.w2Form input,
+.w2Form button,
+.w2Form select,
+.w2Form .formGroup,
+.w2Form .prefill {
+	font-weight:normal;
+	font-size:16px;
+}
+
+/* For showing a group of inputs side by side.
+Not sure how well this will work, but I'll give this a shot */
+.w2Form .formGroup input,
+.w2Form .formGroup button,
+.w2Form .formGroup select,
+.w2Form .formGroup label,
+.w2Form .formGroup span {
+	float:none;
+	/*float:left;*/
+	display:inline-block;
+	font-weight:normal;
+}
+
+
+.w2Form .formGroup span {
+	font-weight:normal;
+}
+
+.w2Form .formGroup label {
+	width:auto;
+	margin:0;
+	margin-right:15px;
+	line-height:initial;
+}
+
+.w2Form .formGroup label:last-child {
+	margin:0;
+}
+
+.w2Form .formGroup label input[type] {
+	width:auto;
+	/*margin-left:0px;*/
+	margin-right:5px;
+	margin-bottom:10px;
+}
+
+
+
+.w2Form label input[type="checkbox"] {
+	width:15px;
+	margin-right:225px;
+	margin-right:calc(240px - 15px);
+}
+
+/*Handle iCheck checkbox*/
+.w2Form label .icheckbox_square-blue {
+	float:right;
+	margin-right:218px;
+}
+
+
+/* Special code to handle Chosen dropdowns */
+.w2Form .chosen-container {
+	font-weight:normal;
+	overflow:visible;
+	float:right;
+}
+
+/*I don't know why, but if this is any less than 5px, the items won't show*/
+.w2Form .chosen-container .chosen-results {
+	padding-left:5px;
+}
+
+.w2Form textarea {
+	width:100%;
+	font-size:16px;
+}
+
+.formSubmit {
+	text-align: center;
+	overflow:auto !important;
+}
+
+.w2Form .formSubmit input,
+.w2Form .formSubmit label input,
+.w2Form .formSubmit button,
+.w2Form .formSubmit label button,
+ {
+	display:block;
+	margin:0 auto;
+	float:none !important;
+	font-size:20px;
+}
+
+.w2Form .button {
+	/* Colors to match the Contact EPL button shown on footer */
+	background: #00a0df;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 4px solid #007bac;
+    border-radius:0px;	
+    -webkit-border-radius:0px;
+    -webkit-appearance:none;
+}
+
+.w2Form .button[disabled],
+.w2Form .button[disabled]:hover,
+.w2Form .button.disabled,
+.w2Form .button.disabled:hover {
+	/* Colors to match the Contact EPL button shown on footer */
+	background: rgba(128,128,128,0.5);
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 4px solid rgba(128,128,128,1);
+    border-radius:0px;	
+    -webkit-border-radius:0px;
+    -webkit-appearance:none;
+}
+
+.w2Form .button:hover {
+	background: #007bac;
+}
+
+.w2Form .formSubmit .w2Button {
+	font-size:20px;
+}
+
+
+.w2Form label .error,
+.w2Form .formItem .error {
+	font-weight:normal;
+	white-space: nowrap; /*be careful with this one*/
+	display:block;
+	padding-top:5px;
+	clear:both;
+} 
+
+.w2Form label .error.eplhidden,
+.w2Form .formItem .error.eplhidden,
+.w2Form label.eplhidden {
+	display:none;
+}
+
+
+/*fieldSeparator DIVs can be used to add space between fields... 
+maybe I can do this another way.*/
+.fieldSeparator {
+	clear:both;
+	padding-top:20px;
+}
+
+/*Without a field separator, there's 20px of padding above each label */
+/*Without a field separator, there's 20px of padding above each label */
+.w2Form>label+label,
+.w2Form>label+.formItem,
+.w2Form>.formItem+.formItem,
+.w2Form>.formItem+label,
+.sectionContents>label+label {
+	padding-top:20px;
+}
+
+
+
+/* Some special styles for forms that are centered on the page 
+	These are used for very simple forms, like a login form in a popup */
+.w2Form.centeredForm label input {
+	width:275px;
+}
+
+.w2Form.centeredForm {
+	width: 400px;
+	margin:0 auto;
+
+}
+
+.w2Form.centeredForm label.formSubmit input {
+	width:100%;
+}
+
+
+
+.container.clearfix {
+	overflow:visible;
+}
+
+
+/* Styles for an infobox and for the outlined "button" style links */
+.flexContainer {
+	display:flex;
+}
+
+.infoCard {
+	background: #fff;
+    border: 1px solid #ccc;
+    flex-grow:1;
+    vertical-align: top;
+    margin-right:7.5px;
+    min-width:240px;
+    max-width:240px;
+    padding: 15px;
+}
+
+.infoCard {
+	color: #292929;
+}
+
+
+
+.infoCard p+h3 {
+	margin-top:20px;
+}
+
+.infoCard ul li {
+	margin-bottom:10px;
+}
+
+.page.w2Contents .buttonList {
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	text-align: center;
+}
+
+.page.w2Contents .buttonList a {
+	display:inline-block;
+	background-color: transparent;
+    border: 1px solid #004B8D;
+    border-color: #002c77;
+    color: #002c77;
+    border-radius:4px;
+	padding: 10px 30px;
+    font-size:14px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+
+.page.w2Contents .buttonList a:hover {
+	background-color: #002c77;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.page.w2Contents .infoCard .buttonList a {
+    width: 100%;
+}
+
+
+
+
+.breadCrumbs {
+	font-size:14px; 
+	margin:0 0 10px 0;
+}
+
+/* Emulate style of new BiblioWeb H1 fl-heading */
+h1.pageTitle,
+h2.pageTitle,
+div.pageTitle {
+	color: #292929;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+h2.pageTitle {
+	font-size:2rem;
+}
+
+
+/* Coloured underline under H1 */
+.fl-separator {
+    border-top: 4px solid #fdbb30;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom:12px; /*This isn't really a match, but looks better*/
+}
+
+h1, h2, h3, h4, h5 {
+	color: #292929;
+}
+
+
+.bullets {
+	padding-left:30px;
+	list-style:disc;
+}
+
+.bullets li {
+	margin:6px;
+}
+
+.listHeader {
+	font-size:20px;
+	font-weight:bold;
+	margin:0 0 5px 11px;
+	  	
+}
+
+b {
+	font-weight:bold;
+}
+
+h3 {
+	font-size:20px;
+	font-weight:bold;
+}
+
+.smallPrint {
+	font-size:14px;
+}
+
+.w2Button {
+	color:white;
+	font-size:16px;
+	border-color:#00a0df;
+	border:none;
+	background-color:#00a0df;
+	-webkit-appearance: none;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+.w2Form label .w2Button,
+.w2Form .w2Button {
+	border-color:#00a0df;
+}
+
+.w2Button:hover {
+	background-color:#007bac;
+}
+
+.w2Button[disabled] {
+	background-color: #909696;
+
+}
+
+.selected {
+		box-shadow:none;
+		text-decoration:underline;
+		background-color:#E7E7E7;
+		color:#3975af;
+		border-color:rgb(135, 140, 145);
+		-webkit-box-shadow: inset 1px 1px 4px 0px rgba(50, 50, 50, 0.3);
+		-moz-box-shadow:    inset 1px 1px 4px 0px rgba(50, 50, 50, 0.3);
+		box-shadow:         inset 1px 1px 4px 0px rgba(50, 50, 50, 0.3);
+}
+
+/* BiblioEvents Style Buttons for registration */
+.register {
+	font-size:13px;
+	background-color: #004B8D;
+	color:white;
+	border-radius:4px;
+	padding:2px 4px;
+	border:1px solid #003d74;
+}
+
+/* Evanced Style Buttons for registration */
+.registerEvanced {
+	font-size:13px;
+	background-color: #3d9a41;
+	color:white;
+	border-radius:4px;
+	padding:2px 4px;
+	border:1px solid rgba(0, 0, 0, 0.247059);
+}
+
+.register:hover {
+	color:white;
+}
+
+
+
+/* Style for the modal popup */
+.backCurtain {
+	/*background-image:url(/Resources/images/alpha-black-30.png);*/
+	background-color: rgba(0,0,0,0.3);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:1050;
+}
+
+/* This is for content that pops up in a big box, like the featured blog form */
+.popover {
+	display:none;
+	position:fixed;
+	top:5%;
+	left:5%;
+	right:5%;
+	background-color:#EEE;
+	border:1px solid #444;
+	padding:15px;
+	margin-top:6px;
+	/*width:90%;*/
+	max-height:90%;
+	z-index:1200;
+	-moz-box-shadow: 3px 3px 20px #222;
+	-webkit-box-shadow: 3px 3px 20px #222;
+	box-shadow: 3px 3px 20px #222;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow:hidden;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling: touch;
+
+}
+
+
+
+
+@media (max-width:767px) {
+	.optVarCol {
+		display:none;
+	}
+
+	div.pageTitle {
+		font-size:2rem;
+	}
+
+	h2.pageTitle {
+		font-size:1.75rem;
+	}
+
+}
+
+@media screen and (max-width: 1024px) {
+	.container {
+		padding: 0 10px;
+	}
+}
+
+/* Responsive form elements for small screens (from forms.css) */
+@media (max-width:450px) {
+
+	.flexContainer {
+		flex-direction:column;
+	}
+
+	.infoCard {
+		display:block;
+		margin-right:0;
+		margin-top:7.5px;
+		max-width:100%;
+		order:99;
+	}
+
+	.page.w2Contents {
+		margin-top:7.5px;
+		margin-bottom:7.5px;
+		margin-left:0;
+	}
+
+
+	.leftCol {
+		float:none;
+		margin-right:0;
+	}
+
+	.w2Form label input,
+	.w2Form label button,
+	.w2Form label select,
+	.w2Form .formGroup,
+	.w2Form label .prefill {
+		float:none;
+	}
+
+	.w2Form.centeredForm label input {
+		width:100%;
+	}
+
+	.w2Form.centeredForm {
+		width:100%;
+	}	
+
+	/* Font size on iOS is pretty small in input fields by default.
+	16px is needed on phones to prevent auto-zooming */
+	.w2Form input, .w2Form textarea, .w2Form select {
+		font-size: 16px;
+	}
+
+	.w2Form .formGroup select,
+	.w2Form .formGroup input {
+		font-size: 16px;
+	}
+
+
+	.w2Form label {
+		font-weight:bold;
+		margin-bottom:15px;
+		width:100%;
+		/* overflow:auto covers chosen dropdowns */
+		/*overflow:auto;*/
+	}
+
+	.w2Form .formItem, .w2Form .formItem .formGroup {
+		display:block;
+		width:100%;
+	}
+
+	.w2Form label input,
+	.w2Form label button,
+	.w2Form label select,
+	.w2Form .formItem .formGroup {
+		width:100%;
+	}
+
+
+	.w2Form label input[type="checkbox"] {
+		width:15px;
+		margin-right:0;
+	}
+
+
+	.container {
+		padding:0;
+	}
+
+
+	.page {
+		padding:5px;
+		margin:0;
+		box-shadow:0 3px 6px rgba(0,0,0,0.16);
+	}
+
+	.w2Form label input,
+	.w2Form label button,
+	.w2Form label select,
+	.w2Form .formItem .formGroup {
+		width:100%;
+	}
+
+	.popover {
+		top:2%;
+		left:2%;
+		right:2%;
+		padding:10px;
+		width:auto;
+	}	
+}/*max-width:450px*/
+
+
+/* Add back smooth scrolling to InnerPopOver for iOS */
+#InnerPopOver {
+	/*overflow-y: scroll;   has to be scroll, not auto 
+	-webkit-overflow-scrolling: touch;*/
+}
+
+.closeButton {
+	position:absolute;
+	top:0px;
+	right:0px;
+	z-index:99;
+	z-index:13;
+	background-image: url('/Resources/Images/xIcon_shadow.svg');
+	background-size:35px 35px;
+	width:35px;
+	height:35px;
+}
+
+.closeButton:hover {
+	background-image: url('/Resources/Images/xIcon_bigshadow.svg');
+}
+
+	
+#escHelp {
+	margin:4px 0px 4px 0px;
+	font-size:13px;
+	color:#888;
+	position:absolute;
+	top:-3px;
+	right:22px;
+	display:none;
+	z-index:1060;
+}
+
+.backCurtain {
+	/*background-image:url(/Resources/images/alpha-black-30.png);*/
+	background-color: rgba(0,0,0,0.3);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:1050;
+}
+
+
+
+
+
+/* Styles for files */
+table.filesList thead tr {
+	background-color:#00458f !important;
+	color:white;
+}
+
+table.filesList th {
+	padding:0 5px;
+}
+
+table.filesList th a {
+	color:#DAE6F7;
+}
+
+table.filesList {
+	font-family: "Segoe UI", Helvetica;
+	font-size:12pt;
+	border-collapse:collapse;
+}
+
+/* Make table colors alternate */
+table.filesList tr:nth-child(even){
+	background-color:#DAE6F7;
+}
+
+table.filesList tr:nth-child(odd){
+	background-color:#F3F8FF;
+}
+
+table.filesList td {
+	padding:0 5px;
+}
+
+table.filesList th {
+	text-align:left;
+	font-weight:bold;
+}
+
+table.filesList span.time {
+	font-size:10pt;
+}
+
+table.filesList .fileIconName,
+table.filesList .fileIcon {
+	position:relative;
+	height:32px;
+	padding-left:0;
+	font-weight:normal;
+}
+
+table.filesList img.fileImage,
+table.filesList img.dirImage {
+	width:32px;
+	vertical-align:middle;
+	margin-right:5px;
+}
+
+/*Little popup thumbnail that shows on hover over the thumbnail*/
+table.filesList .thumbPop {
+    width: 256px;
+    background-color:white;
+    position: absolute;
+    left: 32px;
+    top:32px;
+    z-index:2;
+    box-shadow: 3px 3px 20px #222;
+}
+
+table.filesList .emptyFolder {
+	text-align: center;
+}
+
+table.filesList tr.highlighted {
+	background-image: url('/Resources/images/alpha-yellow-20.png');
+}
+
+table.filesList .delTD {
+	text-align: center;
+	width:26px;
+}
+
+/* This styles the divs of elements */
+
+div.filesList {
+	display:flex;
+	flex-flow:row wrap;
+	align-items:center;
+}
+
+div.filesList div {
+	margin:5px;
+	width:128px;
+}
+
+div.filesList div img {
+	width:100%;
+}
+
+
+.delete {
+	font-family:Tahoma, Arial, sans-serif;
+	color:#CC3333;
+	font-size:14px;
+	text-decoration:none;
+	border-top: solid 1px #ffd4d4;
+	border-right: solid 1px #e2acac;
+	border-bottom: solid 1px #e2acac;
+	border-left: solid 1px #ffd4d4;
+	background-color:#ffc2c2;
+	padding:1px 2px 1px 2px;
+	border-radius: 3px;
+}
+
+.delete:hover{
+	background-color:#ffd4d4;
+}
+
+
+
+/* style for the imagebox that shows big photos */
+#imagebox
+{
+    position: fixed;
+    z-index: 1060;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#imagebox img
+{
+    max-width: 90%;
+    max-width: calc(100% - 25px);
+    max-height: 80%;
+    max-height: calc(100% - 25px);
+    /*border-radius:8px;*/
+    -moz-box-shadow: 3px 3px 20px #222;
+	-webkit-box-shadow: 3px 3px 20px #222;
+	box-shadow: 3px 3px 20px #222;
+}
+
+/* Used to ensure QR codes have crip edges, even when they are tiny low-res images */
+.pixelated, .qr, .barcode {
+	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+	image-rendering: -moz-crisp-edges;          /* Firefox                        */
+	image-rendering: -o-crisp-edges;            /* Opera                          */
+	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+	image-rendering: pixelated; /* Chrome */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+/* A segmented progress bar to show progress over multiple steps */
+
+.w2Contents .progress-steps {
+	list-style:none;
+	padding-left:0;
+}
+
+.progress-steps {
+	padding:0;
+	display:flex;
+	list-style:none;
+}
+
+.progress-steps > li {
+	position: relative;
+	overflow: visible;
+	border-right: 15px solid #fff;
+	border-left: 15px solid #fff;
+	flex:1;
+}
+
+.progress-steps > li:first-child {
+	border-left:none;
+}
+
+.progress-steps > li:last-child {
+	border-right:none;
+}
+
+.progress-steps > li a {
+	background-color: #eee;
+	color: black;
+	height:40px;
+}
+
+.progress-steps > li a:hover {
+	text-decoration: none;
+}
+
+.progress-steps > li > a:first-child {
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+}
+
+.progress-steps > li > a:last-child {
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+
+/* Make the arrow shape */
+.progress-steps > li .progress-arrow {
+	position: absolute;
+	top: 0px;
+	right: -20px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 20px 0 20px 20px;
+	border-color: transparent transparent transparent #eee;
+	z-index: 150;
+}
+
+/* Make the arrow back shape */
+.progress-steps > li .progress-wedge {
+	position: absolute;
+	top: 0px;
+	left: -20px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 20px 0 20px 20px;
+	border-color: #eee #eee #eee transparent;
+	z-index: 150;
+}
+
+
+
+/* Set the colors for a complete step */
+.progress-steps > li.complete > a {
+	background-color: #004b8d;
+	color: #fff;
+}
+
+
+/* Make the arrow shape blue when it's complete */
+.progress-steps > li.complete .progress-arrow {
+	border-color: transparent transparent transparent #004b8d;
+}
+
+.progress-steps > li.complete .progress-wedge {
+    border-color: #004b8d #004b8d #004b8d transparent;
+}
+
+
+/* Pulsating animation */
+@-webkit-keyframes pulsateMain {
+  from   { background-color:#9fbdd7;}
+  to { background-color:#d2dbe3;}
+}
+
+@keyframes pulsateMain {
+  from   { background-color:#9fbdd7;}
+  to { background-color:#d2dbe3;}
+}
+
+@-webkit-keyframes pulsateArrow {
+  from   { border-color: transparent transparent transparent #9fbdd7;}
+  to { border-color: transparent transparent transparent #d2dbe3;}
+}
+
+@keyframes pulsateArrow {
+  from   { border-color: transparent transparent transparent #9fbdd7;}
+  to { border-color: transparent transparent transparent #d2dbe3;}
+}
+
+@-webkit-keyframes pulsateWedge {
+  from   { border-color: #9fbdd7 #9fbdd7 #9fbdd7 transparent;}
+  to { border-color: #d2dbe3 #d2dbe3 #d2dbe3 transparent;}
+}
+
+@keyframes pulsateWedge {
+  from   { border-color: #9fbdd7 #9fbdd7 #9fbdd7 transparent;}
+  to { border-color: #d2dbe3 #d2dbe3 #d2dbe3 transparent;}
+}
+
+
+/* Use a pulsating animation on an active step */
+
+.progress-steps > li.active > a {
+	-webkit-animation: pulsateMain 2s linear 0s infinite alternate;
+	        animation: pulsateMain 2s linear 0s infinite alternate;
+}
+
+
+.progress-steps > li.active .progress-arrow {
+	-webkit-animation: pulsateArrow 2s linear 0s infinite alternate;
+	        animation: pulsateArrow 2s linear 0s infinite alternate;
+}
+
+.progress-steps > li.active .progress-wedge {
+	-webkit-animation: pulsateWedge 2s linear 0s infinite alternate;
+	        animation: pulsateWedge 2s linear 0s infinite alternate;
+}
+
+.progress-steps>li>a {
+    display: block;
+    padding: 10px 0px 10px 7px;
+    white-space:nowrap;
+}
+
+.step {
+    font-weight:bold;
+}
+
+.step-detail {
+    font-weight:normal;
+}
+
+.helpIcon {
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+	border: none;
+	vertical-align: top;
+	background-image:url('/Resources/Images/helpIcon.svg');
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+
+.widget-title.o-heading--medium {
+	border-bottom: 1px solid #ccc;
+    padding: 15px;
+    margin: 0;
+}
+
+.sidecard {
+	background-color:white;
+	padding:0px;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+.sidecard .widget-content {
+	padding:15px;
+}
+
+/* This max-width may need to go up if the content in the arrows is quite long */
+   (max-width: 620px) {
+    .step-detail {
+        display:none;
+    }
+
+    .progress-steps>li>a {
+        padding: 10px 8px;
+        text-align:center;
+    }
+
+}
+
+/* For showing errors and notices */
+.noticeBox, .noticebox {
+  background-color: #FFD5D5;
+  background-color: rgba(255, 80, 80, 0.4);
+  border: solid 1px rgba(255, 80, 80, 0.6);
+  padding: 10px;
+  margin: 5px;
+}
+
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  /*cursor: pointer;*/
+}
+
+/* This gets around an IE glitch where the underline appears IN the tooltip
+  If you really want a tooltip on hover, you'll have to override this and
+  accept that the underline will also show in the tooltip  */
+a[data-tooltip] {
+	text-decoration:none;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";*/
+  /*filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);*/
+  opacity: 0;
+  pointer-events: none;
+  text-decoration:none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight:normal;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";*/
+  /*filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);*/
+  opacity: 1;
+  text-decoration:none;
+}

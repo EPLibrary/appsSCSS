@@ -1,13 +1,17 @@
 @import 'variables';
 
-/* Used for the header present on almost all apps pages (ones using appsHeader.cfm) */
+// Development warnings
+#appsBody .devWarn {
+	padding:3px;
+	margin:0;
+}
 
+/* Used for the header present on almost all apps pages (ones using appsHeader.cfm) */
 #innerHeader {
 	display:flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items:center;
-	// height: 35px;
 }
 
 #headerLeftSection {
@@ -75,6 +79,7 @@
 }
 
 .appsTitle {
+	margin-top:3px;
 	font-size:21px;
 	font-weight:bold;
 	color:white;
@@ -120,21 +125,6 @@
 	margin-bottom:10px;
 }
 
-/* \Includes\SidebarBlogs.cfm and \Includes\SidebarBookmarks.cfm */
-.sidebarLink  {
-	font-size:15px;
-	text-decoration:none;
-	font-weight:normal;
-	position:relative;
-}
-
-a.sidebarLink {
-	color:inherit;
-}
-
-#bookmarks .sidebarLink {
-	display:block;
-}
 
 
 /* Style for the Quick Search */
@@ -203,6 +193,16 @@ footer .darkModeSwitch img {
 	padding:6px 7px 8px 7px;
 }
 
+/* \Includes\SidebarBlogs.cfm and \Includes\SidebarBookmarks.cfm */
+.sidebarCell a  {
+	font-size:15px;
+	text-decoration:none;
+	font-weight:normal;
+	color:inherit;
+	display: block;
+}
+
+
 /* Sidebar Section Headings */
 .sidebarHeading {
 	font-weight:bold;
@@ -219,16 +219,32 @@ footer .darkModeSwitch img {
 	float:right;
 }
 
+#sidebarPeopleFind {
+	select {
+		width:100%;
+		margin-bottom:15px;
+	}
+
+	label[for="sidebarSearch"] {
+		display:flex;
+		flex-wrap:wrap;
+		
+
+	}
+
+	#sidebarSearch {
+		flex:1;
+	}
+
+	.button {
+		margin-left:6px;
+	}
+}
+
 #appsTitleSmallWidth {
 	display:none;
 	text-align:center;
 }
-
-
-
-
-
-
 
 /* Title for Applications if PageTitle is set */
 .titleBar  {
@@ -241,10 +257,11 @@ footer .darkModeSwitch img {
 	margin-bottom:5px;
 	color:white;
 	font-weight:normal;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
 	border-radius: 4px;
 	overflow:hidden;
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .titleBar h1 {
@@ -256,12 +273,12 @@ footer .darkModeSwitch img {
 
 /* Buttons that go on titleBar */
 .adminControl {
-	float:right;
-	margin-top:5px;
+	// float:right;
 }
 
 .adminControl a {
-	margin:3px 3px 0 3px;
+	margin:3px 3px;
+	display: inline-block;
 }
 
 /* footer */
@@ -287,12 +304,15 @@ footer .darkModeSwitch img {
 	#headerEPLLogo img {
 		display:none;
 	}
+	.appsTitle {
+		margin-bottom:4px;
+	}
 }
 
 
 @media (max-width: 700px) {
 	#headerLeftSection #yourImage {
-		margin-left:10px;
+		margin-left:15px;
 	}
 
 	#sidebarButton {
@@ -322,6 +342,7 @@ footer .darkModeSwitch img {
 	#searchArea input {
 		flex:1;
 		margin-left:5px;
+		min-width: 100px;
 	}
 
 
@@ -334,15 +355,21 @@ footer .darkModeSwitch img {
 	}
 
 
-/* Keep phones from zooming into input fields. 736 handles an iPhone 6 Plus in landscape or
-smaller. IMO, 16px is a little too large and it's goofy if you change a window size and the
-fonts get bigger. I can't yet think of a better way to do this, other than disallowing zoom,
-which is a usability concern.
-*/
+	/* Keep phones from zooming into input fields. 736 handles an iPhone 6 Plus in landscape or
+	smaller. IMO, 16px is a little too large and it's goofy if you change a window size and the
+	fonts get bigger. I can't yet think of a better way to do this, other than disallowing zoom,
+	which is a usability concern.
+	*/
 	input, textarea, select {
 		font-size: 16px;
 	}
 
+}
+
+@media (max-width: 350px) {
+	#logoutButton i {
+		display:none;
+	}
 }
 
 

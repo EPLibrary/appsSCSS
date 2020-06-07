@@ -55,9 +55,22 @@ $inputWidth: 240px;
 
 			label {
 				width:auto;
-				margin:0;
-				margin-right:15px;
+				margin-right:12px;
 				font-weight:normal;
+				// Give checkboxes and their labels a grouped look. Still testing this, I think it looks nice.
+				margin:0 3px 3px 0px;
+				margin-top:0;
+				border:1px solid rgba(127,127,127,0.3);
+				padding-left: 2px;
+				padding-right: 4px;
+				padding-bottom:0px;
+				border-radius:3px;
+				background-color:rgba(127,127,127,0.05);
+			}
+
+			label:hover {
+				border-color: rgba(127,127,127,0.5);
+				background-color:rgba(127,127,127,0.025);
 			}
 
 			label:last-child {
@@ -68,7 +81,6 @@ $inputWidth: 240px;
 				width:auto;
 				margin-left:0px;
 				margin-right:5px;
-				margin-bottom:10px;
 			}
 
 		}//end .formGroup		

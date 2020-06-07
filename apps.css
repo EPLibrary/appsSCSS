@@ -655,9 +655,21 @@ footer .darkModeSwitch img {
 .appForm label .formGroup label,
 .appForm .formItem .formGroup label {
   width: auto;
-  margin: 0;
-  margin-right: 15px;
+  margin-right: 12px;
   font-weight: normal;
+  margin: 0 3px 3px 0px;
+  margin-top: 0;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  padding-left: 2px;
+  padding-right: 4px;
+  padding-bottom: 0px;
+  border-radius: 3px;
+  background-color: rgba(127, 127, 127, 0.05);
+}
+.appForm label .formGroup label:hover,
+.appForm .formItem .formGroup label:hover {
+  border-color: rgba(127, 127, 127, 0.5);
+  background-color: rgba(127, 127, 127, 0.025);
 }
 .appForm label .formGroup label:last-child,
 .appForm .formItem .formGroup label:last-child {
@@ -668,7 +680,6 @@ footer .darkModeSwitch img {
   width: auto;
   margin-left: 0px;
   margin-right: 5px;
-  margin-bottom: 10px;
 }
 .appForm label .checkGroup,
 .appForm .formItem .checkGroup {
@@ -1143,10 +1154,17 @@ These shouldn't be used anymore. Use h3 instead. */
 }
 
 /* some older code didn't use uppercase B */
-.noticeBox, .noticebox {
+.noticeBox {
   background-color: #FFD5D5;
   background-color: rgba(255, 80, 80, 0.4);
   border: solid 1px rgba(255, 80, 80, 0.6);
+  padding: 10px;
+  margin: 5px;
+}
+
+.warnBox {
+  background-color: rgba(255, 255, 0, 0.3);
+  border: solid 1px rgba(207, 210, 0, 0.88);
   padding: 10px;
   margin: 5px;
 }

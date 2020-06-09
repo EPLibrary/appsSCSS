@@ -46,9 +46,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   margin: 0;
-  /* zero margin and padding of the body to account for differing browser defaults */
   padding: 0;
-  color: #333;
+  color: #111111;
 }
 
 a {
@@ -173,6 +172,9 @@ nav a:hover:not(.grayButton) {
 #appsBody .devWarn {
   padding: 3px;
   margin: 0;
+}
+#appsBody .devWarn a {
+  color: inherit;
 }
 
 /* Used for the header present on almost all apps pages (ones using appsHeader.cfm) */
@@ -903,6 +905,63 @@ footer .darkModeSwitch img {
     padding-left: 3px;
     padding-right: 3px;
   }
+}
+
+/* filterForm is used by filterTable for the search filter form inputs */
+/* The filterform styles will be added into the appForm stylesheet, I think */
+#filterForm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#filterForm h3 {
+  margin: 0;
+  flex-basis: 100%;
+}
+#filterForm label, #filterForm .formItem {
+  margin: 6px;
+}
+#filterForm label[for=sortBy] {
+  display: none;
+}
+#filterForm .formGroup label {
+  margin: 0;
+}
+#filterForm .year {
+  width: 80px;
+}
+#filterForm .month {
+  width: 115px;
+}
+#filterForm .day {
+  width: 70px;
+}
+#filterForm .button {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#filterForm .formItem label {
+  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.2);
+  margin: 0 3px;
+  border-radius: 4px;
+  padding: 2px 4px;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+}
+#filterForm .formItem label:hover {
+  border-color: rgba(127, 127, 127, 0.5);
+  background-color: rgba(127, 127, 127, 0.025);
+}
+#filterForm .formItem input[type=radio] {
+  /* Any time you use vertical align, you're gonna have a bad time */
+  vertical-align: text-top;
+}
+#filterForm .deleteRow {
+  text-align: center;
+}
+
+.sortLink {
+  white-space: nowrap;
 }
 
 /* Tweak basic HTML styles within markdown containers */
@@ -1827,6 +1886,7 @@ div.filesList div img {
   .columnleft, .columnright {
     width: 100%;
     float: none;
+    margin: 0;
   }
 
   .step-detail {

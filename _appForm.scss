@@ -375,3 +375,80 @@ $inputWidth: 240px;
 
 }//End .appForm
 
+
+/* filterForm is used by filterTable for the search filter form inputs */
+
+/* The filterform styles will be added into the appForm stylesheet, I think */
+#filterForm {
+	display:flex;
+	flex-wrap: wrap;
+	align-items:center;
+
+	h3 {
+		margin:0;
+		flex-basis:100%;
+	}
+
+	label, .formItem {
+		margin:6px;
+	}
+
+	// By default we don't show the sortby dropdown
+	label[for="sortBy"] {
+		display:none;
+	}
+
+	.formGroup label {
+		margin:0;
+	}
+
+	.year {
+		width:80px;
+	}
+
+	.month {
+		width:115px;
+	}
+
+	.day {
+		width:70px;
+	}
+
+	.button {
+		padding-top:2px;
+		padding-bottom:2px;
+	}
+
+	.formItem label {
+		font-weight: bold;
+	    background-color: rgba(128,128,128,0.2);
+	    margin: 0 3px;
+	    border-radius: 4px;
+	    padding: 2px 4px;
+	    border: 1px solid rgba(127, 127, 127, 0.3);
+	}
+
+	.formItem label:hover {
+		border-color: rgba(127, 127, 127, 0.5);
+		background-color: rgba(127, 127, 127, 0.025);
+	}
+
+	.formItem input[type="radio"] {
+		/* Any time you use vertical align, you're gonna have a bad time */
+		vertical-align:text-top;
+	}
+
+	.deleteRow {
+		text-align: center;
+	}
+
+}//End #filterForm
+
+// Links that can be clicked to change sort order
+.sortLink {
+    white-space: nowrap;
+}
+
+
+
+

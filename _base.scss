@@ -68,9 +68,9 @@ Generally, we only want elements styled here with no classes or IDs
 body  {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size:$defaultFontSize;
-	margin: 0; /* zero margin and padding of the body to account for differing browser defaults */
+	margin: 0; // zero margin and padding of the body to account for differing browser defaults
 	padding: 0;
-	color: #333;
+	color: #111111;
 }
 
 a  {

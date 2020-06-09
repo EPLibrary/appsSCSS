@@ -4,6 +4,10 @@
 #appsBody .devWarn {
 	padding:3px;
 	margin:0;
+
+	a {
+		color:inherit;
+	}
 }
 
 /* Used for the header present on almost all apps pages (ones using appsHeader.cfm) */

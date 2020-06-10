@@ -393,10 +393,7 @@ footer .darkModeSwitch img {
 /* Title for Applications if PageTitle is set */
 .titleBar {
   background-color: #004B8D;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
+  padding: 5px;
   margin-top: 6px;
   margin-bottom: 5px;
   color: white;
@@ -410,14 +407,25 @@ footer .darkModeSwitch img {
 
 .titleBar h1 {
   display: inline;
-  font-size: 24px;
-  margin: 0;
+  font-size: 26px;
+  margin: 0 3px;
 }
 
 /* Buttons that go on titleBar */
+.adminControl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .adminControl a {
-  margin: 3px 3px;
+  margin: 3px;
   display: inline-block;
+  text-align: center;
+}
+
+#titleBar .adminControl a {
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 /* footer */
@@ -955,6 +963,7 @@ footer .darkModeSwitch img {
 #filterForm .formItem input[type=radio] {
   /* Any time you use vertical align, you're gonna have a bad time */
   vertical-align: text-top;
+  margin-right: 0;
 }
 #filterForm .deleteRow {
   text-align: center;

@@ -436,6 +436,7 @@ $inputWidth: 240px;
 	.formItem input[type="radio"] {
 		/* Any time you use vertical align, you're gonna have a bad time */
 		vertical-align:text-top;
+		margin-right:0;
 	}
 
 	.deleteRow {

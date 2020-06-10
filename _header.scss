@@ -253,10 +253,7 @@ footer .darkModeSwitch img {
 /* Title for Applications if PageTitle is set */
 .titleBar  {
 	background-color:$accentColor;
-	padding-top:5px;
-	padding-right:5px;
-	padding-bottom:5px;
-	padding-left:10px;
+	padding:5px;
 	margin-top:6px;
 	margin-bottom:5px;
 	color:white;
@@ -270,20 +267,29 @@ footer .darkModeSwitch img {
 
 .titleBar h1 {
 	display:inline;
-	font-size:24px;
-	margin:0;
+	font-size:26px;
+	margin:0 3px;
 }
 
 
 /* Buttons that go on titleBar */
 .adminControl {
-	// float:right;
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	a {
+		margin: 3px;
+		display:inline-block;
+		text-align: center;
+	}
 }
 
-.adminControl a {
-	margin:3px 3px;
-	display: inline-block;
+#titleBar .adminControl a {
+		padding-top:2px;
+		padding-bottom:2px;
 }
+
 
 /* footer */
 #footerHomeLink {

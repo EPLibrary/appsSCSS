@@ -17,6 +17,7 @@ $inputWidth: 240px;
 		flex-wrap:wrap;
 		justify-content:space-between;
 		width:$labelWidth;
+
 		
 		// Markdown fields within formbuilder completed stages
 		div.markdown {
@@ -36,17 +37,25 @@ $inputWidth: 240px;
 			width:$inputWidth;
 			flex-basis:$inputWidth;
 			font-weight:normal;
+
 		}
 
 
 		/* For showing a group of inputs side by side. */
 		.formGroup {
+			// Experimental - used on HR changes to vertically align iCheck radio button text
+			display:flex;
+			align-items:start;
+			flex-wrap: wrap;
+
 			input,
 			select,
 			label,
 			span {
-				float:none;
-				display:inline-block;
+				// Changed from inline block to vertically align iCheck radio buttons
+				display:flex;
+				flex-wrap:nowrap;
+				align-items:center;
 			}
 
 			span {
@@ -60,12 +69,13 @@ $inputWidth: 240px;
 				// Give checkboxes and their labels a grouped look. Still testing this, I think it looks nice.
 				margin:0 3px 3px 0px;
 				margin-top:0;
-				border:1px solid rgba(127,127,127,0.3);
+				border:1px solid rgba(127,127,127,0.20);
 				padding-left: 2px;
 				padding-right: 4px;
 				padding-bottom:0px;
 				border-radius:3px;
 				background-color:rgba(127,127,127,0.05);
+				white-space: nowrap;
 			}
 
 			label:hover {
@@ -79,8 +89,7 @@ $inputWidth: 240px;
 
 			label input[type] {
 				width:auto;
-				margin-left:0px;
-				margin-right:5px;
+				margin:3px 5px 3px 2px;
 			}
 
 		}//end .formGroup		
@@ -158,6 +167,12 @@ $inputWidth: 240px;
 
 
 	}//label, .formItem
+
+	label.centered, .formItem.centered {
+		input, button {
+			margin:auto;
+		}
+	}
 
 	/*Without a field separator, there's 20px of padding above each label */
 	>label+label,
@@ -331,14 +346,14 @@ $inputWidth: 240px;
 			/* Commented out by JDL on Oct 1 2019*/
 			/*margin-bottom:15px;*/
 			width:100%;
-			flex-basis:100%;
+			// flex-basis:100%;
 			/* overflow:auto covers chosen dropdowns */
 			/*overflow:auto;*/
 		}
 
 		.formItem,
 		.formItem .formGroup {
-			display:block;
+			// display:block;
 			width:100%;
 		}
 
@@ -419,25 +434,27 @@ $inputWidth: 240px;
 		padding-bottom:2px;
 	}
 
-	.formItem label {
-		font-weight: bold;
-	    background-color: rgba(128,128,128,0.2);
-	    margin: 0 3px;
-	    border-radius: 4px;
-	    padding: 2px 4px;
-	    border: 1px solid rgba(127, 127, 127, 0.3);
-	}
+	.formItem {
+		label {
+			font-weight: bold;
+		    background-color: rgba(128,128,128,0.2);
+		    margin: 0 3px;
+		    border-radius: 4px;
+		    padding: 2px 4px;
+		    border: 1px solid rgba(127, 127, 127, 0.3);
 
-	.formItem label:hover {
-		border-color: rgba(127, 127, 127, 0.5);
-		background-color: rgba(127, 127, 127, 0.025);
-	}
+			&:hover {
+				border-color: rgba(127, 127, 127, 0.5);
+				background-color: rgba(127, 127, 127, 0.025);
+			}
+		}
 
-	.formItem input[type="radio"] {
-		/* Any time you use vertical align, you're gonna have a bad time */
-		vertical-align:text-top;
-		margin-right:0;
-	}
+		input[type="radio"] {
+			/* Any time you use vertical align, you're gonna have a bad time */
+			vertical-align:text-top;
+			margin-right:0;
+		}
+	}//end .formItem
 
 	.deleteRow {
 		text-align: center;

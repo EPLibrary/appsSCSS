@@ -186,9 +186,12 @@ nav a {
 nav a:not(.grayButton) {
 	color:white;
 	background-color:#666;
-	padding:1px 2px;
+	padding:1px 3px;
 	border-radius:3px;
 	border:1px solid #777;
+	border-bottom-color:#444;
+    border-right-color:#444;
+
 }
 
 nav a:hover:not(.grayButton) {

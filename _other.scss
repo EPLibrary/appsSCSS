@@ -142,39 +142,28 @@ These shouldn't be used anymore. Use h3 instead. */
 	background-color: $accentColor;
 }
 
-/* some older code didn't use uppercase B */
-.noticeBox {
-	background-color:#FFD5D5;
-	background-color:rgba(255,80,80,0.4);
-	border:solid 1px rgba(255,80,80,0.6);
-	padding:10px;
-	margin:5px;
-}
-
-.warnBox {
-	background-color:rgba(255,255,0,0.3);
-	border:solid 1px rgba(207, 210, 0, 0.88);
-	padding:10px;
-	margin:5px;
-}
-
-/* Old grayBox style, now altered to be consistent with Noticebox 
-.grayBox {
-	margin-top:5px;
-	padding:2px 0px 0px 4px;
-	background-color:#EFEFEF;
-	border-top:solid 1px #E0E0E0;
-	border-bottom:solid 2px #DDD;
-	border-left:solid 1px #E0E0E0;
-	border-right:solid 2px #DDD;	
-} */
-
-.grayBox {
+.grayBox, .noticeBox, .warnBox,  {
 	background-color:rgba(127,127,127,0.25);
 	border:solid 1px rgba(127,127,127,0.45);
 	padding:10px;
 	margin:5px;
+
+	h1,h2,h3 {
+		margin-top:0;
+	}
 }
+
+.noticeBox {
+	background-color:rgba(255,80,80,0.4);
+	border-color:rgba(255,80,80,0.6);
+}
+
+.warnBox {
+	background-color:rgba(255,255,0,0.3);
+	border-color:rgba(207, 210, 0, 0.88);
+}
+
+
 
 /* Validation errors can use pulsating red borders around the field */
 #appsBody .valError {

@@ -61,18 +61,17 @@
 		&:active {
 			@if $lighten {
 				background-color:color.scale($baseColor, $lightness: +70%);
-				border-color:color.scale($baseColor, $lightness: +55%);
 			}
 			@else {
 				background-color:color.scale($baseColor, $lightness: +17%);
-				border-color:color.scale($baseColor, $lightness: +15%);
 			}
-			border-style:solid;
+			border-color:color.scale($baseColor, $alpha: -80%);
 		}
 
-		&:visited {
-			color:color.scale($baseColor, $lightness: -80%);
-		}
+		// I don't want a visited appearance
+		// &:visited {
+		// 	color:color.scale($baseColor, $lightness: -80%);
+		// }
 
 		&.disabled, &.disabled:visited, &[disabled], &[disabled]:visited {
 			background-color:#eeeeee;
@@ -86,7 +85,7 @@
 			}
 		}
 
-	}
+	}//button classes
 
 
 	// Delete Subtle just shows a simple gray link that looks like a delete button when hovered
@@ -101,12 +100,71 @@
 
 	}
 
-	.#{$className}Subtle:visited:hover, a.#{$className}Subtle:visited:hover {
-		color:color.scale($baseColor, $lightness: -80%);
-	}
+	// Dark versions of buttons
+	.appsThemeDark {
+		.#{$className}, a.#{$className}, .#{$className}Subtle, a.#{$className}Subtle {
+			@if $lighten {
+				background-color:color.scale($baseColor, $lightness:-55%);
+				border:solid 1px color.scale($baseColor, $lightness: -65%);
+				border-top-color: color.scale($baseColor, $lightness: -25%);
+				border-left-color: color.scale($baseColor, $lightness: -25%);
+				color:color.scale($baseColor, $lightness: +90%);
+			}
 
 
-}
+			&:hover {
+				@if $lighten {background-color:color.scale($baseColor, $lightness: -45%);}
+				@else {background-color:color.scale($baseColor, $lightness: +10%);}
+				color:color.scale($baseColor, $lightness: +100%);
+				text-decoration: none;
+			}
+
+			&:active {
+				@if $lighten {
+					background-color:color.scale($baseColor, $lightness: -25%);
+				}
+				@else {
+					background-color:color.scale($baseColor, $lightness: +17%);
+				}
+				border-color:color.scale($baseColor, $lightness: -65%);
+				color:color.scale($baseColor, $lightness: +100%);
+			}
+
+			&.disabled, &.disabled:visited, &[disabled], &[disabled]:visited {
+				background-color:#333333;
+				color:#bbbbbb;
+				border: solid 1px #222222;
+				border-top-color: #444444;
+				border-left-color: #444444;
+
+				&:hover {
+					color:#aaaaaa;
+				}
+			}
+		}//button classes
+
+		// Subtle links just show a simple gray link that looks like a delete button when hovered
+		.#{$className}Subtle, a.#{$className}Subtle, .#{$className}Subtle:visited, a.#{$className}Subtle:visited {
+			color:color.scale($baseColor, $saturation: -80%);
+			background-color:transparent;
+			border-color:transparent;
+
+			&:active {
+				border-color:transparent;
+			}
+
+		}
+
+
+	}//.appsThemeDark
+
+	// I don't want a visited appearance
+	// .#{$className}Subtle:visited:hover, a.#{$className}Subtle:visited:hover {
+	// 	color:color.scale($baseColor, $lightness: -80%);
+	// }
+
+
+}//end linkButton
 
 // These guys generate about 15KB of CSS code. Yikes!
 @include linkButton(pinkButton, $eplPink);

@@ -5,6 +5,17 @@ body {
 	color: white;
 }
 
+nav {
+	background-color: rgba(255,255,255,0.16);
+}
+
+nav a:not(.grayButton) {
+    background-color: #4a4a4a;
+    border-color:#5a5a5a;
+    border-bottom-color:#222;
+    border-right-color:#222;
+}
+
 /* Input elements - try to match Safari */
 input[type="text"], input[type="password"], input:not([type]),
 select,

@@ -114,7 +114,6 @@
 
 .darkModeSwitch {
 	padding-top:3px;
-	color:rgb(127,127,127);
 
 	img {
 		width:23px;
@@ -122,6 +121,7 @@
 		margin-top:0;
 	}
 }
+
 
 /* Links to parent pages in the header */	
 .breadCrumbs {
@@ -170,17 +170,52 @@
 	
 
 
-footer .darkModeSwitch {
-	text-align: center;
-	margin:10px 0 0 0;
-	display:inline-block;
+footer {
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	flex-wrap:wrap;
+
+	.darkModeSwitch {
+	
+		img {
+			margin-top:-2px;
+			margin-left:5px;
+			vertical-align:middle;
+		}
+	}
+
+	a {
+		color:rgb(180,180,180);
+
+		.fas, .fa {
+			color:white;
+		}
+	}
+
+	a+a {
+		margin-left:30px;
+	}
+
+	/* footer */
+	#footerHomeLink {
+		position:absolute;
+		right:0;
+		margin-right:10px;
+		text-align: right;
+		
+
+		img {
+			height:32px;
+
+			// vertical-align:bottom;
+		}
+	}
+
+
+
 }
 
-footer .darkModeSwitch img {
-	margin-top:-2px;
-	margin-left:5px;
-	vertical-align:middle;
-}
 
 #sidebar {
 	display:none;
@@ -291,18 +326,6 @@ footer .darkModeSwitch img {
 }
 
 
-/* footer */
-#footerHomeLink {
-	margin-top:5px;
-	position:absolute;
-	right:1px;
-	margin-right:10px;
-
-	img {
-		height:32px;
-		vertical-align:bottom;
-	}
-}
 
 @media (max-width: 950px) {
 	#headerUsername {
@@ -425,6 +448,10 @@ footer .darkModeSwitch img {
 
 /* Responsive popover handling */
 @media (max-width:500px) {
+	#footerHomeLink {
+		display:none;
+	}
+
 	.BigPopover {
 		top:2%;
 		left:2%;

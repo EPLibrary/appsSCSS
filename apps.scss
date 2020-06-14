@@ -106,8 +106,8 @@
 			@if $lighten {
 				background-color:color.scale($baseColor, $lightness:-55%);
 				border:solid 1px color.scale($baseColor, $lightness: -65%);
-				border-top-color: color.scale($baseColor, $lightness: -25%);
-				border-left-color: color.scale($baseColor, $lightness: -25%);
+				border-top-color: color.scale($baseColor, $lightness: -30%);
+				border-left-color: color.scale($baseColor, $lightness: -30%);
 				color:color.scale($baseColor, $lightness: +90%);
 			}
 
@@ -173,9 +173,43 @@
 @include linkButton(yellowButton, $eplYellow);
 @include linkButton(blueButton, $eplBlue);
 @include linkButton(grayButton, #BBBBBB);
+
 .grayButton.active, .grayButton.active {
-	background-color:white;
+	background-color:rgb(250,250,250);
+	border-color:rgb(200,200,200);
 	color:black;
+	pointer-events: none;
+}
+
+.appsThemeDark {
+	.grayButton.active, .grayButton.active {
+		background-color:rgb(200,200,200);
+		border-color:rgb(150,150,150);
+		color:black;
+		pointer-events: none;
+	}	
+}
+
+// This might not be the right place for this
+/* page selection buttons for filterForms */
+.pager {
+	margin:10px;
+
+	a, &>i {
+		display:inline-block;
+		min-width:25px;
+		text-align: center;
+		margin:3px;
+		
+		&a:first-of-type {margin-left:0;}
+
+		&a:last-of-type {margin-right:0;}
+	}
+
+}
+
+i.secondarySort, span.secondarySort {
+	opacity: 0.4;
 }
 
 @include linkButton(redButton, #FF2222);

@@ -269,7 +269,6 @@ nav a:hover:not(.grayButton) {
 
 .darkModeSwitch {
   padding-top: 3px;
-  color: #7f7f7f;
 }
 .darkModeSwitch img {
   width: 23px;
@@ -320,16 +319,35 @@ nav a:hover:not(.grayButton) {
   padding-bottom: 3px;
 }
 
-footer .darkModeSwitch {
-  text-align: center;
-  margin: 10px 0 0 0;
-  display: inline-block;
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* footer */
 }
-
 footer .darkModeSwitch img {
   margin-top: -2px;
   margin-left: 5px;
   vertical-align: middle;
+}
+footer a {
+  color: #b4b4b4;
+}
+footer a .fas, footer a .fa {
+  color: white;
+}
+footer a + a {
+  margin-left: 30px;
+}
+footer #footerHomeLink {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  text-align: right;
+}
+footer #footerHomeLink img {
+  height: 32px;
 }
 
 #sidebar {
@@ -428,18 +446,6 @@ footer .darkModeSwitch img {
 #titleBar .adminControl a {
   padding-top: 2px;
   padding-bottom: 2px;
-}
-
-/* footer */
-#footerHomeLink {
-  margin-top: 5px;
-  position: absolute;
-  right: 1px;
-  margin-right: 10px;
-}
-#footerHomeLink img {
-  height: 32px;
-  vertical-align: bottom;
 }
 
 @media (max-width: 950px) {
@@ -552,6 +558,10 @@ footer .darkModeSwitch img {
 
 /* Responsive popover handling */
 @media (max-width: 500px) {
+  #footerHomeLink {
+    display: none;
+  }
+
   .BigPopover {
     top: 2%;
     left: 2%;
@@ -646,7 +656,6 @@ footer .darkModeSwitch img {
   display: block;
   margin-left: auto;
   width: 240px;
-  flex-basis: 240px;
   font-weight: normal;
 }
 .appForm label .formGroup,
@@ -952,7 +961,7 @@ footer .darkModeSwitch img {
   width: 115px;
 }
 #filterForm .day {
-  width: 70px;
+  width: 72px;
 }
 #filterForm .button {
   padding-top: 2px;
@@ -1231,13 +1240,13 @@ These shouldn't be used anymore. Use h3 instead. */
   background-color: #004B8D;
 }
 
-.grayBox, .noticeBox, .warnBox {
+.grayBox, .noticeBox, .warnBox, .successBox {
   background-color: rgba(127, 127, 127, 0.25);
   border: solid 1px rgba(127, 127, 127, 0.45);
   padding: 10px;
   margin: 5px;
 }
-.grayBox h1, .grayBox h2, .grayBox h3, .noticeBox h1, .noticeBox h2, .noticeBox h3, .warnBox h1, .warnBox h2, .warnBox h3 {
+.grayBox h1, .grayBox h2, .grayBox h3, .noticeBox h1, .noticeBox h2, .noticeBox h3, .warnBox h1, .warnBox h2, .warnBox h3, .successBox h1, .successBox h2, .successBox h3 {
   margin-top: 0;
 }
 
@@ -1249,6 +1258,11 @@ These shouldn't be used anymore. Use h3 instead. */
 .warnBox {
   background-color: rgba(255, 255, 0, 0.3);
   border-color: rgba(207, 210, 0, 0.88);
+}
+
+.successBox {
+  background-color: rgba(24, 255, 41, 0.25);
+  border-color: rgba(0, 130, 9, 0.5);
 }
 
 /* Validation errors can use pulsating red borders around the field */
@@ -1285,15 +1299,6 @@ These shouldn't be used anymore. Use h3 instead. */
 
 .success {
   color: #00AA00;
-}
-
-.successBox, .successbox {
-  background-color: #C7FDCB;
-  background-color: rgba(24, 255, 41, 0.25);
-  border: solid 1px #77B37B;
-  border: solid 1px rgba(0, 130, 9, 0.5);
-  padding: 10px;
-  margin: 5px;
 }
 
 .tinyTip, .tinytip {
@@ -2209,8 +2214,8 @@ a[data-tooltip] {
 .appsThemeDark .pinkButton, .appsThemeDark a.pinkButton, .appsThemeDark .pinkButtonSubtle, .appsThemeDark a.pinkButtonSubtle {
   background-color: #67062c;
   border: solid 1px #500522;
-  border-top-color: #ab0b4a;
-  border-left-color: #ab0b4a;
+  border-top-color: #a00a45;
+  border-left-color: #a00a45;
   color: #fde6ef;
 }
 .appsThemeDark .pinkButton:hover, .appsThemeDark a.pinkButton:hover, .appsThemeDark .pinkButtonSubtle:hover, .appsThemeDark a.pinkButtonSubtle:hover {
@@ -2284,8 +2289,8 @@ a[data-tooltip] {
 .appsThemeDark .purpleButton, .appsThemeDark a.purpleButton, .appsThemeDark .purpleButtonSubtle, .appsThemeDark a.purpleButtonSubtle {
   background-color: #381d45;
   border: solid 1px #2b1736;
-  border-top-color: #5d3173;
-  border-left-color: #5d3173;
+  border-top-color: #572e6b;
+  border-left-color: #572e6b;
   color: #f2ebf6;
 }
 .appsThemeDark .purpleButton:hover, .appsThemeDark a.purpleButton:hover, .appsThemeDark .purpleButtonSubtle:hover, .appsThemeDark a.purpleButtonSubtle:hover {
@@ -2359,8 +2364,8 @@ a[data-tooltip] {
 .appsThemeDark .greenButton, .appsThemeDark a.greenButton, .appsThemeDark .greenButtonSubtle, .appsThemeDark a.greenButtonSubtle {
   background-color: #37581d;
   border: solid 1px #2b4417;
-  border-top-color: #5c9330;
-  border-left-color: #5c9330;
+  border-top-color: #56892d;
+  border-left-color: #56892d;
   color: #f2f9ec;
 }
 .appsThemeDark .greenButton:hover, .appsThemeDark a.greenButton:hover, .appsThemeDark .greenButtonSubtle:hover, .appsThemeDark a.greenButtonSubtle:hover {
@@ -2434,8 +2439,8 @@ a[data-tooltip] {
 .appsThemeDark .yellowButton, .appsThemeDark a.yellowButton, .appsThemeDark .yellowButtonSubtle, .appsThemeDark a.yellowButtonSubtle {
   background-color: #865b01;
   border: solid 1px #684701;
-  border-top-color: #e09802;
-  border-left-color: #e09802;
+  border-top-color: #d18e02;
+  border-left-color: #d18e02;
   color: #fff8ea;
 }
 .appsThemeDark .yellowButton:hover, .appsThemeDark a.yellowButton:hover, .appsThemeDark .yellowButtonSubtle:hover, .appsThemeDark a.yellowButtonSubtle:hover {
@@ -2509,8 +2514,8 @@ a[data-tooltip] {
 .appsThemeDark .blueButton, .appsThemeDark a.blueButton, .appsThemeDark .blueButtonSubtle, .appsThemeDark a.blueButtonSubtle {
   background-color: #004763;
   border: solid 1px #00374d;
-  border-top-color: #0076a5;
-  border-left-color: #0076a5;
+  border-top-color: #006e9a;
+  border-left-color: #006e9a;
   color: #e2f7ff;
 }
 .appsThemeDark .blueButton:hover, .appsThemeDark a.blueButton:hover, .appsThemeDark .blueButtonSubtle:hover, .appsThemeDark a.blueButtonSubtle:hover {
@@ -2584,8 +2589,8 @@ a[data-tooltip] {
 .appsThemeDark .grayButton, .appsThemeDark a.grayButton, .appsThemeDark .grayButtonSubtle, .appsThemeDark a.grayButtonSubtle {
   background-color: #545454;
   border: solid 1px #414141;
-  border-top-color: #8c8c8c;
-  border-left-color: #8c8c8c;
+  border-top-color: #838383;
+  border-left-color: #838383;
   color: #f8f8f8;
 }
 .appsThemeDark .grayButton:hover, .appsThemeDark a.grayButton:hover, .appsThemeDark .grayButtonSubtle:hover, .appsThemeDark a.grayButtonSubtle:hover {
@@ -2618,8 +2623,38 @@ a[data-tooltip] {
 }
 
 .grayButton.active, .grayButton.active {
-  background-color: white;
+  background-color: #fafafa;
+  border-color: #c8c8c8;
   color: black;
+  pointer-events: none;
+}
+
+.appsThemeDark .grayButton.active, .appsThemeDark .grayButton.active {
+  background-color: #c8c8c8;
+  border-color: #969696;
+  color: black;
+  pointer-events: none;
+}
+
+/* page selection buttons for filterForms */
+.pager {
+  margin: 10px;
+}
+.pager a, .pager > i {
+  display: inline-block;
+  min-width: 25px;
+  text-align: center;
+  margin: 3px;
+}
+.pager aa:first-of-type, .pager > ia:first-of-type {
+  margin-left: 0;
+}
+.pager aa:last-of-type, .pager > ia:last-of-type {
+  margin-right: 0;
+}
+
+i.secondarySort, span.secondarySort {
+  opacity: 0.4;
 }
 
 .redButton, a.redButton, .redButtonSubtle, a.redButtonSubtle {
@@ -2664,8 +2699,8 @@ a[data-tooltip] {
 .appsThemeDark .redButton, .appsThemeDark a.redButton, .appsThemeDark .redButtonSubtle, .appsThemeDark a.redButtonSubtle {
   background-color: #820000;
   border: solid 1px #650000;
-  border-top-color: #d90000;
-  border-left-color: #d90000;
+  border-top-color: #ca0000;
+  border-left-color: #ca0000;
   color: #ffe9e9;
 }
 .appsThemeDark .redButton:hover, .appsThemeDark a.redButton:hover, .appsThemeDark .redButtonSubtle:hover, .appsThemeDark a.redButtonSubtle:hover {
@@ -2739,8 +2774,8 @@ a[data-tooltip] {
 .appsThemeDark .orangeButton, .appsThemeDark a.orangeButton, .appsThemeDark .orangeButtonSubtle, .appsThemeDark a.orangeButtonSubtle {
   background-color: #833900;
   border: solid 1px #662c00;
-  border-top-color: #da5f00;
-  border-left-color: #da5f00;
+  border-top-color: #cb5900;
+  border-left-color: #cb5900;
   color: #fff3e9;
 }
 .appsThemeDark .orangeButton:hover, .appsThemeDark a.orangeButton:hover, .appsThemeDark .orangeButtonSubtle:hover, .appsThemeDark a.orangeButtonSubtle:hover {
@@ -2814,8 +2849,8 @@ a[data-tooltip] {
 .appsThemeDark .delete, .appsThemeDark a.delete, .appsThemeDark .deleteSubtle, .appsThemeDark a.deleteSubtle {
   background-color: #a80000;
   border: solid 1px #830000;
-  border-top-color: #ff1a1a;
-  border-left-color: #ff1a1a;
+  border-top-color: #ff0707;
+  border-left-color: #ff0707;
   color: #fff1f1;
 }
 .appsThemeDark .delete:hover, .appsThemeDark a.delete:hover, .appsThemeDark .deleteSubtle:hover, .appsThemeDark a.deleteSubtle:hover {
@@ -2889,8 +2924,8 @@ a[data-tooltip] {
 .appsThemeDark .edit, .appsThemeDark a.edit, .appsThemeDark .editSubtle, .appsThemeDark a.editSubtle {
   background-color: #00a800;
   border: solid 1px #008300;
-  border-top-color: #1aff1a;
-  border-left-color: #1aff1a;
+  border-top-color: #07ff07;
+  border-left-color: #07ff07;
   color: #f1fff1;
 }
 .appsThemeDark .edit:hover, .appsThemeDark a.edit:hover, .appsThemeDark .editSubtle:hover, .appsThemeDark a.editSubtle:hover {

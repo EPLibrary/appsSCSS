@@ -35,7 +35,7 @@ $inputWidth: 240px;
 			display:block;
 			margin-left:auto;
 			width:$inputWidth;
-			flex-basis:$inputWidth;
+			// flex-basis:$inputWidth;
 			font-weight:normal;
 
 		}
@@ -426,7 +426,7 @@ $inputWidth: 240px;
 	}
 
 	.day {
-		width:70px;
+		width:72px;
 	}
 
 	.button {

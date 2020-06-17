@@ -73,6 +73,12 @@ body  {
 	color: #111111;
 }
 
+/* Supporting the appsThemeDark class here should speed up switching styles */
+body.appsThemeDark {
+	background-color:#111111;
+	color: white;	
+}
+
 a  {
 	color: #004B8D;
 	text-decoration: none;

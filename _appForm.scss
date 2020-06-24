@@ -1,8 +1,8 @@
 /* Styles used in standard forms used on apps (with an appForm) class. */
-
+@use 'sass:color';
+@import 'variables';
 $labelWidth: 400px;
 $inputWidth: 240px;
-
 .appForm {
 
 	label, 
@@ -76,6 +76,13 @@ $inputWidth: 240px;
 				border-radius:3px;
 				background-color:rgba(127,127,127,0.05);
 				white-space: nowrap;
+				&.checked {
+					border-color: color.scale($accentColor, $lightness: +10%);
+					background-color:transparent;
+					&:hover {
+						border-color:$accentColor;
+					}
+				}				
 			}
 
 			label:hover {
@@ -137,9 +144,18 @@ $inputWidth: 240px;
 			// margin-right:$inputWidth - 15px;
 		}
 
-		.checkboxLeft input[type="checkbox"] {
-			margin-right:$inputWidth - 15px;	
+		.checkboxLeft {
+			display: inline-block;
+			width:$inputWidth;
+
+			input[type="checkbox"] {
+				margin-left:0;
+				margin-right:0;
+				width: initial;
+				display:inline;
+			}
 		}
+
 
 		.icheckbox_square-blue {
 			margin-right:$inputWidth - 22px;
@@ -232,8 +248,14 @@ $inputWidth: 240px;
 
 	/* Some special styles for forms that are centered on the page 
 		These are used for very simple forms, like a login form in a popup */
-	&.centeredForm label input {
-		width:275px;
+	&.centeredForm label {
+		input, .checkboxLeft {
+			width:275px;
+		}
+	}
+
+	&.centeredForm label .checkboxLeft input {
+		width: initial;
 	}
 
 	&.centeredForm {
@@ -245,6 +267,7 @@ $inputWidth: 240px;
 	&.centeredForm label.formSubmit input {
 		width:100%;
 	}
+
 
 
 	fieldset {
@@ -349,6 +372,10 @@ $inputWidth: 240px;
 			// flex-basis:100%;
 			/* overflow:auto covers chosen dropdowns */
 			/*overflow:auto;*/
+
+			.checkboxLeft {
+				width: auto;
+			}
 		}
 
 		.formItem,

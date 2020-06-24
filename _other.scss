@@ -351,6 +351,61 @@ These shouldn't be used anymore. Use h3 instead. */
 	z-index: -1;			
 }
 
+/* Styles for filterTable */
+#filterTable {
+	position: relative;
+	tbody tr {
+		height:24px;
+	}
+	.editing {
+		// border:2px solid color.scale($accentColor, $lightness: +10%);
+		// border-radius:3px;
+		padding:0 2px; //Ideally this won't change shape when we insert an input field
+		position:relative;
+		// This seems to be the only way I can get rid of the outline around the "press enter to save"
+		&:focus {
+			outline:none;
+		}
+
+		&:not(.noTip)::before {
+			content:'Press Enter to Save';
+			position: absolute;
+		    bottom: 100%;
+		    left: 50%;
+			margin-bottom: 5px;
+			margin-left: -80px;
+			padding: 7px;
+			width: 135px;
+			border-radius: 3px;
+			background-color: hsla(0, 0%, 20%, 0.7);
+			color: #fff;
+			text-align: center;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 1.2;
+			opacity:0;
+			animation:opacityFadeOut 7s ease;
+		}
+	}
+
+	.inPlace {
+		width:100%;
+		// Hmm, on mobile it probably needs to be 16.
+		font-size:15px;
+		border-width:1px;
+		padding:1px 2px;
+	}
+
+	.datepicker {
+		background-image:none;
+	}
+}
+
+@keyframes opacityFadeOut {
+    0%{opacity:100%}
+    50%{opacity:100%}
+    100%{opacity:0%}
+}
 
 .outlined, .outlinedGreen {
 	background-color:#d2ffd0;
@@ -1006,14 +1061,6 @@ a[data-tooltip] {
     50%{background-position:50% 100%}
     100%{background-position:50% 00%}
 }
-
-
-@keyframes fadeBG {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
 
 
 /* Slider switch used in inOut and inOutGo */

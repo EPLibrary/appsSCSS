@@ -388,18 +388,26 @@ These shouldn't be used anymore. Use h3 instead. */
 		}
 	}
 
+	.saving {
+		color: rgba(128,128,128,0.7);
+	}
+
 	.inPlace {
 		width:100%;
 		// Hmm, on mobile it probably needs to be 16.
 		font-size:15px;
 		border-width:1px;
 		padding:1px 2px;
+
+	}
+	select.inPlace {
+		min-width:45px;
 	}
 
 	.datepicker {
 		background-image:none;
 	}
-}
+}//end #filterTable
 
 @keyframes opacityFadeOut {
     0%{opacity:100%}

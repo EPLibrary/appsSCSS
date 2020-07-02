@@ -113,6 +113,7 @@ img {
 
 input, textarea {
   font-size: 14px;
+  border-radius: 2px;
 }
 
 /***************************************************************/
@@ -1496,11 +1497,17 @@ These shouldn't be used anymore. Use h3 instead. */
   opacity: 0;
   animation: opacityFadeOut 7s ease;
 }
+#filterTable .saving {
+  color: rgba(128, 128, 128, 0.7);
+}
 #filterTable .inPlace {
   width: 100%;
   font-size: 15px;
   border-width: 1px;
   padding: 1px 2px;
+}
+#filterTable select.inPlace {
+  min-width: 45px;
 }
 #filterTable .datepicker {
   background-image: none;
@@ -2288,7 +2295,7 @@ a[data-tooltip] {
   border: solid 1px #500522;
   border-top-color: #a00a45;
   border-left-color: #a00a45;
-  color: #fde6ef;
+  color: #fbc0d7;
 }
 .appsThemeDark .pinkButton:hover, .appsThemeDark a.pinkButton:hover, .appsThemeDark .pinkButtonSubtle:hover, .appsThemeDark a.pinkButtonSubtle:hover {
   background-color: #7d0836;
@@ -2363,7 +2370,7 @@ a[data-tooltip] {
   border: solid 1px #2b1736;
   border-top-color: #572e6b;
   border-left-color: #572e6b;
-  color: #f2ebf6;
+  color: #e0cce9;
 }
 .appsThemeDark .purpleButton:hover, .appsThemeDark a.purpleButton:hover, .appsThemeDark .purpleButtonSubtle:hover, .appsThemeDark a.purpleButtonSubtle:hover {
   background-color: #442454;
@@ -2438,7 +2445,7 @@ a[data-tooltip] {
   border: solid 1px #2b4417;
   border-top-color: #56892d;
   border-left-color: #56892d;
-  color: #f2f9ec;
+  color: #def0d0;
 }
 .appsThemeDark .greenButton:hover, .appsThemeDark a.greenButton:hover, .appsThemeDark .greenButtonSubtle:hover, .appsThemeDark a.greenButtonSubtle:hover {
   background-color: #436c23;
@@ -2513,7 +2520,7 @@ a[data-tooltip] {
   border: solid 1px #684701;
   border-top-color: #d18e02;
   border-left-color: #d18e02;
-  color: #fff8ea;
+  color: #ffeecb;
 }
 .appsThemeDark .yellowButton:hover, .appsThemeDark a.yellowButton:hover, .appsThemeDark .yellowButtonSubtle:hover, .appsThemeDark a.yellowButtonSubtle:hover {
   background-color: #a47002;
@@ -2588,7 +2595,7 @@ a[data-tooltip] {
   border: solid 1px #00374d;
   border-top-color: #006e9a;
   border-left-color: #006e9a;
-  color: #e2f7ff;
+  color: #b7eaff;
 }
 .appsThemeDark .blueButton:hover, .appsThemeDark a.blueButton:hover, .appsThemeDark .blueButtonSubtle:hover, .appsThemeDark a.blueButtonSubtle:hover {
   background-color: #005679;
@@ -2663,7 +2670,7 @@ a[data-tooltip] {
   border: solid 1px #414141;
   border-top-color: #838383;
   border-left-color: #838383;
-  color: #f8f8f8;
+  color: #eeeeee;
 }
 .appsThemeDark .grayButton:hover, .appsThemeDark a.grayButton:hover, .appsThemeDark .grayButtonSubtle:hover, .appsThemeDark a.grayButtonSubtle:hover {
   background-color: #676767;
@@ -2773,7 +2780,7 @@ i.secondarySort, span.secondarySort {
   border: solid 1px #650000;
   border-top-color: #ca0000;
   border-left-color: #ca0000;
-  color: #ffe9e9;
+  color: #ffc8c8;
 }
 .appsThemeDark .redButton:hover, .appsThemeDark a.redButton:hover, .appsThemeDark .redButtonSubtle:hover, .appsThemeDark a.redButtonSubtle:hover {
   background-color: #9f0000;
@@ -2848,7 +2855,7 @@ i.secondarySort, span.secondarySort {
   border: solid 1px #662c00;
   border-top-color: #cb5900;
   border-left-color: #cb5900;
-  color: #fff3e9;
+  color: #ffe0c8;
 }
 .appsThemeDark .orangeButton:hover, .appsThemeDark a.orangeButton:hover, .appsThemeDark .orangeButtonSubtle:hover, .appsThemeDark a.orangeButtonSubtle:hover {
   background-color: #a04600;
@@ -2923,7 +2930,7 @@ i.secondarySort, span.secondarySort {
   border: solid 1px #830000;
   border-top-color: #ff0707;
   border-left-color: #ff0707;
-  color: #fff1f1;
+  color: #ffdddd;
 }
 .appsThemeDark .delete:hover, .appsThemeDark a.delete:hover, .appsThemeDark .deleteSubtle:hover, .appsThemeDark a.deleteSubtle:hover {
   background-color: #ce0000;
@@ -2998,7 +3005,7 @@ i.secondarySort, span.secondarySort {
   border: solid 1px #008300;
   border-top-color: #07ff07;
   border-left-color: #07ff07;
-  color: #f1fff1;
+  color: #ddffdd;
 }
 .appsThemeDark .edit:hover, .appsThemeDark a.edit:hover, .appsThemeDark .editSubtle:hover, .appsThemeDark a.editSubtle:hover {
   background-color: #00ce00;

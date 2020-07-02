@@ -1,8 +1,11 @@
-/* Base styles to style plain elements on apps.
-Generally, we only want elements styled here with no classes or IDs
-
-*/
+/* Base styles to style plain elements on apps. Generally, we want elements with no classes or IDs here */
 /* Primary CSS For apps.epl.ca */
+:root {
+  --accent-color: #004B8D;
+  --accent-color-hover: #005fb2;
+  --accent-color-active: #006ccc;
+}
+
 /* WebFonts for browsers that support them */
 @font-face {
   font-family: "HelveticaNeueLTStd";

@@ -401,12 +401,19 @@ footer #footerHomeLink img {
   box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.5);
   z-index: 500;
 }
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#sidebar ul ul {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
 
 .sidebarCell {
   padding: 6px 7px 8px 7px;
 }
-
-/* \Includes\SidebarBlogs.cfm and \Includes\SidebarBookmarks.cfm */
 .sidebarCell a {
   font-size: 15px;
   text-decoration: none;

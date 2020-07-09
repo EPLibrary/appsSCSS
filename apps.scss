@@ -33,6 +33,7 @@
 
 	.#{$className}, a.#{$className}, .#{$className}Subtle, a.#{$className}Subtle {
 		text-decoration:none;
+		-webkit-appearance: none;
 		border:solid 1px color.scale($baseColor, $lightness: -40%);
 		@if $lighten {
 			background-color:color.scale($baseColor, $lightness:+40%);

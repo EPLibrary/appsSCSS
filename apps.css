@@ -2294,6 +2294,7 @@ a[data-tooltip] {
 /*This core stylesheet includes all the components from partials (starting with _).*/
 .pinkButton, a.pinkButton, .pinkButtonSubtle, a.pinkButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #89083b;
   background-color: #f6689f;
   border-top-color: #f99abf;
@@ -2369,6 +2370,7 @@ a[data-tooltip] {
 
 .purpleButton, a.purpleButton, .purpleButtonSubtle, a.purpleButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #4a275c;
   background-color: #b384cb;
   border-top-color: #cdaddc;
@@ -2444,6 +2446,7 @@ a[data-tooltip] {
 
 .greenButton, a.greenButton, .greenButtonSubtle, a.greenButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #4a7527;
   background-color: #b0da8e;
   border-top-color: #cae6b4;
@@ -2519,6 +2522,7 @@ a[data-tooltip] {
 
 .yellowButton, a.yellowButton, .yellowButtonSubtle, a.yellowButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #b37a02;
   background-color: #fed683;
   border-top-color: #fee4ac;
@@ -2594,6 +2598,7 @@ a[data-tooltip] {
 
 .blueButton, a.blueButton, .blueButtonSubtle, a.blueButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #005e84;
   background-color: #51cdff;
   border-top-color: #8bdeff;
@@ -2669,6 +2674,7 @@ a[data-tooltip] {
 
 .grayButton, a.grayButton, .grayButtonSubtle, a.grayButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #707070;
   background-color: #d6d6d6;
   border-top-color: #e4e4e4;
@@ -2779,6 +2785,7 @@ i.secondarySort, span.secondarySort {
 
 .redButton, a.redButton, .redButtonSubtle, a.redButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #ad0000;
   background-color: #ff7a7a;
   border-top-color: #ffa7a7;
@@ -2854,6 +2861,7 @@ i.secondarySort, span.secondarySort {
 
 .orangeButton, a.orangeButton, .orangeButtonSubtle, a.orangeButtonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #ae4c00;
   background-color: #ffb57b;
   border-top-color: #ffcda7;
@@ -2929,6 +2937,7 @@ i.secondarySort, span.secondarySort {
 
 .delete, a.delete, .deleteSubtle, a.deleteSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #e00000;
   background-color: #ffadad;
   border-top-color: #ffc9c9;
@@ -3004,6 +3013,7 @@ i.secondarySort, span.secondarySort {
 
 .edit, a.edit, .editSubtle, a.editSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #00e000;
   background-color: #adffad;
   border-top-color: #c9ffc9;
@@ -3079,6 +3089,7 @@ i.secondarySort, span.secondarySort {
 
 .button, a.button, .buttonSubtle, a.buttonSubtle {
   text-decoration: none;
+  -webkit-appearance: none;
   border: solid 1px #002d55;
   background-color: #004B8D;
   border-top-color: #0068c4;

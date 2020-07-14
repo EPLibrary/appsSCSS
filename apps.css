@@ -346,6 +346,10 @@ nav a:not(.grayButton) {
   color: white;
 }
 
+.autocomplete-suggestion {
+  cursor: pointer;
+}
+
 .autocomplete-suggestion strong {
   font-weight: normal;
   background-color: rgba(255, 255, 127, 0.5);

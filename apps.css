@@ -551,6 +551,10 @@ footer #footerHomeLink img {
     min-width: 100px;
   }
 
+  .autocomplete-suggestions div {
+    line-height: 26px;
+  }
+
   nav {
     display: none;
   }

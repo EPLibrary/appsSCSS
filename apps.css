@@ -633,14 +633,14 @@ footer #footerHomeLink img {
   top: 0px;
   right: 0px;
   z-index: 210;
-  background-image: url("/Resources/Images/xIcon_shadow.svg");
+  background-image: url("/images/xIcon_shadow.svg");
   background-size: 35px 35px;
   width: 35px;
   height: 35px;
 }
 
 .closeButton:hover {
-  background-image: url("/Resources/Images/xIcon_bigshadow.svg");
+  background-image: url("/images/xIcon_bigshadow.svg");
 }
 
 #escHelp {
@@ -656,7 +656,7 @@ footer #footerHomeLink img {
 
 .backCurtain {
   /* This was to support stupid IE8 that didn't allow for translucent colors */
-  /*background-image:url(/Resources/images/alpha-black-30.png);*/
+  /*background-image:url(/images/alpha-black-30.png);*/
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
@@ -1257,7 +1257,7 @@ These shouldn't be used anymore. Use h3 instead. */
   height: 16px;
   border: none;
   vertical-align: top;
-  background-image: url("/Resources/Images/helpIcon.svg");
+  background-image: url("/images/helpIcon.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
 }
@@ -1461,7 +1461,7 @@ These shouldn't be used anymore. Use h3 instead. */
 
 /* Shade alternating columns by giving a table this class */
 .altColColors td:nth-child(even) {
-  background-image: url(/Resources/images/alpha-black-05.png);
+  background-image: url(/images/alpha-black-05.png);
   background-image: linear-gradient(rgba(127, 127, 127, 0.1), rgba(127, 127, 127, 0.1));
 }
 
@@ -1495,7 +1495,7 @@ These shouldn't be used anymore. Use h3 instead. */
 }
 
 .hoverHighlight tr:hover {
-  background-image: url(/Resources/images/alpha-yellow-20.png);
+  background-image: url(/images/alpha-yellow-20.png);
 }
 
 .hoverHighlight tr td,
@@ -1505,7 +1505,7 @@ These shouldn't be used anymore. Use h3 instead. */
 
 .hoverHighlight tr td:hover::after,
 .hoverHighlight tr th:hover::after {
-  background-image: url(/Resources/images/alpha-yellow-20.png);
+  background-image: url(/images/alpha-yellow-20.png);
   content: "";
   position: absolute;
   left: 0;
@@ -1640,19 +1640,19 @@ a[href$=".ppt"], a[href$=".pptx"], a[href$=".ppsx"], a[href$=".pdf"], a[href$=".
 }
 
 a[href$=".ppt"], a[href$=".pptx"], a[href$=".ppsx"] {
-  background-image: url("/Resources/images/type_icons/ppt-icon_16.png");
+  background-image: url("/images/type_icons/ppt-icon_16.png");
 }
 
 a[href$=".pdf"] {
-  background-image: url("/Resources/images/type_icons/pdf-icon_16.png");
+  background-image: url("/images/type_icons/pdf-icon_16.png");
 }
 
 a[href$=".doc"], a[href$=".docx"] {
-  background-image: url("/Resources/images/type_icons/doc-icon_16.png");
+  background-image: url("/images/type_icons/doc-icon_16.png");
 }
 
 a[href$=".xls"], a[href$=".xlsx"] {
-  background-image: url("/Resources/images/type_icons/xls-icon_16.png");
+  background-image: url("/images/type_icons/xls-icon_16.png");
 }
 
 /* For tabbed Easy-Edit Pages (or other pages with tabs) */
@@ -1667,7 +1667,7 @@ a[href$=".xls"], a[href$=".xlsx"] {
   font-size: 16px;
   background-color: #004B8D;
   padding: 4px 8px 0px 8px;
-  background-image: url("/Resources/images/alpha-black-30.png");
+  background-image: url("/images/alpha-black-30.png");
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   border-bottom: 1px solid #0d2b4a;
@@ -1833,7 +1833,7 @@ table.filesList .emptyFolder {
 /* allow this general style to apply to anything*/
 .highlighted,
 table.filesList tr.highlighted {
-  background-image: url("/Resources/images/alpha-yellow-20.png");
+  background-image: url("/images/alpha-yellow-20.png");
 }
 
 table.filesList .delTD {

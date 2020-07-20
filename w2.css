@@ -582,7 +582,7 @@ h3 {
 
 /* Style for the modal popup */
 .backCurtain {
-	/*background-image:url(/Resources/images/alpha-black-30.png);*/
+	/*background-image:url(/images/alpha-black-30.png);*/
 	background-color: rgba(0,0,0,0.3);
 	position:fixed;
 	top:0;
@@ -767,14 +767,14 @@ h3 {
 	right:0px;
 	z-index:99;
 	z-index:13;
-	background-image: url('/Resources/Images/xIcon_shadow.svg');
+	background-image: url('/images/xIcon_shadow.svg');
 	background-size:35px 35px;
 	width:35px;
 	height:35px;
 }
 
 .closeButton:hover {
-	background-image: url('/Resources/Images/xIcon_bigshadow.svg');
+	background-image: url('/images/xIcon_bigshadow.svg');
 }
 
 	
@@ -790,7 +790,7 @@ h3 {
 }
 
 .backCurtain {
-	/*background-image:url(/Resources/images/alpha-black-30.png);*/
+	/*background-image:url(/images/alpha-black-30.png);*/
 	background-color: rgba(0,0,0,0.3);
 	position:fixed;
 	top:0;
@@ -880,7 +880,7 @@ table.filesList .emptyFolder {
 }
 
 table.filesList tr.highlighted {
-	background-image: url('/Resources/images/alpha-yellow-20.png');
+	background-image: url('/images/alpha-yellow-20.png');
 }
 
 table.filesList .delTD {
@@ -1129,7 +1129,7 @@ div.filesList div img {
 	height: 16px;
 	border: none;
 	vertical-align: top;
-	background-image:url('/Resources/Images/helpIcon.svg');
+	background-image:url('/images/helpIcon.svg');
 	background-repeat:no-repeat;
 	background-size:100%;
 }

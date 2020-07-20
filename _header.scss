@@ -482,14 +482,14 @@ footer {
 	top:0px;
 	right:0px;
 	z-index:210;
-	background-image: url('/Resources/Images/xIcon_shadow.svg');
+	background-image: url('/images/xIcon_shadow.svg');
 	background-size:35px 35px;
 	width:35px;
 	height:35px;
 }
 
 .closeButton:hover {
-	background-image: url('/Resources/Images/xIcon_bigshadow.svg');
+	background-image: url('/images/xIcon_bigshadow.svg');
 }
 
 
@@ -506,7 +506,7 @@ footer {
 
 .backCurtain {
 	/* This was to support stupid IE8 that didn't allow for translucent colors */
-	/*background-image:url(/Resources/images/alpha-black-30.png);*/
+	/*background-image:url(/images/alpha-black-30.png);*/
 	background-color: rgba(0,0,0,0.3);
 	position:fixed;
 	top:0;

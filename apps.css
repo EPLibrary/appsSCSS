@@ -109,13 +109,37 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Kill blue borders in IE */
+/* Kill blue borders in IE like it's 1993 */
 img {
   border: none;
 }
 
+input[type=text], input[type=password], input:not([type]) {
+  line-height: 20px;
+}
+
 input, textarea {
   font-size: 14px;
+  border-width: 1px;
+  border-radius: 2px;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cpolygon%20fill%3D%22%23888%22%20points%3D%22200%2C380%2010%2C60%20390%2C60%22%20%2F%3E%3C%2Fsvg%3E");
+  background-size: 7px 7px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 5px) 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 4px 6px;
+  padding-right: 19px;
+  border-width: 1px;
+  border-radius: 2px;
+}
+
+.chosen-container-single .chosen-single {
+  border-radius: 2px;
 }
 
 /***************************************************************/
@@ -1059,6 +1083,13 @@ footer #footerHomeLink img {
 #filterForm .formItem label:hover {
   border-color: rgba(127, 127, 127, 0.5);
   background-color: rgba(127, 127, 127, 0.025);
+}
+#filterForm .formItem label.checked {
+  border-color: #005fb2;
+  background-color: transparent;
+}
+#filterForm .formItem label.checked:hover {
+  border-color: #004B8D;
 }
 #filterForm .formItem input[type=radio] {
   /* Any time you use vertical align, you're gonna have a bad time */

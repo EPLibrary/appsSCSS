@@ -474,6 +474,16 @@ $inputWidth: 240px;
 				border-color: rgba(127, 127, 127, 0.5);
 				background-color: rgba(127, 127, 127, 0.025);
 			}
+
+			// Add blue border around checked items
+			&.checked {
+				border-color: color.scale($accentColor, $lightness: +10%);
+				background-color:transparent;
+				&:hover {
+					border-color:$accentColor;
+				}
+			}
+
 		}
 
 		input[type="radio"] {

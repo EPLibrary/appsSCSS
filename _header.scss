@@ -173,14 +173,16 @@
     padding-bottom:3px;
 }
 	
-
-
 footer {
 	display:flex;
 	align-items:center;
 	justify-content: center;
 	flex-wrap:wrap;
-
+	background-color:#000000;
+	height:50px;
+	margin-top:40px;
+	text-align:center;
+	position:relative;
 	.darkModeSwitch {
 	
 		img {
@@ -216,9 +218,6 @@ footer {
 			// vertical-align:bottom;
 		}
 	}
-
-
-
 }
 
 

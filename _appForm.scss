@@ -75,14 +75,7 @@ $inputWidth: 240px;
 				padding-bottom:0px;
 				border-radius:3px;
 				background-color:rgba(127,127,127,0.05);
-				white-space: nowrap;
-				&.checked {
-					border-color: color.scale($accentColor, $lightness: +10%);
-					background-color:transparent;
-					&:hover {
-						border-color:$accentColor;
-					}
-				}				
+				white-space: nowrap;				
 			}
 
 			label:hover {
@@ -475,14 +468,6 @@ $inputWidth: 240px;
 				background-color: rgba(127, 127, 127, 0.025);
 			}
 
-			// Add blue border around checked items
-			&.checked {
-				border-color: color.scale($accentColor, $lightness: +10%);
-				background-color:transparent;
-				&:hover {
-					border-color:$accentColor;
-				}
-			}
 
 		}
 
@@ -498,6 +483,21 @@ $inputWidth: 240px;
 	}
 
 }//End #filterForm
+
+// Blue border around checked radios and checkmarks inside a formItem or formGroup class
+// Sometimes I need a lot of specificity, like in appForm
+.formItem label.checked,
+.formGroup label.checked,
+.appForm .formGroup label.checked,
+.appForm .formItem .formGroup label.checked,
+#filterForm  .formItem label.checked {
+	border-color: color.scale($accentColor, $lightness: +10%);
+	background-color:transparent;
+	&:hover {
+		border-color:$accentColor;
+	}
+}
+
 
 // Links that can be clicked to change sort order
 .sortLink {

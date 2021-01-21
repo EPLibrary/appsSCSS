@@ -8,12 +8,6 @@ body  {
 	color: #000000;
 }
 
-header,
-footer,
-#footerSpacer { 
-	display:none;
-}
-
 main { 
 	/* width: 98%;   this will create a container 80% of the browser width */
 	border: 0px none #ffffff;
@@ -22,17 +16,13 @@ main {
 	background-color:#ffffff;
 } 
 
+header, footer, nav, .noPrint, .cfdebug, .adminControl, .breadCrumbs, .devWarn, #footerSpacer {
+	display:none;
+}
+
 #titleBar {
 	color:black;
 	background:none;
-}
-
-.adminControl {
-	display:none;
-}
-
-.breadCrumbs {
-	display:none;
 }
 
 a  {
@@ -44,16 +34,4 @@ a  {
 a:visited  {
 	/*use epl_light_blue with less brightness*/
 	color:#000000;
-}
-
-nav {
-	display:none;
-}
-
-.cfdebug {
-	display:none;
-}
-
-.noPrint {
-	display:none;
 }

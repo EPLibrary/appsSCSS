@@ -903,6 +903,10 @@ $moreTrans:color.adjust($accentColor, $alpha:-0.4);
 /* This max-width may need to go up if the content in the arrows is quite long */
 @media (max-width: 620px) {
 
+	#innerHeader form {
+		width: 100%;
+	}
+
 	.columnleft, .columnright {
 		width:100%;
 		float:none;
@@ -1049,6 +1053,11 @@ a[data-tooltip] {
   text-decoration:none;
 }
 
+
+/* Darken links in tooltips when in dark mode */
+.appsThemeDark .opentip a {
+	color: #004B8D;
+}
 
 #InnerPopOver h3 {
 	margin-top: 0;
